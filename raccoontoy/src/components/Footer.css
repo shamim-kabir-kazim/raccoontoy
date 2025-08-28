@@ -1,0 +1,132 @@
+.footer-root {
+  background: #232224;
+  padding: 42px 16px 18px 16px;
+  color: #d1d1d1;
+  font-family: 'Inter', 'Arial', sans-serif;
+  text-align: center;
+  position: relative;
+}
+
+.footer-section {
+  margin-bottom: 34px;
+}
+
+.footer-section.about h2 {
+  color: #fff;
+  font-size: 2rem;
+  font-weight: 700;
+  margin-bottom: 14px;
+}
+
+.footer-section.about p {
+  color: #b7b7b7;
+  font-size: 1.25rem;
+  max-width: 600px;
+  margin: 0 auto 22px auto;
+  line-height: 1.25;
+}
+
+.footer-socials {
+  display: flex;
+  justify-content: center;
+  gap: 44px;
+  margin-bottom: 0;
+}
+
+.footer-social-icon {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 56px;
+  height: 56px;
+  border: 2px solid #fff;
+  border-radius: 50%;
+  margin: 0 15px;
+  transition: border 0.2s, background 0.2s;
+}
+
+.footer-social-icon:hover {
+  border-color: #ffc300;
+  background: #2d2c2e;
+}
+
+.footer-section.information h3,
+.footer-section.contact h3 {
+  color: #fff;
+  font-size: 1.4rem;
+  font-weight: 700;
+  margin-bottom: 12px;
+  margin-top: 0;
+}
+
+.footer-section.information p,
+.footer-section.contact p {
+  color: #b7b7b7;
+  font-size: 1.15rem;
+  margin: 0;
+  line-height: 1.5;
+  font-weight: 500;
+}
+
+.footer-divider {
+  border: none;
+  border-top: 2px solid #444;
+  margin: 38px 0 16px 0;
+  width: 96%;
+}
+
+.footer-bottom-row {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 16px;
+  position: relative;
+}
+
+.footer-backtotop {
+  position: absolute;
+  right: 0;
+  top: -24px;
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 0;
+  outline: none;
+  transition: transform 0.15s;
+}
+
+.footer-backtotop:active {
+  transform: scale(0.95);
+}
+
+.footer-backtotop svg {
+  display: block;
+}
+
+.footer-copyright {
+  color: #b7b7b7;
+  font-size: 1.05rem;
+  margin: 0 auto;
+}
+
+@media (max-width: 500px) {
+  .footer-root {
+    padding: 28px 2vw 12px 2vw;
+  }
+  .footer-section.about p {
+    font-size: 1.05rem;
+    max-width: 97vw;
+  }
+  .footer-section.information p,
+  .footer-section.contact p {
+    font-size: 1rem;
+  }
+  .footer-social-icon {
+    width: 44px;
+    height: 44px;
+    margin: 0 7px;
+  }
+  .footer-divider {
+    margin: 26px 0 10px 0;
+  }
+}

@@ -1,0 +1,64 @@
+.bottom-nav-bar {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  width: 100vw;
+  height: 88px;
+  background: #fff;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  box-shadow: 0 -1px 10px 0 rgba(0,0,0,0.06);
+  z-index: 100;
+}
+
+.nav-item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  flex: 1 1 0;
+  cursor: pointer;
+  transition: background 0.1s;
+  padding: 9px 0 4px 0;
+}
+
+.nav-item svg {
+  display: block;
+  margin-bottom: 6px;
+  width: 38px;
+  height: 38px;
+}
+
+.nav-label {
+  font-family: 'Arial', sans-serif;
+  font-size: 1.3rem;
+  font-weight: 600;
+  color: #111;
+  transition: color 0.15s;
+}
+
+.nav-item.active .nav-label,
+.nav-item.active svg g,
+.nav-item.active svg path,
+.nav-item.active svg rect {
+  color: #ffc300;
+  stroke: #ffc300 !important;
+  fill: none;
+}
+
+.nav-item.active .nav-label {
+  color: #ffc300;
+}
+
+@media (max-width: 700px) {
+  .bottom-nav-bar {
+    height: 68px;
+  }
+  .nav-item svg {
+    width: 28px;
+    height: 28px;
+  }
+  .nav-label {
+    font-size: 1rem;
+  }
+}

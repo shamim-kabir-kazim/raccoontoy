@@ -78,11 +78,17 @@
   align-items: center;
   transition: filter 0.12s;
   height: 54px;
+  outline: none !important;
+  box-shadow: none !important;
 }
-
-.header-icon-btn:active,
 .header-icon-btn:focus {
+  outline: none !important;
+  box-shadow: none !important;
+}
+.header-icon-btn:active {
   filter: brightness(0.93);
+  outline: none !important;
+  box-shadow: none !important;
 }
 
 .header-search-btn {
@@ -110,7 +116,6 @@
   height: 28px;
   display: block;
   object-fit: contain;
-  
 }
 
 .header-row-search {
@@ -135,7 +140,7 @@
 }
 
 .header-search-input {
-  width: 90%;
+  width: 80%;
   max-width: 520px;
   font-size: 1.16rem;
   padding: 12px 16px;

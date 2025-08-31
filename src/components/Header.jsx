@@ -36,7 +36,12 @@ const Header = () => {
       <div className="header-row header-row-top">
         {/* Left: Burger Menu */}
         <div className="header-col header-col-left">
-          <button className="header-icon-btn" aria-label="Menu">
+          <button
+            className="header-icon-btn"
+            aria-label="Menu"
+            tabIndex={0}
+            type="button"
+          >
             <img
               src={menuIcon}
               alt="menu"
@@ -59,6 +64,8 @@ const Header = () => {
           <button
             className="header-icon-btn header-search-btn"
             aria-label="Search"
+            type="button"
+            tabIndex={0}
             onClick={() => setShowSearch((s) => !s)}
           >
             <span className="header-search-circle">

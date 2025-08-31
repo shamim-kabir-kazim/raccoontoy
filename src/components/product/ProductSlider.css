@@ -4,6 +4,7 @@
   align-items: center;
   margin: 36px 0 0 0;
   user-select: none;
+  background-color: #BAA3FF;
 }
 
 .slider-carousel {
@@ -107,7 +108,7 @@
   font-family: 'Inter', 'Arial Black', Arial, sans-serif;
 }
 .slider-price {
-  color: #fa5050;
+  color: #BAA3FF;
   font-size: 2rem;
   font-weight: bold;
   margin-top: 1px;

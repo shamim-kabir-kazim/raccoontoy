@@ -91,7 +91,8 @@
   z-index: 10;
   transform: translateY(-50%);
   height: 0;
-  gap: 120px;
+  gap: 70vw;
+  background-color: aqua;
 }
 .slider-btn {
   pointer-events: auto;

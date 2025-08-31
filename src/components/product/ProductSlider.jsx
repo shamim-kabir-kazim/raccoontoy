@@ -1,5 +1,6 @@
 import React, { useState, useEffect, useRef } from "react";
 import "./ProductSlider.css";
+import { FaAngleRight, FaHeart } from "react-icons/fa6"; // Using FaAngleRight for ">" icon
 
 // Demo products with your images
 const products = [
@@ -84,7 +85,7 @@ const ProductSlider = () => {
             </button>
           </div>
         </div>
-        {/* Center image column (3:4 ratio) */}
+        {/* Center image column (3:5 ratio) */}
         <div className="slider-col slider-col-center">
           <div className="main-image-ratio">
             <img
@@ -132,17 +133,13 @@ const ProductSlider = () => {
       {/* ROW 3: Actions */}
       <div className="slider-row slider-row-actions">
         <button className="order-btn">
-          Order <span className="arrow">{'>'}</span>
+          <span className="order-label">Order</span>
+          <span className="arrow"><FaAngleRight /></span>
         </button>
         <button className="fav-btn" aria-label="Add to favorite">
-          <svg width="31" height="31" viewBox="0 0 31 31" fill="none">
-            <path
-              d="M15.5 27s-8-5.8-8-10.7C7.5 12.3 10.3 10 13.5 10c1.5 0 2.9 0.7 3.5 2 0.6-1.3 2-2 3.5-2 3.2 0 6 2.3 6 6.3C23.5 21.2 15.5 27 15.5 27z"
-              stroke="#1c1c1e"
-              strokeWidth="2"
-              fill="none"
-            />
-          </svg>
+          <span className="fav-icon">
+            <FaHeart />
+          </span>
         </button>
       </div>
     </div>

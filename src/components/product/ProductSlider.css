@@ -61,7 +61,6 @@
   width: 480px;
   height: 480px;
   z-index: 3;
-  box-shadow: 0 10px 38px 0 rgba(0,0,0,0.14);
   border-radius: 32px;
   
   object-fit: contain;
@@ -234,8 +233,8 @@
     width: 70vw;
   }
   .img-center {
-    width: 58vw;         /* Less width, but... */
-    height: 70vw;        /* ...still very tall on mobile */
+    width: 60vw;         /* Less width, but... */
+    height: 80vw;        /* ...still very tall on mobile */
     max-width: 320px;
     max-height: 420px;
     min-width: 140px;
@@ -243,8 +242,8 @@
     object-fit: contain;
   }
   .img-left, .img-right {
-    width: 17vw;
-    height: 22vw;
+    width: 20vw;
+    height: 28vw;
     min-width: 38px;
     min-height: 50px;
     max-width: 70px;

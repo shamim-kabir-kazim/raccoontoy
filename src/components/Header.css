@@ -1,12 +1,12 @@
 .raccoon-header {
   width: 100vw;
-  background: #fff;
+  background: #BAA3FF;
   display: flex;
   flex-direction: column;
   align-items: center;
   padding: 0;
   box-sizing: border-box;
-  border-bottom: 1.5px solid #ececec;
+  border-bottom: 1.5px solid #BAA3FF;
   position: relative;
   z-index: 100;
 }
@@ -21,9 +21,9 @@
 }
 
 .header-row-top {
-  height: 70px;
-  background: #fff;
-  border-bottom: 1px solid #f0f0f0;
+  height: 96px;
+  background: #BAA3FF;
+  border-bottom: 1px solid #BAA3FF;
 }
 
 .header-col {
@@ -36,8 +36,8 @@
 
 .header-col-left,
 .header-col-right {
-  max-width: 90px;
-  min-width: 60px;
+  max-width: 100px;
+  min-width: 62px;
   justify-content: flex-start;
 }
 
@@ -46,31 +46,71 @@
 }
 
 .header-col-center {
-  flex: 2 1 0;
+  flex: 3 1 0;
   justify-content: center;
 }
 
+.header-menu-img {
+  width: 38px;
+  height: 38px;
+  object-fit: contain;
+  display: block;
+}
+
 .header-logo-img {
-  height: 48px;
+  height: 96px;
   width: auto;
   object-fit: contain;
   display: block;
   margin: 0 auto;
+  transition: height 0.2s;
+}
+.header-logo-img.extra-large {
+  height: 112px;
 }
 
 .header-icon-btn {
   background: none;
   border: none;
   cursor: pointer;
-  padding: 0 12px;
+  padding: 0 8px;
   display: flex;
   align-items: center;
   transition: filter 0.12s;
-  height: 44px;
+  height: 54px;
 }
 
-.header-icon-btn:active, .header-icon-btn:focus {
+.header-icon-btn:active,
+.header-icon-btn:focus {
   filter: brightness(0.93);
+}
+
+.header-search-btn {
+  padding: 0 10px 0 0;
+}
+
+.header-search-circle {
+  background: #222;
+  border-radius: 50%;
+  width: 52px;
+  height: 52px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: background 0.18s;
+}
+
+.header-search-btn:active .header-search-circle,
+.header-search-btn:focus .header-search-circle {
+  background: #444;
+}
+
+.header-search-img {
+  width: 28px;
+  height: 28px;
+  display: block;
+  object-fit: contain;
+  
 }
 
 .header-row-search {
@@ -81,10 +121,10 @@
   justify-content: center;
   height: 0;
   overflow: hidden;
-  background: #fff;
+  background: #BAA3FF;
   transition: height 0.26s cubic-bezier(.36,1.2,.57,1), padding 0.18s;
   box-sizing: border-box;
-  border-bottom: 1px solid #ececec;
+  border-bottom: 1px solid #BAA3FF;
 }
 
 .header-row-search.show {
@@ -114,13 +154,17 @@
 }
 
 @media (max-width: 700px) {
-  .header-row, .header-row-search, .header-row-search.show {
+  .header-row,
+  .header-row-search,
+  .header-row-search.show {
     max-width: 100vw;
   }
-  .header-logo-img {
-    height: 36px;
+  .header-logo-img,
+  .header-logo-img.extra-large {
+    height: 56px;
   }
-  .header-col-left, .header-col-right {
+  .header-col-left,
+  .header-col-right {
     max-width: 58px;
     min-width: 46px;
   }
@@ -131,5 +175,17 @@
   .header-search-input {
     font-size: 1rem;
     padding: 8px 10px;
+  }
+  .header-search-circle {
+    width: 38px;
+    height: 38px;
+  }
+  .header-search-img {
+    width: 18px;
+    height: 18px;
+  }
+  .header-menu-img {
+    width: 28px;
+    height: 28px;
   }
 }

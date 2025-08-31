@@ -1,11 +1,15 @@
 import React, { useState, useRef, useEffect } from "react";
 import "./Header.css";
 
+const menuIcon = "https://i.postimg.cc/MKxGkXMw/menu-alt-1-svgrepo-com-1-1.png";
+const searchIcon = "https://i.postimg.cc/t4Zw2Nq4/search-svgrepo-com-1-1.png";
+const logoImg = "https://i.postimg.cc/2SBv2Rgv/Frame-305-1-2-1-2.png";
+
 const Header = () => {
   const [showSearch, setShowSearch] = useState(false);
   const inputRef = useRef();
 
-  // Focus the input if search bar is shown
+  // Focus the input when search bar is shown
   useEffect(() => {
     if (showSearch && inputRef.current) {
       inputRef.current.focus();
@@ -30,36 +34,49 @@ const Header = () => {
   return (
     <header className="raccoon-header">
       <div className="header-row header-row-top">
+        {/* Left: Burger Menu */}
         <div className="header-col header-col-left">
-          {/* Left icon (menu or user) */}
           <button className="header-icon-btn" aria-label="Menu">
-            <svg width="34" height="34" viewBox="0 0 34 34">
-              <circle cx="17" cy="17" r="15" fill="#fff" stroke="#222" strokeWidth="2" />
-              <rect x="10" y="16" width="14" height="2.5" rx="1.2" fill="#222"/>
-              <rect x="10" y="10.5" width="14" height="2.5" rx="1.2" fill="#222"/>
-              <rect x="10" y="21.5" width="14" height="2.5" rx="1.2" fill="#222"/>
-            </svg>
+            <img
+              src={menuIcon}
+              alt="menu"
+              className="header-menu-img"
+              draggable={false}
+            />
           </button>
         </div>
+        {/* Center: Logo */}
         <div className="header-col header-col-center">
-          {/* Logo image */}
-          <img src={"https://i.postimg.cc/2SBv2Rgv/Frame-305-1-2-1-2.png"} alt="Raccoon Toy Logo" className="header-logo-img" />
+          <img
+            src={logoImg}
+            alt="Raccoon Toy Logo"
+            className="header-logo-img extra-large"
+            draggable={false}
+          />
         </div>
+        {/* Right: Search Icon in black round */}
         <div className="header-col header-col-right">
-          {/* Search icon */}
           <button
-            className="header-icon-btn"
+            className="header-icon-btn header-search-btn"
             aria-label="Search"
-            onClick={() => setShowSearch(s => !s)}
+            onClick={() => setShowSearch((s) => !s)}
           >
-            <svg width="34" height="34" viewBox="0 0 40 40">
-              <circle cx="20" cy="20" r="12" stroke="#222" strokeWidth="3" fill="none"/>
-              <line x1="31" y1="31" x2="25" y2="25" stroke="#222" strokeWidth="3" strokeLinecap="round"/>
-            </svg>
+            <span className="header-search-circle">
+              <img
+                src={searchIcon}
+                alt="search"
+                className="header-search-img"
+                draggable={false}
+              />
+            </span>
           </button>
         </div>
       </div>
-      <div className={`header-row header-row-search${showSearch ? " show" : ""}`}>
+      <div
+        className={`header-row header-row-search${
+          showSearch ? " show" : ""
+        }`}
+      >
         <input
           ref={inputRef}
           type="text"

@@ -1,25 +1,25 @@
 import React, { useState, useEffect, useRef } from "react";
 import "./ProductSlider.css";
 
-// Example products (replace these images with your own assets)
+// New demo products with provided image URLs
 const products = [
   {
     id: 1,
-    name: "Cat Bricks Toy",
-    price: 18,
-    image: "/images/cat.png",
+    name: "Cute Raccoon Plush",
+    price: 19,
+    image: "https://i.postimg.cc/N0C1pFt8/Chat-GPT-Image-Aug-2-2025-03-49-34-PM-1-2-1.png",
   },
   {
     id: 2,
-    name: "Pikachu Bricks Toy",
-    price: 26,
-    image: "/images/pikachu.png",
+    name: "Raccoon Bubble Toy",
+    price: 22,
+    image: "https://i.postimg.cc/nLh447yc/Chat-GPT-Image-Aug-2-2025-03-56-54-PM-1-1.png",
   },
   {
     id: 3,
-    name: "Charmander Bricks Toy",
-    price: 20,
-    image: "/images/charmander.png",
+    name: "Raccoon Robot Figure",
+    price: 28,
+    image: "https://i.postimg.cc/XY8KBxDz/Chat-GPT-Image-Aug-2-2025-04-00-57-PM-1-1.png",
   },
 ];
 
@@ -60,56 +60,66 @@ const ProductSlider = () => {
 
   return (
     <div className="slider-main">
-      <div className="slider-carousel">
-        {/* Left Button */}
-        <button className="slider-btn left" onClick={handlePrev} aria-label="Previous product">
-          <svg width="42" height="42" viewBox="0 0 42 42">
-            <circle cx="21" cy="21" r="21" fill="#fff" />
-            <polyline points="25,13 17,21 25,29" fill="none" stroke="#222" strokeWidth="3" strokeLinecap="round" />
-          </svg>
-        </button>
-
-        {/* Left Image (small) */}
-        <img
-          src={products[leftIdx].image}
-          alt={products[leftIdx].name}
-          className="slider-img img-left"
-          draggable={false}
-        />
-
-        {/* Center Image (big) */}
-        <img
-          src={products[centerIdx].image}
-          alt={products[centerIdx].name}
-          className="slider-img img-center"
-          draggable={false}
-        />
-
-        {/* Right Image (small) */}
-        <img
-          src={products[rightIdx].image}
-          alt={products[rightIdx].name}
-          className="slider-img img-right"
-          draggable={false}
-        />
-
-        {/* Right Button */}
-        <button className="slider-btn right" onClick={handleNext} aria-label="Next product">
-          <svg width="42" height="42" viewBox="0 0 42 42">
-            <circle cx="21" cy="21" r="21" fill="#fff" />
-            <polyline points="17,13 25,21 17,29" fill="none" stroke="#222" strokeWidth="3" strokeLinecap="round" />
-          </svg>
-        </button>
+      {/* --- ROW 1: Images + Buttons --- */}
+      <div className="slider-row slider-row-images">
+        {/* Left image */}
+        <div className="slider-col slider-col-small">
+          <img
+            src={products[leftIdx].image}
+            alt={products[leftIdx].name}
+            className="slider-img img-left"
+            draggable={false}
+            style={{objectFit: "contain"}}
+          />
+        </div>
+        {/* Center image */}
+        <div className="slider-col slider-col-center">
+          <img
+            src={products[centerIdx].image}
+            alt={products[centerIdx].name}
+            className="slider-img img-center"
+            draggable={false}
+            style={{objectFit: "contain"}}
+          />
+          {/* Floating buttons over center image */}
+          <div className="slider-floating-controls">
+            <button className="slider-btn left" onClick={handlePrev} aria-label="Previous product">
+              <svg width="32" height="32" viewBox="0 0 42 42">
+                <circle cx="21" cy="21" r="21" fill="#fff" fillOpacity="0.32" />
+                <polyline points="25,13 17,21 25,29" fill="none" stroke="#222" strokeWidth="3" strokeLinecap="round" />
+              </svg>
+            </button>
+            <button className="slider-btn right" onClick={handleNext} aria-label="Next product">
+              <svg width="32" height="32" viewBox="0 0 42 42">
+                <circle cx="21" cy="21" r="21" fill="#fff" fillOpacity="0.32" />
+                <polyline points="17,13 25,21 17,29" fill="none" stroke="#222" strokeWidth="3" strokeLinecap="round" />
+              </svg>
+            </button>
+          </div>
+        </div>
+        {/* Right image */}
+        <div className="slider-col slider-col-small">
+          <img
+            src={products[rightIdx].image}
+            alt={products[rightIdx].name}
+            className="slider-img img-right"
+            draggable={false}
+            style={{objectFit: "contain"}}
+          />
+        </div>
       </div>
 
-      {/* Title and Price */}
-      <div className="slider-info">
+      {/* --- ROW 2: Name + Price --- */}
+      <div className="slider-row slider-row-info">
         <div className="slider-title">{products[centerIdx].name}</div>
-        <div className="slider-price">{products[centerIdx].price}<span className="slider-currency">$</span></div>
+        <div className="slider-price">
+          {products[centerIdx].price}
+          <span className="slider-currency">$</span>
+        </div>
       </div>
 
-      {/* Action Buttons */}
-      <div className="slider-actions">
+      {/* --- ROW 3: Actions --- */}
+      <div className="slider-row slider-row-actions">
         <button className="order-btn">
           Order <span className="arrow">{'>'}</span>
         </button>

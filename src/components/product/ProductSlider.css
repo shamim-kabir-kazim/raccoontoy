@@ -2,7 +2,7 @@
   display: flex;
   flex-direction: column;
   align-items: center;
-  margin: 36px 0 0 0;
+  margin: 0; /* removed left/right margin */
   user-select: none;
   background-color: #BAA3FF;
   width: 100vw;
@@ -12,94 +12,97 @@
 }
 
 .slider-row {
-  width: 100vw;
+  width: 100%;
   max-width: 100vw;
   display: flex;
   justify-content: center;
   align-items: center;
   box-sizing: border-box;
+  margin: 0; /* Remove gaps between rows */
 }
 
 /* --- ROW 1: Images --- */
 .slider-row-images {
-  margin-bottom: 8px;
+  margin-bottom: 0; /* Remove gap below images */
   position: relative;
-  min-height: 500px; /* Increased to fit big image */
+  min-height: 400px;
   gap: 0;
 }
 
-.slider-col {
+.slider-side-col {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  min-width: 72px;
+  gap: 0;
+}
+
+.side-img-wrapper {
+  position: relative;
+  width: 60px;
+  height: 100px; /* 3:5 ratio (60:100) */
   display: flex;
   align-items: center;
   justify-content: center;
-  position: relative;
-}
-
-.slider-col-small {
-  width: 170px;
-  justify-content: center;
-}
-
-.slider-col-center {
-  width: 520px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  position: relative;
-}
-
-/* Images */
-.slider-img {
-  transition: all 0.47s cubic-bezier(.36,1.2,.57,1);
-  filter: drop-shadow(0 6px 32px rgba(0,0,0,0.08));
-  z-index: 1;
-  pointer-events: none;
-  position: relative;
-}
-
-.img-center {
-  width: 480px;
-  height: 480px;
-  z-index: 3;
-  border-radius: 32px;
-  
-  object-fit: contain;
 }
 
 .img-left,
 .img-right {
-  width: 148px;
-  height: 148px;
+  width: 60px;
+  height: 100px;
   opacity: 0.78;
-  z-index: 2;
+  z-index: 1;
   filter: blur(0.5px) brightness(0.89);
-  border-radius: 18px;
-  
-  object-fit: contain;
+  border-radius: 10px;
+  object-fit: unset; /* DO NOT fit/fill, just center */
+  display: block;
+  background: none;
+  margin: 0;
 }
 
-/* Floating slider controls */
-.slider-floating-controls {
+/* Center image container and centering */
+.slider-col-center {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  width: 340px;
+}
+
+.main-image-ratio {
+  width: 300px;
+  aspect-ratio: 3/5;
+  border-radius: 22px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+  background: none;
+}
+
+.img-center {
+  max-width: 100%;
+  max-height: 100%;
+  width: auto;
+  height: auto;
+  border-radius: 22px;
+  display: block;
+  background: none;
+  object-fit: unset; /* Do not stretch/crop, just center */
+  margin: 0;
+}
+
+/* Slide buttons overlay */
+.slider-btn.side-btn {
   position: absolute;
   top: 50%;
-  left: 0;
-  width: 100%;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  pointer-events: none;
-  z-index: 10;
   transform: translateY(-50%);
-  height: 0;
-  gap: 70vw;
-  background-color: aqua;
-}
-.slider-btn {
   pointer-events: auto;
   border: none;
   background: rgba(255,255,255,0.32);
   cursor: pointer;
-  z-index: 11;
+  z-index: 2;
   width: 32px;
   height: 32px;
   outline: none;
@@ -109,50 +112,56 @@
   align-items: center;
   justify-content: center;
   border-radius: 50%;
-  box-shadow: 0 2px 8px 0 rgba(0,0,0,0.13);
 }
-.slider-btn svg {
+.slider-btn.side-btn svg {
   width: 28px;
   height: 28px;
   border-radius: 50%;
   background: none;
   display: block;
 }
-.slider-btn:active {
+.slider-btn.side-btn:active {
   background: rgba(255,255,255,0.57);
-  box-shadow: 0 1px 3px 0 rgba(0,0,0,0.19);
+}
+.slider-btn.left-overlay {
+  left: -16px;
+}
+.slider-btn.right-overlay {
+  right: -16px;
 }
 
 /* --- ROW 2: Info --- */
 .slider-row-info {
   flex-direction: column;
   align-items: center;
-  margin-top: 3px;
-  margin-bottom: 0;
+  margin: 0;
+  padding: 0;
+  gap: 0;
 }
 .slider-title {
   color: #282829;
-  font-weight: 700;
-  font-size: 2.15rem;
+  font-family: 'Inter', Arial, sans-serif !important;
+  font-weight: 500;
+  font-size: 1.28rem;
   letter-spacing: 0.02em;
-  margin-bottom: 1px;
+  margin-bottom: 0.15em;
   text-align: center;
   max-width: 440px;
   white-space: nowrap;
   overflow: hidden;
   text-overflow: ellipsis;
-  font-family: 'Inter', 'Arial Black', Arial, sans-serif;
 }
 .slider-price {
-  color: #BAA3FF;
-  font-size: 2rem;
-  font-weight: bold;
-  margin-top: 1px;
+  font-family: 'Inter', Arial, sans-serif !important;
+  color: #FF3535;
+  font-size: 1.11rem;
+  font-weight: 500;
+  margin: 0;
   letter-spacing: 0.04em;
-  font-family: 'Inter', Arial, sans-serif;
+  text-align: center;
 }
 .slider-currency {
-  font-size: 1rem;
+  font-size: 0.93rem;
   margin-left: 2px;
 }
 
@@ -162,7 +171,7 @@
   align-items: center;
   justify-content: center;
   gap: 16px;
-  margin-top: 12px;
+  margin-top: 10px;
 }
 
 .order-btn {
@@ -216,40 +225,51 @@
 
 @media (max-width: 900px) {
   .slider-col-center {
-    width: 290px;
+    width: 200px;
   }
-  .img-center {
-    width: 240px;
-    height: 240px;
+  .main-image-ratio {
+    width: 120px;
+    aspect-ratio: 3/5;
   }
 }
+
 @media (max-width: 600px) {
   .slider-row-images {
-    min-height: 86vw; /* accommodates tall center image */
+    min-height: 100vw;
   }
-  .slider-col-small {
-    width: 22vw;
+  .slider-side-col {
+    min-width: 16vw;
+  }
+  .side-img-wrapper {
+    width: 14vw;
+    height: 24vw; /* 3:5 ratio */
+    min-width: 38px;
+    min-height: 58px;
+    max-width: 60px;
+    max-height: 100px;
   }
   .slider-col-center {
-    width: 70vw;
+    width: 64vw;
+  }
+  .main-image-ratio {
+    width: 60vw;
+    aspect-ratio: 3/5;
+    min-width: 130px;
+    max-width: 310px;
   }
   .img-center {
-    width: 60vw;         /* Less width, but... */
-    height: 80vw;        /* ...still very tall on mobile */
-    max-width: 320px;
-    max-height: 420px;
-    min-width: 140px;
-    min-height: 180px;
-    object-fit: contain;
+    max-width: 100%;
+    max-height: 100%;
+    width: auto;
+    height: auto;
+    border-radius: 14px;
+    object-fit: unset;
   }
   .img-left, .img-right {
-    width: 20vw;
-    height: 28vw;
-    min-width: 38px;
-    min-height: 50px;
-    max-width: 70px;
-    max-height: 100px;
-    object-fit: contain;
+    width: 100%;
+    height: 100%;
+    border-radius: 8px;
+    object-fit: unset;
   }
   .slider-title {
     font-size: 1.2rem;
@@ -271,15 +291,18 @@
     width: 40px;
     height: 40px;
   }
-  .slider-btn {
+  .slider-btn.side-btn {
     width: 28px;
     height: 28px;
   }
-  .slider-btn svg {
+  .slider-btn.side-btn svg {
     width: 24px;
     height: 24px;
   }
-  .slider-floating-controls {
-    gap: 14vw;
+  .slider-btn.left-overlay {
+    left: -12px;
+  }
+  .slider-btn.right-overlay {
+    right: -12px;
   }
 }

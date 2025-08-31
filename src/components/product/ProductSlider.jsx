@@ -1,7 +1,7 @@
 import React, { useState, useEffect, useRef } from "react";
 import "./ProductSlider.css";
 
-// New demo products with provided image URLs
+// Demo products with your images
 const products = [
   {
     id: 1,
@@ -29,7 +29,6 @@ const ProductSlider = () => {
   const [current, setCurrent] = useState(1);
   const intervalRef = useRef(null);
 
-  // Auto-slide functionality
   useEffect(() => {
     intervalRef.current = setInterval(() => {
       setCurrent((prev) => (prev + 1) % products.length);
@@ -38,19 +37,20 @@ const ProductSlider = () => {
   }, []);
 
   // Manual navigation resets auto-slide
-  const handlePrev = () => {
+  const resetInterval = () => {
     clearInterval(intervalRef.current);
-    setCurrent((prev) => (prev - 1 + products.length) % products.length);
     intervalRef.current = setInterval(() => {
       setCurrent((prev) => (prev + 1) % products.length);
     }, AUTO_SLIDE_INTERVAL);
   };
+
+  const handlePrev = () => {
+    setCurrent((prev) => (prev - 1 + products.length) % products.length);
+    resetInterval();
+  };
   const handleNext = () => {
-    clearInterval(intervalRef.current);
     setCurrent((prev) => (prev + 1) % products.length);
-    intervalRef.current = setInterval(() => {
-      setCurrent((prev) => (prev + 1) % products.length);
-    }, AUTO_SLIDE_INTERVAL);
+    resetInterval();
   };
 
   // Get indices for left, center, right
@@ -60,36 +60,57 @@ const ProductSlider = () => {
 
   return (
     <div className="slider-main">
-      {/* --- ROW 1: Images + Buttons --- */}
+      {/* ROW 1: Images + Slide Buttons in side columns */}
       <div className="slider-row slider-row-images">
-        {/* Left image */}
-        <div className="slider-col slider-col-small">
-          <img
-            src={products[leftIdx].image}
-            alt={products[leftIdx].name}
-            className="slider-img img-left"
-            draggable={false}
-            style={{objectFit: "contain"}}
-          />
-        </div>
-        {/* Center image */}
-        <div className="slider-col slider-col-center">
-          <img
-            src={products[centerIdx].image}
-            alt={products[centerIdx].name}
-            className="slider-img img-center"
-            draggable={false}
-            style={{objectFit: "contain"}}
-          />
-          {/* Floating buttons over center image */}
-          <div className="slider-floating-controls">
-            <button className="slider-btn left" onClick={handlePrev} aria-label="Previous product">
+        {/* Left column: image with overlaid button */}
+        <div className="slider-side-col">
+          <div className="side-img-wrapper">
+            <img
+              src={products[leftIdx].image}
+              alt={products[leftIdx].name}
+              className="slider-img img-left"
+              draggable={false}
+              style={{ objectFit: "cover" }}
+            />
+            <button
+              className="slider-btn side-btn left-overlay"
+              onClick={handlePrev}
+              aria-label="Previous product"
+            >
               <svg width="32" height="32" viewBox="0 0 42 42">
                 <circle cx="21" cy="21" r="21" fill="#fff" fillOpacity="0.32" />
                 <polyline points="25,13 17,21 25,29" fill="none" stroke="#222" strokeWidth="3" strokeLinecap="round" />
               </svg>
             </button>
-            <button className="slider-btn right" onClick={handleNext} aria-label="Next product">
+          </div>
+        </div>
+        {/* Center image column (3:4 ratio) */}
+        <div className="slider-col slider-col-center">
+          <div className="main-image-ratio">
+            <img
+              src={products[centerIdx].image}
+              alt={products[centerIdx].name}
+              className="slider-img img-center"
+              draggable={false}
+              style={{ objectFit: "cover" }}
+            />
+          </div>
+        </div>
+        {/* Right column: image with overlaid button */}
+        <div className="slider-side-col">
+          <div className="side-img-wrapper">
+            <img
+              src={products[rightIdx].image}
+              alt={products[rightIdx].name}
+              className="slider-img img-right"
+              draggable={false}
+              style={{ objectFit: "cover" }}
+            />
+            <button
+              className="slider-btn side-btn right-overlay"
+              onClick={handleNext}
+              aria-label="Next product"
+            >
               <svg width="32" height="32" viewBox="0 0 42 42">
                 <circle cx="21" cy="21" r="21" fill="#fff" fillOpacity="0.32" />
                 <polyline points="17,13 25,21 17,29" fill="none" stroke="#222" strokeWidth="3" strokeLinecap="round" />
@@ -97,19 +118,9 @@ const ProductSlider = () => {
             </button>
           </div>
         </div>
-        {/* Right image */}
-        <div className="slider-col slider-col-small">
-          <img
-            src={products[rightIdx].image}
-            alt={products[rightIdx].name}
-            className="slider-img img-right"
-            draggable={false}
-            style={{objectFit: "contain"}}
-          />
-        </div>
       </div>
 
-      {/* --- ROW 2: Name + Price --- */}
+      {/* ROW 2: Name + Price */}
       <div className="slider-row slider-row-info">
         <div className="slider-title">{products[centerIdx].name}</div>
         <div className="slider-price">
@@ -118,7 +129,7 @@ const ProductSlider = () => {
         </div>
       </div>
 
-      {/* --- ROW 3: Actions --- */}
+      {/* ROW 3: Actions */}
       <div className="slider-row slider-row-actions">
         <button className="order-btn">
           Order <span className="arrow">{'>'}</span>

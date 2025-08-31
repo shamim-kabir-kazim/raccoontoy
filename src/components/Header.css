@@ -166,7 +166,7 @@
   }
   .header-logo-img,
   .header-logo-img.extra-large {
-    height: 56px;
+    height: 65px;
   }
   .header-col-left,
   .header-col-right {
@@ -186,11 +186,11 @@
     height: 38px;
   }
   .header-search-img {
-    width: 18px;
-    height: 18px;
+    width: 25px;
+    height: 25px;
   }
   .header-menu-img {
-    width: 28px;
-    height: 28px;
+    width: 30px;
+    height: 30px;
   }
 }

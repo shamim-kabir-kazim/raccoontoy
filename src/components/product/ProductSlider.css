@@ -221,7 +221,7 @@
 /* --- FAV BUTTON --- */
 .fav-btn {
   background: none !important;
-  border: 2px solid #222 !important;
+  border: 2px solid #c2c2c2 !important;
   border-radius: 50% !important;
   width: 38px !important;
   height: 38px !important;
@@ -238,7 +238,7 @@
 }
 
 .fav-btn:active {
-  border-color: #111 !important;
+  border-color: #c2c2c2 !important;
 }
 
 .fav-btn .fav-icon {
@@ -277,8 +277,8 @@
     min-height: 28px !important;
   }
   .fav-btn .fav-img {
-    width: 14px !important;
-    height: 14px !important;
+    width: 24px !important;
+    height: 24px !important;
   }
 }
 
@@ -349,8 +349,8 @@
     min-height: 42px !important;
   }
   .fav-btn .fav-img {
-    width: 10px !important;
-    height: 10px !important;
+    width: 25px !important;
+    height: 25px !important;
   }
   .slider-btn.side-btn {
     width: 28px;

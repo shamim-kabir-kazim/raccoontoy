@@ -1,8 +1,7 @@
 import React, { useState, useEffect, useRef } from "react";
 import "./ProductSlider.css";
-import { FaAngleRight } from "react-icons/fa6"; // Only FaAngleRight is used now
+import { FaAngleRight } from "react-icons/fa6";
 
-// Demo products with your images
 const products = [
   {
     id: 1,
@@ -38,7 +37,6 @@ const ProductSlider = () => {
     return () => clearInterval(intervalRef.current);
   }, []);
 
-  // Manual navigation resets auto-slide
   const resetInterval = () => {
     clearInterval(intervalRef.current);
     intervalRef.current = setInterval(() => {
@@ -55,21 +53,17 @@ const ProductSlider = () => {
     resetInterval();
   };
 
-  // Favorite toggle
   const handleFavoriteClick = () => {
     setIsFavorite((prev) => !prev);
   };
 
-  // Get indices for left, center, right
   const leftIdx = (current - 1 + products.length) % products.length;
   const centerIdx = current;
   const rightIdx = (current + 1) % products.length;
 
   return (
     <div className="slider-main">
-      {/* ROW 1: Images + Slide Buttons in side columns */}
       <div className="slider-row slider-row-images">
-        {/* Left column: image with overlaid button */}
         <div className="slider-side-col">
           <div className="side-img-wrapper">
             <img
@@ -91,7 +85,6 @@ const ProductSlider = () => {
             </button>
           </div>
         </div>
-        {/* Center image column (3:5 ratio) */}
         <div className="slider-col slider-col-center">
           <div className="main-image-ratio">
             <img
@@ -103,7 +96,6 @@ const ProductSlider = () => {
             />
           </div>
         </div>
-        {/* Right column: image with overlaid button */}
         <div className="slider-side-col">
           <div className="side-img-wrapper">
             <img
@@ -127,7 +119,6 @@ const ProductSlider = () => {
         </div>
       </div>
 
-      {/* ROW 2: Name + Price */}
       <div className="slider-row slider-row-info">
         <div className="slider-title">{products[centerIdx].name}</div>
         <div className="slider-price">
@@ -136,14 +127,15 @@ const ProductSlider = () => {
         </div>
       </div>
 
-      {/* ROW 3: Actions */}
       <div className="slider-row slider-row-actions">
         <button className="order-btn">
           <span className="order-label">Order</span>
           <span className="arrow"><FaAngleRight /></span>
         </button>
-        <button
+        <div
           className="fav-btn"
+          role="button"
+          tabIndex={0}
           aria-label="Add to favorite"
           onClick={handleFavoriteClick}
         >
@@ -155,16 +147,11 @@ const ProductSlider = () => {
                   : "https://i.postimg.cc/Kzb5Y4Nb/love-svgrepo-com-2.png"
               }
               alt={isFavorite ? "Favorited" : "Not Favorited"}
-              style={{
-                width: "1.8rem",
-                height: "1.8rem",
-                display: "block",
-                objectFit: "contain"
-              }}
+              className="fav-img"
               draggable={false}
             />
           </span>
-        </button>
+        </div>
       </div>
     </div>
   );

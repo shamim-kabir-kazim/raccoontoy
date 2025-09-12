@@ -1,6 +1,6 @@
 import React, { useState, useEffect, useRef } from "react";
 import "./ProductSlider.css";
-import { FaAngleRight, FaHeart } from "react-icons/fa6"; // Using FaAngleRight for ">" icon
+import { FaAngleRight } from "react-icons/fa6"; // Only FaAngleRight is used now
 
 // Demo products with your images
 const products = [
@@ -28,6 +28,7 @@ const AUTO_SLIDE_INTERVAL = 4000;
 
 const ProductSlider = () => {
   const [current, setCurrent] = useState(1);
+  const [isFavorite, setIsFavorite] = useState(false);
   const intervalRef = useRef(null);
 
   useEffect(() => {
@@ -52,6 +53,11 @@ const ProductSlider = () => {
   const handleNext = () => {
     setCurrent((prev) => (prev + 1) % products.length);
     resetInterval();
+  };
+
+  // Favorite toggle
+  const handleFavoriteClick = () => {
+    setIsFavorite((prev) => !prev);
   };
 
   // Get indices for left, center, right
@@ -136,9 +142,27 @@ const ProductSlider = () => {
           <span className="order-label">Order</span>
           <span className="arrow"><FaAngleRight /></span>
         </button>
-        <button className="fav-btn" aria-label="Add to favorite">
+        <button
+          className="fav-btn"
+          aria-label="Add to favorite"
+          onClick={handleFavoriteClick}
+        >
           <span className="fav-icon">
-            <FaHeart />
+            <img
+              src={
+                isFavorite
+                  ? "https://i.postimg.cc/TwcJ5G7D/love-svgrepo-com-3.png"
+                  : "https://i.postimg.cc/Kzb5Y4Nb/love-svgrepo-com-2.png"
+              }
+              alt={isFavorite ? "Favorited" : "Not Favorited"}
+              style={{
+                width: "1.8rem",
+                height: "1.8rem",
+                display: "block",
+                objectFit: "contain"
+              }}
+              draggable={false}
+            />
           </span>
         </button>
       </div>

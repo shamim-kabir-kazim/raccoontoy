@@ -2,7 +2,7 @@
   display: flex;
   flex-direction: column;
   align-items: center;
-  margin: 0; /* No margin */
+  margin: 0;
   user-select: none;
   background-color: #BAA3FF;
   width: 100vw;
@@ -18,12 +18,12 @@
   justify-content: center;
   align-items: center;
   box-sizing: border-box;
-  margin: 0; /* Remove gaps between rows */
+  margin: 0;
 }
 
 /* --- ROW 1: Images --- */
 .slider-row-images {
-  margin-bottom: 0; /* Remove gap below images */
+  margin-bottom: 0;
   position: relative;
   min-height: 400px;
   gap: 0;
@@ -41,7 +41,7 @@
 .side-img-wrapper {
   position: relative;
   width: 60px;
-  height: 100px; /* 3:5 ratio (60:100) */
+  height: 100px;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -55,7 +55,7 @@
   z-index: 1;
   filter: blur(0.5px) brightness(0.89);
   border-radius: 10px;
-  object-fit: unset; /* DO NOT fit/fill, just center */
+  object-fit: unset;
   display: block;
   background: none;
   margin: 0;
@@ -89,7 +89,7 @@
   border-radius: 22px;
   display: block;
   background: none;
-  object-fit: unset; /* Do not stretch/crop, just center */
+  object-fit: unset;
   margin: 0;
 }
 
@@ -175,9 +175,9 @@
 }
 
 .order-btn {
-  background: rgba(255,255,255,0.62); /* More transparent */
-  border: none; /* Remove border */
-  border-radius: 999px; /* Full round */
+  background: rgba(255,255,255,0.62);
+  border: none;
+  border-radius: 999px;
   font-size: 2.8rem;
   font-family: 'Jersey 10', Arial, sans-serif;
   font-weight: 700;
@@ -187,14 +187,14 @@
   cursor: pointer;
   display: flex;
   align-items: center;
-  justify-content: center; /* Center content horizontally */
+  justify-content: center;
   min-width: 220px;
   min-height: 62px;
   height: 62px;
   transition: box-shadow 0.17s, background 0.13s;
   position: relative;
   letter-spacing: 1px;
-  gap: 22px; /* Space between label and arrow */
+  gap: 22px;
 }
 .order-btn .order-label {
   font-family: 'Jersey 10', Arial, sans-serif;
@@ -217,31 +217,47 @@
   background: rgba(230,230,230,0.62);
   box-shadow: 0 2px 7px 0 rgba(0,0,0,0.13);
 }
+
+/* --- FAV BUTTON --- */
 .fav-btn {
-  background: #fff;
-  border: 3px solid #fff;
-  border-radius: 50%;
-  width: 68px;
-  height: 68px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
+  background: none !important;
+  border: 2px solid #222 !important;
+  border-radius: 50% !important;
+  width: 38px !important;
+  height: 38px !important;
+  min-width: 38px !important;
+  min-height: 38px !important;
+  display: flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  box-shadow: none !important;
+  padding: 0 !important;
+  margin: 0 2px 0 0;
   cursor: pointer;
-  transition: box-shadow 0.17s, background 0.13s;
-  box-shadow: 0 4px 20px 0 rgba(0,0,0,0.08);
-  padding: 0;
-  margin-left: 2px;
+  transition: border 0.18s;
 }
+
 .fav-btn:active {
-  background: #fafafa;
-  box-shadow: 0 2px 7px 0 rgba(0,0,0,0.13);
+  border-color: #111 !important;
 }
+
 .fav-btn .fav-icon {
   display: flex;
   align-items: center;
   justify-content: center;
-  font-size: 2.1rem;
-  color: #c83256;
+  width: 20px;
+  height: 20px;
+  margin: 0 auto;
+  padding: 0;
+}
+
+.fav-btn .fav-img {
+  width: 18px !important;
+  height: 18px !important;
+  object-fit: contain;
+  display: block;
+  margin: 0 auto;
+  background: none !important;
 }
 
 @media (max-width: 900px) {
@@ -254,7 +270,18 @@
   }
   .order-btn, .order-btn .order-label { font-size: 1.6rem;}
   .order-btn .arrow { font-size: 1.3rem;}
+  .fav-btn {
+    width: 28px !important;
+    height: 28px !important;
+    min-width: 28px !important;
+    min-height: 28px !important;
+  }
+  .fav-btn .fav-img {
+    width: 14px !important;
+    height: 14px !important;
+  }
 }
+
 @media (max-width: 600px) {
   .slider-row-images {
     min-height: 100vw;
@@ -264,7 +291,7 @@
   }
   .side-img-wrapper {
     width: 14vw;
-    height: 24vw; /* 3:5 ratio */
+    height: 24vw;
     min-width: 38px;
     min-height: 58px;
     max-width: 60px;
@@ -316,8 +343,14 @@
     margin-left: 3px;
   }
   .fav-btn {
-    width: 40px;
-    height: 40px;
+    width: 42px !important;
+    height: 42px !important;
+    min-width: 42px !important;
+    min-height: 42px !important;
+  }
+  .fav-btn .fav-img {
+    width: 10px !important;
+    height: 10px !important;
   }
   .slider-btn.side-btn {
     width: 28px;

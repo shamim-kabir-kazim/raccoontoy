@@ -1,19 +1,22 @@
 import React from "react";
 import "./ProductTrending.css";
+import TrendProductCard from "./TrendProductCard";
 
 // Sample trending products data
 const products = [
   {
     id: 1,
-    name: "Pikachu Bricks",
-    price: 2,
-    image: "https://i.postimg.cc/8zP4C1q4/pikachu.png",
+    name: "Pikachu Bricks cabb",
+    price: "2$",
+    image: "https://i.postimg.cc/N0C1pFt8/Chat-GPT-Image-Aug-2-2025-03-49-34-PM-1-2-1.png",
+    cartIcon: "https://i.postimg.cc/N0C1pFt8/Chat-GPT-Image-Aug-2-2025-03-49-34-PM-1-2-1.png"
   },
   {
     id: 2,
     name: "Charmander Bricks",
-    price: 2,
-    image: "https://i.postimg.cc/yYyYyYyY/charmander.png",
+    price: "2$",
+    image: "https://i.postimg.cc/nLh447yc/Chat-GPT-Image-Aug-2-2025-03-56-54-PM-1-1.png",
+    cartIcon: "https://i.postimg.cc/nLh447yc/Chat-GPT-Image-Aug-2-2025-03-56-54-PM-1-1.png"
   },
   // Add more products as needed
 ];
@@ -27,28 +30,13 @@ const ProductTrending = () => {
       </div>
       <div className="trending-scroll">
         {products.map(product => (
-          <div className="trending-card" key={product.id}>
-            <div className="trending-image-bg">
-              <img src={product.image} alt={product.name} className="trending-img" draggable={false} />
-            </div>
-            <div className="trending-info">
-              <span className="trending-title">{product.name}</span>
-              <div className="trending-buy-row">
-                <span className="trending-price">
-                  {product.price}
-                  <span className="trending-currency">$</span>
-                </span>
-                <span className="trending-cart-icon">
-                  {/* Simple bag icon SVG */}
-                  <svg width="28" height="28" viewBox="0 0 28 28">
-                    <circle cx="14" cy="14" r="13.5" stroke="#000" strokeWidth="1" fill="none" />
-                    <path d="M9 12V10a5 5 0 0110 0v2" stroke="#000" strokeWidth="1.5" fill="none"/>
-                    <rect x="7" y="12" width="14" height="9" rx="2" stroke="#000" strokeWidth="1.5" fill="none"/>
-                  </svg>
-                </span>
-              </div>
-            </div>
-          </div>
+          <TrendProductCard
+            key={product.id}
+            image={product.image}
+            name={product.name}
+            price={product.price}
+            cartIcon={product.cartIcon}
+          />
         ))}
       </div>
     </div>

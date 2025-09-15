@@ -1,5 +1,6 @@
 import React from "react";
 import "./TrendProductCard.css";
+import { FaHeart } from "react-icons/fa"; // for heart icon (optional)
 
 const TrendProductCard = ({
   image = "https://placehold.co/73x98",
@@ -9,9 +10,17 @@ const TrendProductCard = ({
 }) => {
   return (
     <div className="trend-card">
+      {/* Wishlist Heart */}
+      <div className="trend-card-heart">
+        <FaHeart className="heart-icon" />
+      </div>
+
+      {/* Image Circle */}
       <div className="trend-card-img-bg">
         <img className="trend-card-img" src={image} alt={name} draggable={false} />
       </div>
+
+      {/* Info */}
       <div className="trend-card-info-row">
         <div className="trend-card-info">
           <div className="trend-card-title">{name}</div>

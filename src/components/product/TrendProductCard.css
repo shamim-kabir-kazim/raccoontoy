@@ -1,139 +1,91 @@
 .trend-card {
   width: 210px;
   height: 228px;
-  position: relative;
-  background: #FFF9F9;
-  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.05);
-  overflow: hidden;
+  background: #ff0000; /* white background */
+  box-shadow: 0px 2px 6px rgba(0, 0, 0, 0.08);
   border-radius: 15px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+  padding-top: 15px;
+  padding-bottom: 15px;
+  position: relative;
+  overflow: hidden;
+}
+
+/* Wishlist heart (top-right) */
+.trend-card-heart {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+}
+.heart-icon {
+  color: #d3d3d3;
+  font-size: 18px;
 }
 
 /* Image background circle */
 .trend-card-img-bg {
-  position: absolute;
-  left: 30px;
-  top: 17px;
-  background: #FFE0E0;
-  border-radius: 100px;
-  padding: 26px 38px;
+  background: #fbdde1; /* correct pink */
+  border-radius: 50%;
+  width: 140px;
+  height: 140px;
   display: flex;
   justify-content: center;
   align-items: center;
-  overflow: hidden;
 }
 
 .trend-card-img {
-  width: 73px;
-  height: 98px;
+  width: 90px;
+  height: 110px;
   object-fit: contain;
   display: block;
 }
 
 /* Info row at the bottom */
 .trend-card-info-row {
-  position: absolute;
-  left: 32px;
-  top: 173px;
-  width: 148px;
-  height: 55px;
-  padding: 8px 5px;
+  width: 100%;
+  padding: 0 20px;
   display: flex;
-  justify-content: center;
+  justify-content: space-between;
   align-items: center;
-  gap: 4px;
-  overflow: hidden;
-  background: none;
+  background-color: #ffffff;
 }
 
-/* Info column */
 .trend-card-info {
-  width: 85px;
-  height: 39px;
-  padding: 10px 10px 10px 2px;
   display: flex;
   flex-direction: column;
-  justify-content: center;
-  align-items: flex-start;
   gap: 4px;
 }
 
 .trend-card-title {
   color: black;
-  font-size: 10px;
+  font-size: 12px;
   font-family: 'Inter', Arial, sans-serif;
   font-weight: 700;
-  word-break: break-word;
 }
 
 .trend-card-price {
-  color: #F89E9E;
-  font-size: 10px;
+  color: #f89e9e;
+  font-size: 12px;
   font-family: 'Inter', Arial, sans-serif;
   font-weight: 700;
-  word-break: break-word;
 }
 
 /* Cart icon circle */
 .trend-card-cart {
-  width: 29px;
-  height: 29px;
+  width: 36px;
+  height: 36px;
   background: black;
-  border-radius: 50px;
+  border-radius: 50%;
   display: flex;
   justify-content: center;
   align-items: center;
-  overflow: hidden;
 }
 
 .trend-card-cart-img {
-  width: 15px;
-  height: 15px;
+  width: 16px;
+  height: 16px;
   object-fit: contain;
-  display: block;
-}
-
-/* Responsive for mobile */
-@media (max-width: 600px) {
-  .trend-card {
-    width: 140px;
-    height: 150px;
-    border-radius: 9px;
-  }
-  .trend-card-img-bg {
-    left: 12px;
-    top: 8px;
-    padding: 12px 16px;
-    border-radius: 48px;
-  }
-  .trend-card-img {
-    width: 40px;
-    height: 53px;
-  }
-  .trend-card-info-row {
-    left: 14px;
-    top: 110px;
-    width: 90px;
-    height: 28px;
-    padding: 3px 2px;
-    gap: 2px;
-  }
-  .trend-card-info {
-    width: 55px;
-    height: 18px;
-    padding: 4px 4px 4px 1px;
-    gap: 2px;
-  }
-  .trend-card-title,
-  .trend-card-price {
-    font-size: 7px;
-  }
-  .trend-card-cart {
-    width: 18px;
-    height: 18px;
-    border-radius: 25px;
-  }
-  .trend-card-cart-img {
-    width: 9px;
-    height: 9px;
-  }
 }

@@ -155,46 +155,19 @@
 
 @media (max-width: 600px) {
   .trending-header {
-    padding: 0 12px 12px 12px;
+    padding: 0 8px 8px 8px;
   }
   .trending-scroll {
-    padding: 0 8px 16px 8px;
-    gap: 8px; /* keep visible spacing */
+    padding: 0 4px 16px 4px;
+    gap: 4px;
     overflow-x: auto;
   }
   .trending-card {
-    min-width: 160px;
+    min-width: 140px;
     max-width: 180px;
-    height: auto;  /* let content decide */
+    height: 230px;
     border-radius: 16px;
-    padding: 8px;
-  }
-  .trending-image-bg {
-    width: 80px;
-    height: 80px;
-    margin-top: 8px;
-  }
-  .trending-img {
-    width: 60px;
-    height: 60px;
-  }
-  .trending-info {
-    padding: 0 6px;
-    margin-top: 6px;
-  }
-  .trending-title {
-    font-size: 0.85rem;
-    margin-bottom: 4px;
-  }
-  .trending-price {
-    font-size: 0.8rem;
-  }
-  .trending-cart-icon {
-    width: 24px;
-    height: 24px;
-  }
-  .trending-cart-icon svg {
-    width: 16px;
-    height: 16px;
+    padding: 0;
+    margin: 0;
   }
 }

@@ -26,17 +26,7 @@ const products = [
     image: "https://i.postimg.cc/nLh447yc/Chat-GPT-Image-Aug-2-2025-03-56-54-PM-1-1.png",
     favoriteIcon: "https://placehold.co/21x21"
   },
-  {
-    id: 3,
-    name: "Eevee Plush",
-    subtitle: "Soft and Cute",
-    oldPrice: "5$",
-    newPrice: "3.8$",
-    discount: "25%",
-    soldOut: true,
-    image: "https://placehold.co/153x202?text=Eevee",
-    favoriteIcon: "https://placehold.co/21x21"
-  },
+
 ];
 
 const ProductTrending = () => {

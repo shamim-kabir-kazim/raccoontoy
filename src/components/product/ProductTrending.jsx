@@ -2,23 +2,41 @@ import React from "react";
 import "./ProductTrending.css";
 import TrendProductCard from "./TrendProductCard";
 
-// Sample trending products data
+// Demo products with all required fields!
 const products = [
   {
     id: 1,
     name: "Pikachu Bricks cabb",
-    price: "2$",
+    subtitle: "Limited Edition",
+    oldPrice: "2.5$",
+    newPrice: "2$",
+    discount: "20%",
+    soldOut: false,
     image: "https://i.postimg.cc/N0C1pFt8/Chat-GPT-Image-Aug-2-2025-03-49-34-PM-1-2-1.png",
-    cartIcon: "https://i.postimg.cc/N0C1pFt8/Chat-GPT-Image-Aug-2-2025-03-49-34-PM-1-2-1.png"
+    favoriteIcon: "https://placehold.co/21x21"
   },
   {
     id: 2,
     name: "Charmander Bricks",
-    price: "2$",
+    subtitle: "Classic Toy",
+    oldPrice: "2.5$",
+    newPrice: "2$",
+    discount: "10%",
+    soldOut: false,
     image: "https://i.postimg.cc/nLh447yc/Chat-GPT-Image-Aug-2-2025-03-56-54-PM-1-1.png",
-    cartIcon: "https://i.postimg.cc/nLh447yc/Chat-GPT-Image-Aug-2-2025-03-56-54-PM-1-1.png"
+    favoriteIcon: "https://placehold.co/21x21"
   },
-  // Add more products as needed
+  {
+    id: 3,
+    name: "Eevee Plush",
+    subtitle: "Soft and Cute",
+    oldPrice: "5$",
+    newPrice: "3.8$",
+    discount: "25%",
+    soldOut: true,
+    image: "https://placehold.co/153x202?text=Eevee",
+    favoriteIcon: "https://placehold.co/21x21"
+  },
 ];
 
 const ProductTrending = () => {
@@ -34,8 +52,12 @@ const ProductTrending = () => {
             key={product.id}
             image={product.image}
             name={product.name}
-            price={product.price}
-            cartIcon={product.cartIcon}
+            subtitle={product.subtitle}
+            oldPrice={product.oldPrice}
+            newPrice={product.newPrice}
+            discount={product.discount}
+            soldOut={product.soldOut}
+            favoriteIcon={product.favoriteIcon}
           />
         ))}
       </div>

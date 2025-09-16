@@ -2,25 +2,37 @@
   width: 100vw;
   background: #f1f1f1;
   overflow-x: hidden;
-  padding: 20px 0; /* 20px top and bottom margin */
+  padding: 20px 0;
 }
 
 .vix-trending-header {
-  color: #222; /* Ensures text is dark and visible */
+  color: #222;
   display: flex;
   align-items: center;
   justify-content: space-between;
   padding: 0 36px 16px 36px;
-  font-weight: bold;         /* bold text */
-  font-size: 1rem;           /* smaller text */
+  font-weight: bold;
+  font-size: 1rem;
   letter-spacing: 0.02em;
   margin-bottom: 10px;
 }
 
-.vix-trending-fire {
-  color: #222; /* Ensures fire text is dark */
-  font-size: 1.25rem; /* smaller fire icon */
-  margin-right: 8px;
+.vix-trending-title {
+  color: #222;
+  font-family: 'Inter', Arial, sans-serif;
+  font-size: 1.23rem;
+  font-weight: 600;
+  margin-bottom: 8px;
+  display: inline-flex;
+  align-items: center;
+}
+
+.vix-trending-fire-emoji {
+  margin-left: 6px;
+  font-family: 'Apple Color Emoji', 'Segoe UI Emoji', 'Noto Color Emoji', 'EmojiOne', 'Twemoji', sans-serif;
+  font-size: 1.23rem;
+  font-weight: normal;
+  line-height: 1;
 }
 
 .vix-trending-show-all {
@@ -32,7 +44,7 @@
 .vix-trending-scroll {
   display: flex;
   flex-direction: row;
-  gap: 8px;         /* Reduced gap between cards */
+  gap: 8px;
   overflow-x: auto;
   padding: 0 36px 36px 36px;
   scrollbar-width: thin;
@@ -157,7 +169,6 @@
     height: 32px;
   }
 }
-
 
 @media (max-width: 600px) {
   .vix-trending-header {

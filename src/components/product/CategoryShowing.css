@@ -2,7 +2,7 @@
   width: 100vw;
   background: #f1f1f1;
   overflow-x: hidden;
-  padding: 20px 0; /* Same as trending - 20px top and bottom padding */
+  padding: 10px 0; /* Same as trending - 20px top and bottom padding */
 }
 
 .category-header {
@@ -17,8 +17,9 @@
 }
 
 .category-title {
-  font-size: 1rem; /* Match trending title size */
+  font-size: 1.83rem; /* Match trending title size */
   font-weight: bold;
+  color: #ea0808;
 }
 
 .category-show-all {

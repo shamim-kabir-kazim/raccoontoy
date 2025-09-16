@@ -7,8 +7,7 @@ const CatCard = ({
   onClick
 }) => {
   return (
-    <div className="cat-card">
-      {/* Image Section - matches Figma structure exactly */}
+    <div className="cat-card" onClick={onClick}>
       <div className="cat-card-img-box">
         <img 
           className="cat-card-img" 
@@ -16,8 +15,6 @@ const CatCard = ({
           alt={title}
         />
       </div>
-      
-      {/* Info Section - matches Figma structure exactly */}
       <div className="cat-card-info">
         <div className="cat-card-title">{title}</div>
       </div>

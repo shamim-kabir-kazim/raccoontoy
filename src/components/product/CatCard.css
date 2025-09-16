@@ -1,57 +1,55 @@
 .cat-card {
   width: 13rem;           /* w-52 = 208px */
   height: 14rem;          /* h-56 = 224px */
-  position: relative;
   background: #fafaf9;    /* bg-stone-50 */
   border-radius: 1rem;    /* rounded-2xl */
   box-shadow: 0px 4px 4px 0px rgba(0,0,0,0.05);
   overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 10px; /* Space between image and category name */
+  position: relative;
 }
 
 .cat-card-img-box {
-  padding: 1.5rem 2.25rem; /* px-9 py-6 */
-  left: 30px;
-  top: 17px;
-  position: absolute;
+  width: 6rem;            /* w-20 = 80px */
+  height: 6rem;           /* h-24 = 96px */
+  padding: 0;
   background: #fee2e2;    /* bg-red-100 */
   border-radius: 1rem;    /* rounded-2xl */
-  display: flex;          /* Changed to flex for better centering */
-  justify-content: center; /* Center horizontally */
-  align-items: center;     /* Center vertically */
-  gap: 0.625rem;          /* gap-2.5 */
+  display: flex;
+  justify-content: center;
+  align-items: center;
   overflow: hidden;
 }
 
 .cat-card-img {
-  width: 5rem;            /* w-20 = 80px */
+  width: 6rem;            /* w-20 = 80px */
   height: 6rem;           /* h-24 = 96px */
-  object-fit: contain;    /* Maintain aspect ratio */
+  object-fit: contain;
   display: block;
 }
 
 .cat-card-info {
-  width: 9rem;            /* w-36 = 144px */
-  height: 3.5rem;         /* h-14 = 56px */
-  padding: 0.5rem 0.3125rem; /* px-[5px] py-2 */
-  left: 32px;
-  top: 173px;
-  position: absolute;
-  display: flex;          /* Use flex for proper centering */
-  justify-content: center; /* Center horizontally */
-  align-items: center;     /* Center vertically */
+  width: 70%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
   overflow: hidden;
 }
 
 .cat-card-title {
   color: black;
-  font-size: 0.875rem;    /* text-sm */
-  font-weight: 600;       /* Semi-bold for consistency */
+  font-size: 0.575rem;
+  font-weight: 600;
   font-family: 'Inter', sans-serif;
-  text-align: center;     /* Center the text itself */
-  line-height: 1.2;       /* Better line spacing */
-  margin: 0;              /* Remove any default margins */
-  padding: 0;             /* Remove any default padding */
-  word-wrap: break-word;  /* Handle long text */
+  text-align: center;
+  line-height: 1.2;
+  margin: 0;
+  padding: 0;
+  word-wrap: break-word;
 }
 
 /* Responsive design for mobile */
@@ -60,29 +58,9 @@
     width: 10rem;
     height: 11rem;
   }
-  
-  .cat-card-img-box {
-    padding: 1rem 1.5rem;
-    left: 20px;
-    top: 12px;
-  }
-  
   .cat-card-img {
     width: 4rem;
     height: 4.8rem;
-  }
-  
-  .cat-card-info {
-    width: 7rem;
-    height: 2.8rem;
-    left: 24px;
-    top: 130px;
-  }
-  
-  .cat-card-title {
-    font-size: 0.75rem;
-    font-weight: 600;
-    text-align: center;
   }
 }
 
@@ -91,28 +69,8 @@
     width: 8.5rem;
     height: 9.5rem;
   }
-  
-  .cat-card-img-box {
-    padding: 0.8rem 1.2rem;
-    left: 15px;
-    top: 10px;
-  }
-  
   .cat-card-img {
     width: 3.2rem;
     height: 3.8rem;
-  }
-  
-  .cat-card-info {
-    width: 6rem;
-    height: 2.4rem;
-    left: 18px;
-    top: 110px;
-  }
-  
-  .cat-card-title {
-    font-size: 0.7rem;
-    font-weight: 600;
-    text-align: center;
   }
 }

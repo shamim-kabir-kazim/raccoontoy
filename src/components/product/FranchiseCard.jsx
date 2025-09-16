@@ -12,31 +12,31 @@ const FranchiseCard = ({
   favoriteIcon = "https://placehold.co/21x21",
 }) => {
   return (
-    <div className="trend-card">
+    <div className="fvb-trend-card">
       {/* Top badges and heart (overlay, absolute) */}
-      <div className="top-section">
-        <div className="badge-wrapper">
-          <div className="discount-badge">{discount}</div>
-          {soldOut && <div className="sold-out">sold out</div>}
+      <div className="fvb-top-section">
+        <div className="fvb-badge-wrapper">
+          <div className="fvb-discount-badge">{discount}</div>
+          {soldOut && <div className="fvb-sold-out">sold out</div>}
         </div>
-        <img src={favoriteIcon} alt="favorite" className="favorite-icon" />
+        <img src={favoriteIcon} alt="favorite" className="fvb-favorite-icon" />
       </div>
       {/* Main vertical layout */}
-      <div className="card-body">
+      <div className="fvb-card-body">
         {/* Image Section (starts at top) */}
-        <div className="img-circle">
-          <img src={image} alt={name} className="product-img" />
+        <div className="fvb-img-circle">
+          <img src={image} alt={name} className="fvb-product-img" />
         </div>
         {/* Info Section */}
-        <div className="info">
-          <div className="name">{name}</div>
-          <div className="price">
-            <span className="old">{oldPrice}</span>
-            <span className="new">{newPrice}</span>
+        <div className="fvb-info">
+          <div className="fvb-name">{name}</div>
+          <div className="fvb-price">
+            <span className="fvb-old">{oldPrice}</span>
+            <span className="fvb-new">{newPrice}</span>
           </div>
         </div>
         {/* Button Section */}
-        <button className="buy-btn">Buy Now</button>
+        <button className="fvb-buy-btn">Buy Now</button>
       </div>
     </div>
   );

@@ -3,15 +3,21 @@ import "./CatCard.css";
 
 const CatCard = ({
   image = "https://placehold.co/73x98",
-  title = "Pikachu Bricks"
+  title = "Pikachu Bricks",
+  onClick
 }) => {
   return (
     <div className="cat-card">
-      {/* Image Section */}
+      {/* Image Section - matches Figma structure exactly */}
       <div className="cat-card-img-box">
-        <img className="cat-card-img" src={image} alt={title} />
+        <img 
+          className="cat-card-img" 
+          src={image} 
+          alt={title}
+        />
       </div>
-      {/* Info Section */}
+      
+      {/* Info Section - matches Figma structure exactly */}
       <div className="cat-card-info">
         <div className="cat-card-title">{title}</div>
       </div>

@@ -1,63 +1,113 @@
 .category-section {
   width: 100vw;
   background: #f1f1f1;
-  margin: 20px 0;
   overflow-x: hidden;
+  padding: 20px 0; /* Same as trending - 20px top and bottom padding */
 }
 
 .category-header {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  padding: 0 24px 12px 24px;
+  padding: 0 36px 16px 36px; /* Same as trending - 36px horizontal, 16px bottom */
   font-weight: bold;
   font-size: 1rem;
   letter-spacing: 0.02em;
+  margin-bottom: 10px; /* Same as trending */
 }
 
 .category-title {
-  font-size: 0.97rem;
+  font-size: 1rem; /* Match trending title size */
   font-weight: bold;
 }
 
 .category-show-all {
-  color: #888;
-  font-size: 0.95rem;
+  color: #bcbcbc; /* Same color as trending */
+  font-size: 0.8rem; /* Same size as trending */
+  letter-spacing: 0.02em;
+  cursor: pointer;
 }
 
 .category-scroll {
   display: flex;
   flex-direction: row;
-  gap: 12px;
+  gap: 8px; /* Same gap as trending */
   overflow-x: auto;
-  padding: 0 24px 20px 24px;
+  overflow-y: hidden;
+  padding: 0 36px 36px 36px; /* Same as trending */
   scrollbar-width: thin;
   scrollbar-color: #ccc #f1f1f1;
+  /* Prevent wrapping and enable smooth scrolling */
+  flex-wrap: nowrap;
+  scroll-behavior: smooth;
+  -webkit-overflow-scrolling: touch; /* iOS smooth scrolling */
 }
 
+/* Ensure each card maintains its size and doesn't shrink */
+.category-scroll > * {
+  flex-shrink: 0;
+  flex-grow: 0;
+  min-width: 13rem; /* Same as cat-card width */
+}
+
+/* Custom scrollbar styling */
 .category-scroll::-webkit-scrollbar {
   height: 6px;
 }
+
 .category-scroll::-webkit-scrollbar-thumb {
   background: #ccc;
   border-radius: 6px;
 }
+
 .category-scroll::-webkit-scrollbar-track {
   background: #f1f1f1;
+}
+
+/* Hide scrollbar on mobile for cleaner look */
+@media (max-width: 768px) {
+  .category-scroll {
+    scrollbar-width: none; /* Firefox */
+    -ms-overflow-style: none; /* IE/Edge */
+  }
+  
+  .category-scroll::-webkit-scrollbar {
+    display: none; /* WebKit browsers */
+  }
 }
 
 /* Responsive */
 @media (max-width: 600px) {
   .category-header {
-    padding: 0 10px 8px 10px;
-    font-size: 0.9rem;
+    padding: 0 8px 8px 8px; /* Same as trending */
   }
+  
   .category-title,
   .category-show-all {
     font-size: 0.85rem;
   }
+  
   .category-scroll {
-    padding: 0 8px 14px 8px;
-    gap: 6px;
+    padding: 0 4px 16px 4px; /* Same as trending */
+    gap: 4px; /* Same as trending */
+  }
+  
+  .category-scroll > * {
+    min-width: 10rem; /* Smaller cards on mobile */
+  }
+}
+
+@media (max-width: 480px) {
+  .category-header {
+    padding: 0 8px 8px 8px; /* Keep consistent with trending */
+  }
+  
+  .category-scroll {
+    padding: 0 4px 16px 4px; /* Keep consistent with trending */
+    gap: 4px;
+  }
+  
+  .category-scroll > * {
+    min-width: 8.5rem; /* Even smaller on very small screens */
   }
 }

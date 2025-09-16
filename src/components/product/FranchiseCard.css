@@ -1,7 +1,7 @@
 .trend-card {
   width: 210px;
   height: 257px;
-  background: #fff;
+  background: rgba(255, 255, 255, 0.4); /* Only background is semi-transparent */
   border-radius: 30px;
   position: relative;
   overflow: hidden;
@@ -34,7 +34,7 @@
 }
 
 .discount-badge {
-  background: #ffaeae;
+  background: #bba3d1;
   color: #fff;
   font-size: 11px;
   font-weight: 600;
@@ -109,7 +109,7 @@
 .name {
   font-size: 13px;
   font-weight: 300;
-  color: #000;
+  color: #ffffff;
 }
 
 .subtitle {
@@ -123,16 +123,17 @@
   margin-top: 6px;
   font-size: 12px;
   font-weight: 300;
+  color: #ffffff;
 }
 
 .price .old {
   text-decoration: line-through;
-  color: #6f6f6f;
+  color: #bcbcbc;
   margin-right: 6px;
 }
 
 .price .new {
-  color: #000;
+  color: #ffffff;
   font-weight: 400;
 }
 
@@ -142,7 +143,7 @@
   height: 35px;
   border: none;
   border-radius: 30px;
-  background: #ee6443;
+  background: #888888;
   color: #fff;
   font-size: 12px;
   font-weight: 600;

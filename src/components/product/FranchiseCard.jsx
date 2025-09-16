@@ -30,7 +30,6 @@ const FranchiseCard = ({
         {/* Info Section */}
         <div className="info">
           <div className="name">{name}</div>
-          <div className="subtitle">{subtitle}</div>
           <div className="price">
             <span className="old">{oldPrice}</span>
             <span className="new">{newPrice}</span>

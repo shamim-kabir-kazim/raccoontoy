@@ -6,6 +6,7 @@ import ProductSlider from "../components/product/ProductSlider";
 import ProductTrending from "../components/product/ProductTrending";
 import "./LandingPage.css";
 import CategoryShowing from "../components/product/CategoryShowing";
+import FranchiseSection from "../components/product/FranchiseSection";
 
 const LandingPage = () => {
   return (
@@ -17,6 +18,7 @@ const LandingPage = () => {
       </main>
       <ProductTrending />
       <CategoryShowing />
+      <FranchiseSection/>
       <Footer />
       <BottomNavBar />
     </div>

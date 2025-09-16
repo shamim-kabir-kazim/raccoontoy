@@ -1,0 +1,59 @@
+.franchise-section-main {
+  width: 100%;
+  padding: 10px 0; /* Only vertical padding */
+  background: #f1f1f1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  box-sizing: border-box;
+}
+
+.franchise-section {
+  width: 420px; /* Use fixed or max-width for best centering */
+  max-width: 95vw;
+  padding: 24px 0;
+  background: #010e34;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  box-sizing: border-box;
+  border-radius: 30px;
+}
+
+.franchise-logo {
+  width: 197px;
+  height: 71px;
+  margin-bottom: 20px;
+}
+
+.franchise-items-grid {
+  width: 360px; /* 2 cards (153px) + 10px gap = 316px, so 320px is good */
+  max-width: 90vw;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: repeat(2, 153px);
+  grid-template-rows: repeat(2, 1fr);
+  gap: 10px;
+  margin-bottom: 20px;
+  box-sizing: border-box;
+  justify-content: center;
+  align-content: center;
+}
+
+.franchise-show-more-btn {
+  width: 109px;
+  height: 38px;
+  background: rgba(36, 35, 81, 0.55);
+  border: none;
+  border-radius: 15px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.franchise-show-more-btn span {
+  color: #fff;
+  font-size: 10px;
+  font-weight: 700;
+}

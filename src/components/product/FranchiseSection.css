@@ -27,13 +27,14 @@
 }
 
 .franchise-items-grid {
-  width: 360px; /* 2 cards (153px) + 10px gap = 316px, so 320px is good */
+  width: 360px;
   max-width: 90vw;
   margin: 0 auto;
   display: grid;
   grid-template-columns: repeat(2, 153px);
   grid-template-rows: repeat(2, 1fr);
-  gap: 10px;
+  row-gap: 10px;       /* gap between rows */
+  column-gap: 24px;    /* gap between columns */
   margin-bottom: 20px;
   box-sizing: border-box;
   justify-content: center;

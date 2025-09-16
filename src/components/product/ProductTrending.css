@@ -1,8 +1,8 @@
 .trending-section {
   width: 100vw;
-  background: #000; /* Black background */
-  padding: 32px 0 0 0;
+  background: #f1f1f1;
   overflow-x: hidden;
+  padding: 20px 0; /* 20px top and bottom margin */
 }
 
 .trending-header {
@@ -10,16 +10,20 @@
   align-items: center;
   justify-content: space-between;
   padding: 0 36px 16px 36px;
+  font-weight: bold;         /* bold text */
+  font-size: 1rem;           /* smaller text */
+  letter-spacing: 0.02em;
+  margin-bottom: 10px;
 }
 
 .trending-fire {
-  font-size: 2rem;
-  margin-right: 12px;
+  font-size: 1.25rem; /* smaller fire icon */
+  margin-right: 8px;
 }
 
 .trending-show-all {
   color: #bcbcbc;
-  font-size: 1.35rem;
+  font-size: 0.8rem;
   letter-spacing: 0.02em;
 }
 

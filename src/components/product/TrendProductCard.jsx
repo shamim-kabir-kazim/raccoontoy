@@ -13,7 +13,7 @@ const TrendProductCard = ({
 }) => {
   return (
     <div className="trend-card">
-      {/* Top badges and heart */}
+      {/* Top badges and heart (overlay, absolute) */}
       <div className="top-section">
         <div className="badge-wrapper">
           <div className="discount-badge">{discount}</div>
@@ -21,24 +21,24 @@ const TrendProductCard = ({
         </div>
         <img src={favoriteIcon} alt="favorite" className="favorite-icon" />
       </div>
-
-      {/* Image */}
-      <div className="img-circle">
-        <img src={image} alt={name} className="product-img" />
-      </div>
-
-      {/* Text info */}
-      <div className="info">
-        <div className="name">{name}</div>
-        <div className="subtitle">{subtitle}</div>
-        <div className="price">
-          <span className="old">{oldPrice}</span>
-          <span className="new">{newPrice}</span>
+      {/* Main vertical layout */}
+      <div className="card-body">
+        {/* Image Section (starts at top) */}
+        <div className="img-circle">
+          <img src={image} alt={name} className="product-img" />
         </div>
+        {/* Info Section */}
+        <div className="info">
+          <div className="name">{name}</div>
+          <div className="subtitle">{subtitle}</div>
+          <div className="price">
+            <span className="old">{oldPrice}</span>
+            <span className="new">{newPrice}</span>
+          </div>
+        </div>
+        {/* Button Section */}
+        <button className="buy-btn">Buy Now</button>
       </div>
-
-      {/* Button */}
-      <button className="buy-btn">Buy Now</button>
     </div>
   );
 };

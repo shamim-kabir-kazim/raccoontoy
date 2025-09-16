@@ -1,91 +1,160 @@
 .trend-card {
   width: 210px;
-  height: 228px;
-  background: #ff0000; /* white background */
-  box-shadow: 0px 2px 6px rgba(0, 0, 0, 0.08);
-  border-radius: 15px;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: space-between;
-  padding-top: 15px;
-  padding-bottom: 15px;
+  height: 257px;
+  background: #fff;
+  border-radius: 30px;
   position: relative;
   overflow: hidden;
+  margin: auto;
+  font-family: "Inter", sans-serif;
 }
 
-/* Wishlist heart (top-right) */
-.trend-card-heart {
+/* Top Section */
+.top-section {
   position: absolute;
-  top: 10px;
-  right: 10px;
-}
-.heart-icon {
-  color: #d3d3d3;
-  font-size: 18px;
-}
-
-/* Image background circle */
-.trend-card-img-bg {
-  background: #fbdde1; /* correct pink */
-  border-radius: 50%;
-  width: 140px;
-  height: 140px;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
-
-.trend-card-img {
-  width: 90px;
-  height: 110px;
-  object-fit: contain;
-  display: block;
-}
-
-/* Info row at the bottom */
-.trend-card-info-row {
   width: 100%;
-  padding: 0 20px;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  background-color: #ffffff;
+  height: 58px;
+  top: 0;
+  left: 0;
 }
 
-.trend-card-info {
+.badge-wrapper {
+  position: absolute;
+  top: 5px;
+  left: 9px;
   display: flex;
   flex-direction: column;
   gap: 4px;
 }
 
-.trend-card-title {
-  color: black;
-  font-size: 12px;
-  font-family: 'Inter', Arial, sans-serif;
-  font-weight: 700;
+.discount-badge {
+  background: #ffaeae;
+  color: #fff;
+  font-size: 11px;
+  font-weight: 600;
+  padding: 6px 14px;
+  border-radius: 50px;
+  border: 0.3px solid #b1b1b1;
 }
 
-.trend-card-price {
-  color: #f89e9e;
-  font-size: 12px;
-  font-family: 'Inter', Arial, sans-serif;
-  font-weight: 700;
+.sold-out {
+  background: #fff;
+  color: #000;
+  font-size: 11px;
+  font-weight: 500;
+  padding: 4px 16px;
+  border-radius: 50px;
+  border: 0.3px solid #b1b1b1;
 }
 
-/* Cart icon circle */
-.trend-card-cart {
-  width: 36px;
-  height: 36px;
-  background: black;
-  border-radius: 50%;
+.favorite-icon {
+  position: absolute;
+  top: 15px;
+  right: 20px;
+  width: 21px;
+  height: 21px;
+}
+
+/* Image circle */
+.img-circle {
+  position: absolute;
+  top: 5px;
+  left: 28px;
+  width: 153px;
+  height: 154px;
+  background: #ffe0e0;
+  border-radius: 100px;
   display: flex;
-  justify-content: center;
   align-items: center;
+  justify-content: center;
 }
 
-.trend-card-cart-img {
-  width: 16px;
-  height: 16px;
+.product-img {
+  width: 153px;
+  height: auto;
   object-fit: contain;
+}
+
+/* Info */
+.info {
+  position: absolute;
+  top: 163px;
+  width: 100%;
+  text-align: center;
+}
+
+.name {
+  font-size: 13px;
+  font-weight: 300;
+  color: #000;
+}
+
+.subtitle {
+  font-size: 10px;
+  font-weight: 300;
+  color: #000;
+  margin-top: 2px;
+}
+
+.price {
+  margin-top: 6px;
+  font-size: 12px;
+  font-weight: 300;
+}
+
+.price .old {
+  text-decoration: line-through;
+  color: #6f6f6f;
+  margin-right: 6px;
+}
+
+.price .new {
+  color: #000;
+  font-weight: 400;
+}
+
+/* Button */
+.buy-btn {
+  position: absolute;
+  bottom: 14px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 117px;
+  height: 35px;
+  border: none;
+  border-radius: 30px;
+  background: #ee6443;
+  color: #fff;
+  font-size: 12px;
+  font-weight: 600;
+  cursor: pointer;
+}
+
+/* Responsive */
+@media (max-width: 480px) {
+  .trend-card {
+    width: 180px;
+    height: auto;
+  }
+  .img-circle {
+    width: 130px;
+    height: 130px;
+  }
+  .product-img {
+    width: 120px;
+  }
+  .name {
+    font-size: 12px;
+  }
+  .subtitle {
+    font-size: 9px;
+  }
+  .price {
+    font-size: 11px;
+  }
+  .buy-btn {
+    width: 100px;
+    height: 32px;
+    font-size: 11px;
+  }
 }

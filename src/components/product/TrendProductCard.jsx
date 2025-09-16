@@ -1,35 +1,44 @@
 import React from "react";
 import "./TrendProductCard.css";
-import { FaHeart } from "react-icons/fa"; // for heart icon (optional)
 
 const TrendProductCard = ({
-  image = "https://placehold.co/73x98",
-  name = "Pikachu Bricks",
-  price = "2$",
-  cartIcon = "https://placehold.co/15x15",
+  discount = "50%",
+  soldOut = true,
+  image = "https://placehold.co/153x202",
+  name = "Name Of the Product",
+  subtitle = "Name Of the Product",
+  oldPrice = "450৳",
+  newPrice = "400৳",
+  favoriteIcon = "https://placehold.co/21x21",
 }) => {
   return (
     <div className="trend-card">
-      {/* Wishlist Heart */}
-      <div className="trend-card-heart">
-        <FaHeart className="heart-icon" />
+      {/* Top badges and heart */}
+      <div className="top-section">
+        <div className="badge-wrapper">
+          <div className="discount-badge">{discount}</div>
+          {soldOut && <div className="sold-out">sold out</div>}
+        </div>
+        <img src={favoriteIcon} alt="favorite" className="favorite-icon" />
       </div>
 
-      {/* Image Circle */}
-      <div className="trend-card-img-bg">
-        <img className="trend-card-img" src={image} alt={name} draggable={false} />
+      {/* Image */}
+      <div className="img-circle">
+        <img src={image} alt={name} className="product-img" />
       </div>
 
-      {/* Info */}
-      <div className="trend-card-info-row">
-        <div className="trend-card-info">
-          <div className="trend-card-title">{name}</div>
-          <div className="trend-card-price">{price}</div>
-        </div>
-        <div className="trend-card-cart">
-          <img className="trend-card-cart-img" src={cartIcon} alt="cart" draggable={false} />
+      {/* Text info */}
+      <div className="info">
+        <div className="name">{name}</div>
+        <div className="subtitle">{subtitle}</div>
+        <div className="price">
+          <span className="old">{oldPrice}</span>
+          <span className="new">{newPrice}</span>
         </div>
       </div>
+
+      {/* Button */}
+      <button className="buy-btn">Buy Now</button>
     </div>
   );
 };

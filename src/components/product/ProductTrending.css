@@ -1,11 +1,12 @@
-.trending-section {
+.vix-trending-section {
   width: 100vw;
   background: #f1f1f1;
   overflow-x: hidden;
   padding: 20px 0; /* 20px top and bottom margin */
 }
 
-.trending-header {
+.vix-trending-header {
+  color: #222; /* Ensures text is dark and visible */
   display: flex;
   align-items: center;
   justify-content: space-between;
@@ -16,18 +17,19 @@
   margin-bottom: 10px;
 }
 
-.trending-fire {
+.vix-trending-fire {
+  color: #222; /* Ensures fire text is dark */
   font-size: 1.25rem; /* smaller fire icon */
   margin-right: 8px;
 }
 
-.trending-show-all {
+.vix-trending-show-all {
   color: #bcbcbc;
   font-size: 0.8rem;
   letter-spacing: 0.02em;
 }
 
-.trending-scroll {
+.vix-trending-scroll {
   display: flex;
   flex-direction: row;
   gap: 8px;         /* Reduced gap between cards */
@@ -37,7 +39,7 @@
   scrollbar-color: #baa3ff #f4f4f4;
 }
 
-.trending-card {
+.vix-trending-card {
   min-width: 320px;
   max-width: 340px;
   height: 380px;
@@ -53,11 +55,11 @@
   transition: box-shadow 0.18s;
 }
 
-.trending-card:hover {
+.vix-trending-card:hover {
   box-shadow: 0 8px 32px 0 rgba(0,0,0,0.16);
 }
 
-.trending-image-bg {
+.vix-trending-image-bg {
   width: 240px;
   height: 240px;
   background: #ffe3ee;
@@ -68,7 +70,7 @@
   justify-content: center;
 }
 
-.trending-img {
+.vix-trending-img {
   width: 140px;
   height: 140px;
   object-fit: contain;
@@ -76,7 +78,7 @@
   margin: 0 auto;
 }
 
-.trending-info {
+.vix-trending-info {
   width: 100%;
   padding: 0 24px;
   margin-top: 16px;
@@ -85,7 +87,7 @@
   align-items: flex-start;
 }
 
-.trending-title {
+.vix-trending-title {
   color: #222;
   font-family: 'Inter', Arial, sans-serif;
   font-size: 1.23rem;
@@ -93,14 +95,14 @@
   margin-bottom: 8px;
 }
 
-.trending-buy-row {
+.vix-trending-buy-row {
   display: flex;
   align-items: center;
   justify-content: space-between;
   width: 100%;
 }
 
-.trending-price {
+.vix-trending-price {
   color: #ff7e9c;
   font-size: 1.18rem;
   font-weight: 500;
@@ -108,12 +110,12 @@
   margin-right: 8px;
 }
 
-.trending-currency {
+.vix-trending-currency {
   font-size: 1.02rem;
   margin-left: 2px;
 }
 
-.trending-cart-icon {
+.vix-trending-cart-icon {
   background: #000;
   border-radius: 50%;
   width: 42px;
@@ -123,7 +125,7 @@
   justify-content: center;
 }
 
-.trending-cart-icon svg {
+.vix-trending-cart-icon svg {
   display: block;
   margin: auto;
   width: 28px;
@@ -133,24 +135,24 @@
 
 /* Responsive */
 @media (max-width: 900px) {
-  .trending-card {
+  .vix-trending-card {
     min-width: 220px;
     max-width: 220px;
     height: 260px;
   }
-  .trending-image-bg {
+  .vix-trending-image-bg {
     width: 120px;
     height: 120px;
   }
-  .trending-img {
+  .vix-trending-img {
     width: 70px;
     height: 70px;
   }
-  .trending-info {
+  .vix-trending-info {
     padding: 0 12px;
     margin-top: 8px;
   }
-  .trending-cart-icon {
+  .vix-trending-cart-icon {
     width: 32px;
     height: 32px;
   }
@@ -158,15 +160,15 @@
 
 
 @media (max-width: 600px) {
-  .trending-header {
+  .vix-trending-header {
     padding: 0 8px 8px 8px;
   }
-  .trending-scroll {
+  .vix-trending-scroll {
     padding: 0 4px 16px 4px;
     gap: 4px;
     overflow-x: auto;
   }
-  .trending-card {
+  .vix-trending-card {
     min-width: 140px;
     max-width: 180px;
     height: 230px;

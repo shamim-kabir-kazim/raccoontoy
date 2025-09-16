@@ -53,12 +53,12 @@ const products = [
 
 const ProductTrending = () => {
   return (
-    <div className="trending-section">
-      <div className="trending-header">
-        <span className="trending-fire" role="img" aria-label="Trending">Trending Toys🔥</span>
-        <span className="trending-show-all">Show all</span>
+    <div className="vix-trending-section">
+      <div className="vix-trending-header">
+        <span className="vix-trending-fire" role="img" aria-label="Trending">Trending Toys🔥</span>
+        <span className="vix-trending-show-all">Show all</span>
       </div>
-      <div className="trending-scroll">
+      <div className="vix-trending-scroll">
         {products.map(product => (
           <TrendProductCard
             key={product.id}

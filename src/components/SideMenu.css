@@ -15,14 +15,23 @@
   box-shadow: 6px 0 20px 0 rgba(60,20,110,0.09);
   display: flex;
   flex-direction: column;
-  gap: 0;
-  justify-content: flex-start;
   align-items: center;
 }
 
 .SideMenu.slide.open {
   transform: translateX(0);
 }
+
+.SideMenu-content {
+  display: flex;
+  flex-direction: column;
+  flex: 1 1 auto;
+  width: 100%;
+  height: 100%;
+  justify-content: flex-start;
+  align-items: center;
+}
+
 .SideMenu-backdrop {
   position: fixed;
   z-index: 1150;
@@ -64,16 +73,15 @@
 
 /* Menu Rows - General */
 .MenuRow {
-  width: 260px; /* or whichever fixed width you use for other rows */
+  width: 80%; /* or whichever fixed width you use for other rows */
   display: flex;
   flex-direction: row;
   gap: 8px;
-  justify-content: flex-start;  /* <--- CHANGE THIS */
+  justify-content: flex-start;
   align-items: center;
   margin: 0;
   margin-bottom: 10px;
   margin-top: 0;
-  
   
 }
 
@@ -86,6 +94,12 @@
   gap: 8px;
   margin-bottom: 10px;
   padding: 0 18px;
+}
+
+/* Stick row-5 to bottom */
+.MenuRow.row-5 {
+  margin-top: auto !important;
+  margin-bottom: 22px;
 }
 
 /* Home & Offer */
@@ -357,6 +371,10 @@
     width: 100vw;
     min-width: 0;
     border-radius: 0 0 0 0;
+  }
+  .SideMenu-content {
+    width: 100vw;
+    min-width: 0;
   }
   .MenuRow, .MenuRow.row-1, .MenuRow.row-2, .MenuRow.row-3, .MenuRow.row-4, .MenuRow.row-5 {
     padding: 0 6px;

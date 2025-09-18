@@ -1,144 +1,149 @@
 .Slidermain {
   width: 100vw;
-  max-width: 435px;
-  height: 465px;
-  position: relative;
-  overflow: hidden;
+  max-width: 480px;
+  margin: 0 auto;
   background: #BAA3FF;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
   border-radius: 16px;
   box-sizing: border-box;
-  display: flex;
-  flex-direction: column;
-  justify-content: flex-start;
-  align-items: center;
+  padding: 0;
 }
-.Productslider {
-  width: 100vw;
-  max-width: 430px;
-  min-width: 280px;
-  height: 100%;
-  background: #BAA3FF;
-  position: absolute;
-  left: 3px;
-  top: -2px;
-  overflow: hidden;
-  display: flex;
-  flex-direction: column;
-  justify-content: flex-start;
-  align-items: flex-start;
-}
-
-.Emptysection {
-  align-self: stretch;
-  height: 63px;
-  padding-left: 10px;
-  padding-right: 10px;
-}
-
 .Imagesection {
-  align-self: stretch;
-  height: 293px;
-  padding: 10px;
+  width: 100%;
+  padding: 7vw 0;
   overflow: hidden;
-  display: flex;
-  flex-direction: row;
-  justify-content: space-between;
+  justify-content: center;
   align-items: center;
+  display: flex;
+  gap: 3vw; /* Increased the gap a bit */
+  box-sizing: border-box;
+  touch-action: pan-y;
+  user-select: none;
 }
 .LeftsideSmallImg,
 .RightsideSmallImg {
-  width: 115px;
-  height: 115px;
+  width: 26vw;      /* Increased size */
+  max-width: 135px; /* Increased max */
+  min-width: 80px;  /* Increased min */
+  height: 26vw;
+  max-height: 135px;
+  min-height: 80px;
   object-fit: cover;
   border-radius: 18px;
   opacity: 0.8;
   background: #e9e9e9;
+  flex-shrink: 0;
 }
-
+.Frame588 {
+  flex: 1 1 0;
+  max-width: 100vw;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  height: auto;
+  min-width: 0;
+  position: relative;
+  overflow: visible;
+}
+.ImageBoxedWrap {
+  width: 56vw;
+  max-width: 255px;
+  min-width: 180px;
+  aspect-ratio: 230 / 305;
+  position: relative;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  align-items: stretch;
+}
 .BigMainImg {
-  width: 210px;
-  height: 280px;
-  object-fit: cover;
-  border-radius: 22px;
+  width: 100%;
+  height: 100%;
+  min-width: 0;
+  min-height: 0;
+  object-fit: cover; /* fill the box */
+  border-top-left-radius: 6vw;
+  border-top-right-radius: 6vw;
+  border: 0.5px white solid;
   background: #fff;
-  margin: 0 8px;
+  margin: 0 auto;
+  display: block;
+  z-index: 1;
+  position: relative;
 }
-
-.InformationSection {
-  align-self: stretch;
-  height: 114px;
-  padding-left: 10px;
-  padding-right: 10px;
-  overflow: hidden;
-  display: flex;
-  flex-direction: column;
-  justify-content: flex-start;
-  align-items: center;
-}
-
 .Nameandbuttonsection {
-  width: 231px;
+  width: 100%; /* Always match main image width */
+  background: rgba(198, 180, 250, 0.30);
   overflow: hidden;
+  border-bottom-right-radius: 6vw;
+  border-bottom-left-radius: 6vw;
   display: flex;
   flex-direction: column;
-  justify-content: flex-start;
   align-items: center;
+  padding-bottom: 2vw;
+  padding-top: 1vw;
+  min-height: 82px;
+  margin: 0 auto;
+  position: relative;
+  z-index: 2;
 }
 
 .NameAndPriceBox {
-  align-self: stretch;
-  height: 50px;
+  width: 100%;
+  height: 48px;
   position: relative;
   overflow: hidden;
-  margin-bottom: 8px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start;
+  margin-bottom: 2px;
 }
-
 .NameText {
-  position: absolute;
-  left: 46px;
-  top: 7px;
   color: #9D9D9D;
-  font-size: 16px;
+  font-size: 1rem;
   font-family: Inter, Arial, sans-serif;
   font-weight: 500;
   white-space: nowrap;
   overflow: hidden;
   text-overflow: ellipsis;
-  max-width: 140px;
+  width: 100%;
+  text-align: center;
+  margin-top: 10px;
 }
-
 .PriceText {
-  position: absolute;
-  left: 94px;
-  top: 31px;
   color: #EE6666;
-  font-size: 16px;
+  font-size: 1rem;
   font-family: Inter, Arial, sans-serif;
   font-weight: 500;
+  line-height: 1.25;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-top: 5px;
+  height: 21px;
 }
-
 .OrderButtonAndFvrtIcon {
-  padding-left: 11px;
-  padding-right: 11px;
-  padding-top: 7px;
-  padding-bottom: 7px;
-  overflow: hidden;
-  display: inline-flex;
+  width: 100%;
+  display: flex;
   justify-content: center;
   align-items: center;
-  gap: 7px;
+  gap: 12px;
+  margin-top: 2vw;
 }
-
 .PrderButton {
-  width: 134px;
-  height: 46px;
+  min-width: 90px;
+  height: 40px;
   background: rgba(255, 255, 255, 0.50);
   border: none;
   border-radius: 50px;
   display: flex;
   align-items: center;
   justify-content: center;
-  font-size: 18px;
+  font-size: 1.1rem;
   font-family: 'Jersey 10', Arial, sans-serif;
   font-weight: 700;
   color: #222;
@@ -146,17 +151,23 @@
   overflow: hidden;
   cursor: pointer;
   transition: background 0.12s;
-  padding: 0 12px;
+  padding: 0 18px;
   gap: 5px;
+  outline: none !important;
+  box-shadow: none !important;
 }
-.PrderButton:active {
+.PrderButton:active,
+.PrderButton:focus {
   background: rgba(230,230,230,0.62);
+  outline: none !important;
+  border: none !important;
+  box-shadow: none !important;
 }
 .OrderBtnText {
-  font-size: 18px;
+  font-size: 1.1rem;
   font-family: 'Jersey 10', Arial, sans-serif;
   font-weight: 700;
-  letter-spacing: 1px;
+  letter-spacing: 0.5px;
   line-height: 1;
 }
 .OrderBtnArrow {
@@ -164,13 +175,12 @@
   align-items: center;
   margin-left: 6px;
 }
-
 .FvrtIcon {
-  width: 45px;
-  height: 45px;
+  width: 40px;
+  height: 40px;
   background: #fff;
   border: none;
-  border-radius: 50px;
+  border-radius: 50%;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -179,11 +189,17 @@
   margin: 0;
   cursor: pointer;
   transition: background 0.12s;
+  outline: none !important;
 }
 .FvrtIcon.favorited {
   background: #ffe6ed;
 }
-
+.FvrtIcon:active,
+.FvrtIcon:focus {
+  outline: none !important;
+  border: none !important;
+  box-shadow: none !important;
+}
 .IconImg {
   width: 25px !important;
   height: 25px !important;
@@ -192,54 +208,74 @@
   background: none !important;
 }
 
-.LeftOverlayDiv, .RightOverlayDiv {
-  width: 75px;
-  height: 459px;
-  position: absolute;
-  top: 3px;
-  overflow: hidden;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  z-index: 2;
-}
-.LeftOverlayDiv {
-  left: 5px;
-}
-.RightOverlayDiv {
-  left: 360px;
-}
-.LiftSlideButton, .RightSlideButton {
-  width: 38px;
-  height: 38px;
-  background: rgba(255, 255, 255, 0.5);
-  border: none;
-  border-radius: 30px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  cursor: pointer;
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  box-shadow: 0 1px 8px rgba(0,0,0,0.07);
-  padding: 0;
-}
-.LiftSlideButton:active, .RightSlideButton:active {
-  background: rgba(230,230,230,0.62);
-}
-
 @media (max-width: 500px) {
-  .Slidermain, .Productslider {
-    width: 100vw;
+  .Slidermain {
     max-width: 100vw;
     border-radius: 0;
   }
-  .Productslider {
-    left: 0;
+  .Imagesection {
+    padding: 4vw 0;
+    gap: 3vw;
   }
-  .LeftOverlayDiv, .RightOverlayDiv {
-    display: none;
+  .LeftsideSmallImg,
+  .RightsideSmallImg {
+    width: 24vw;
+    height: 24vw;
+    min-width: 65px;
+    min-height: 65px;
+    max-width: 105px;
+    max-height: 105px;
+  }
+  .ImageBoxedWrap {
+    width: 64vw;
+    max-width: 210px;
+    min-width: 120px;
+    aspect-ratio: 230 / 305;
+  }
+  .BigMainImg {
+    border-top-left-radius: 7vw;
+    border-top-right-radius: 7vw;
+  }
+  .Nameandbuttonsection {
+    border-bottom-left-radius: 7vw;
+    border-bottom-right-radius: 7vw;
+    min-height: 70px;
+    padding-bottom: 2vw;
+    padding-top: 1vw;
+  }
+  .OrderButtonAndFvrtIcon {
+    gap: 9px;
+    margin-top: 2vw;
+  }
+  .PrderButton {
+    min-width: 76px;
+    height: 33px;
+    font-size: 0.93rem;
+    padding: 0 10px;
+  }
+  .OrderBtnText {
+    font-size: 0.93rem;
+  }
+  .FvrtIcon {
+    width: 32px;
+    height: 32px;
+  }
+  .IconImg {
+    width: 25px !important;
+    height: 25px !important;
+    min-width: 25px !important;
+    min-height: 25px !important;
+    max-width: 25px !important;
+    max-height: 25px !important;
+  }
+}
+
+@media (max-width: 350px) {
+  .ImageBoxedWrap {
+    min-width: 84px;
+  }
+  .LeftsideSmallImg, .RightsideSmallImg {
+    min-width: 36px;
+    min-height: 36px;
   }
 }

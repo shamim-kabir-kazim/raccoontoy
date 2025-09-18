@@ -6,7 +6,10 @@
   width: 80%;
   height: 100vh;
   min-height: 520px;
-  background: rgba(173, 245, 231, 0.74);
+  background: rgb(186, 163, 255,0.74);
+  backdrop-filter: blur(2px);  /* apply blur effect */
+  -webkit-backdrop-filter: blur(2px); /* Safari support */
+
   border-top-right-radius: 30px;
   border-bottom-right-radius: 30px;
   overflow-y: auto;

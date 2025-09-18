@@ -5,7 +5,7 @@ const menuIcon = "https://i.postimg.cc/MKxGkXMw/menu-alt-1-svgrepo-com-1-1.png";
 const searchIcon = "https://i.postimg.cc/t4Zw2Nq4/search-svgrepo-com-1-1.png";
 const logoImg = "https://i.postimg.cc/2SBv2Rgv/Frame-305-1-2-1-2.png";
 
-const Header = () => {
+const Header = ({ onMenuClick }) => {
   const [showSearch, setShowSearch] = useState(false);
   const inputRef = useRef();
 
@@ -41,6 +41,7 @@ const Header = () => {
             aria-label="Menu"
             tabIndex={0}
             type="button"
+            onClick={onMenuClick}
           >
             <img
               src={menuIcon}

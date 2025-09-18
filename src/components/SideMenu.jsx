@@ -62,8 +62,8 @@ export default function SideMenu({ open, onClose }) {
           />
         </div>
 
-        {/* Home & Offer Row */}
-        <div className="MenuRow">
+        {/* Row 1: Home & Offer */}
+        <div className="MenuRow row-1">
           <div className="HomeDiv" data-layer="home-div">
             <img
               className="HomeIcon"
@@ -81,54 +81,58 @@ export default function SideMenu({ open, onClose }) {
           />
         </div>
 
-        {/* Categories */}
-        <div className="CategoryDiv" data-layer="category-div">
-          <div className="CategoryDivHeader" data-layer="category-div-header">
-            <div className="CategoriesHeaderTitle" data-layer="Categories-header-title">
-              Categories
-            </div>
-            <img
-              className="CategoryDropDownIcon"
-              data-layer="category-drop-down-icon"
-              src="https://i.postimg.cc/vZj1sQSP/arrow-drop-down-big-svgrepo-com.png"
-              alt="Dropdown"
-            />
-          </div>
-          <div className="CategoryMenuList" data-layer="category-menu-list">
-            {categories.map((cat) => (
-              <div className="CategoryMenuItems" data-layer="Category-menu-items" key={cat}>
-                <div className="CategoryMenuItemsRadioButton" data-layer="category-menu-items-radio-button"></div>
-                <div className="CategoryMenuItemsName" data-layer="category-menu-items-name">{cat}</div>
+        {/* Row 2: Categories */}
+        <div className="MenuRow row-2">
+          <div className="CategoryDiv" data-layer="category-div">
+            <div className="CategoryDivHeader" data-layer="category-div-header">
+              <div className="CategoriesHeaderTitle" data-layer="Categories-header-title">
+                Categories
               </div>
-            ))}
+              <img
+                className="CategoryDropDownIcon"
+                data-layer="category-drop-down-icon"
+                src="https://i.postimg.cc/vZj1sQSP/arrow-drop-down-big-svgrepo-com.png"
+                alt="Dropdown"
+              />
+            </div>
+            <div className="CategoryMenuList" data-layer="category-menu-list">
+              {categories.map((cat) => (
+                <div className="CategoryMenuItems" data-layer="Category-menu-items" key={cat}>
+                  <div className="CategoryMenuItemsRadioButton" data-layer="category-menu-items-radio-button"></div>
+                  <div className="CategoryMenuItemsName" data-layer="category-menu-items-name">{cat}</div>
+                </div>
+              ))}
+            </div>
           </div>
         </div>
 
-        {/* Fandoms */}
-        <div className="FandomsDiv" data-layer="fandoms-div">
-          <div className="FandomsHeaderSection" data-layer="fandoms-header-section">
-            <div className="FandomsHeaderTitle" data-layer="Fandoms-header-title">
-              Fandoms
-            </div>
-            <img
-              className="FandomsDropdownIcon"
-              data-layer="fandoms-dropdown-icon"
-              src="https://i.postimg.cc/vZj1sQSP/arrow-drop-down-big-svgrepo-com.png"
-              alt="Dropdown"
-            />
-          </div>
-          <div className="FandomsMenuList" data-layer="fandoms-menu-list">
-            {fandoms.map((fan) => (
-              <div className="FandomsMenuItems" data-layer="fandoms-menu-items" key={fan}>
-                <div className="FandomsMenuItemsRadioButton" data-layer="fandoms-menu-items-radio-button"></div>
-                <div className="FandomsMenuItemsName" data-layer="fandoms-menu-items-name">{fan}</div>
+        {/* Row 3: Fandoms */}
+        <div className="MenuRow row-3">
+          <div className="FandomsDiv" data-layer="fandoms-div">
+            <div className="FandomsHeaderSection" data-layer="fandoms-header-section">
+              <div className="FandomsHeaderTitle" data-layer="Fandoms-header-title">
+                Fandoms
               </div>
-            ))}
+              <img
+                className="FandomsDropdownIcon"
+                data-layer="fandoms-dropdown-icon"
+                src="https://i.postimg.cc/vZj1sQSP/arrow-drop-down-big-svgrepo-com.png"
+                alt="Dropdown"
+              />
+            </div>
+            <div className="FandomsMenuList" data-layer="fandoms-menu-list">
+              {fandoms.map((fan) => (
+                <div className="FandomsMenuItems" data-layer="fandoms-menu-items" key={fan}>
+                  <div className="FandomsMenuItemsRadioButton" data-layer="fandoms-menu-items-radio-button"></div>
+                  <div className="FandomsMenuItemsName" data-layer="fandoms-menu-items-name">{fan}</div>
+                </div>
+              ))}
+            </div>
           </div>
         </div>
 
-        {/* Favorite & About Row */}
-        <div className="MenuRow bottom-row">
+        {/* Row 4: Favorite & About */}
+        <div className="MenuRow row-4">
           <div className="FaviteDiv" data-layer="favite-div">
             <img
               className="FavIcon"
@@ -149,16 +153,18 @@ export default function SideMenu({ open, onClose }) {
           </div>
         </div>
 
-        {/* Account/Logout */}
-        <div className="AccountLogutDiv" data-layer="account-logut-div">
-          <div className="UserProfileImg" data-layer="user-profile-img"></div>
-          <img
-            className="LogoutIcon"
-            data-layer="logout-icon"
-            src="https://i.postimg.cc/kGc63Kk8/logout-svgrepo-com-1.png"
-            alt="Logout"
-          />
-          <div className="UserName" data-layer="user-name">Shamim Kabir</div>
+        {/* Row 5: Account/Logout */}
+        <div className="MenuRow row-5">
+          <div className="AccountLogutDiv" data-layer="account-logut-div">
+            <div className="UserProfileImg" data-layer="user-profile-img"></div>
+            <img
+              className="LogoutIcon"
+              data-layer="logout-icon"
+              src="https://i.postimg.cc/kGc63Kk8/logout-svgrepo-com-1.png"
+              alt="Logout"
+            />
+            <div className="UserName" data-layer="user-name">Shamim Kabir</div>
+          </div>
         </div>
       </aside>
     </>

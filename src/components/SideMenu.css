@@ -3,7 +3,7 @@
   top: 0;
   left: 0;
   z-index: 1200;
-  width: 320px;
+  width: 80%;
   height: 100vh;
   min-height: 520px;
   background: rgba(173, 245, 231, 0.74);
@@ -16,7 +16,7 @@
   display: flex;
   flex-direction: column;
   gap: 0;
-  justify-content: flex-start; /* Ensures content starts at the top */
+  justify-content: flex-start;
 }
 
 .SideMenu.slide.open {
@@ -44,7 +44,7 @@
   width: 259px;
   height: 119px;
   margin: 0 auto;
-  margin-top: 0; /* no extra margin at top */
+  margin-top: 0;
   overflow: hidden;
   border-radius: 15px;
   display: flex;
@@ -61,27 +61,30 @@
   transform: translateX(-50%);
 }
 
-/* Menu Row (Home & Offer, Favorite & About) */
+/* Menu Rows - General */
 .MenuRow {
   width: 100%;
   display: flex;
   flex-direction: row;
-  gap: 16px;
-  justify-content: flex-start;
-  align-items: flex-start;
+  gap: 8px; /* LESS GAP between all items */
+  justify-content: center;
+  align-items: center;
   margin: 0;
-  margin-bottom: 14px;
-  margin-top: 0; /* remove top margin */
-  padding: 0 26px;
+  margin-bottom: 10px; /* reduce bottom margin */
+  margin-top: 0;
+  background-color: #AC5ED9;
+  
 }
-.MenuRow.bottom-row {
-  position: absolute;
-  left: 0;
-  bottom: 110px;
-  width: 100%;
-  padding: 0 26px;
-  gap: 16px;
-  justify-content: flex-start;
+
+/* Numbered Rows for future targeting if needed */
+.MenuRow.row-1,
+.MenuRow.row-2,
+.MenuRow.row-3,
+.MenuRow.row-4,
+.MenuRow.row-5 {
+  gap: 8px;
+  margin-bottom: 10px;
+  padding: 0 18px;
 }
 
 /* Home & Offer */
@@ -125,7 +128,7 @@
 /* Category */
 .CategoryDiv {
   width: 268px;
-  margin: 0 auto 0 auto; /* remove top margin */
+  margin: 0 auto 0 auto;
   background: #000;
   overflow: hidden;
   border-radius: 15px;
@@ -189,7 +192,7 @@
 /* Fandoms */
 .FandomsDiv {
   width: 268px;
-  margin: 8px auto 0 auto; /* reduced gap after previous section */
+  margin: 8px auto 0 auto;
   background: #000;
   overflow: hidden;
   border-radius: 15px;
@@ -309,15 +312,12 @@
   width: 268px;
   height: 59px;
   margin: 0 auto;
-  position: absolute;
-  left: 26px;
-  bottom: 28px;
   background: #2E2E2F;
   overflow: hidden;
   border-radius: 15px;
   display: flex;
   align-items: center;
-  position: absolute;
+  position: relative;
 }
 .UserProfileImg {
   width: 33px;
@@ -357,9 +357,9 @@
     min-width: 0;
     border-radius: 0 0 0 0;
   }
-  .MenuRow, .MenuRow.bottom-row {
+  .MenuRow, .MenuRow.row-1, .MenuRow.row-2, .MenuRow.row-3, .MenuRow.row-4, .MenuRow.row-5 {
     padding: 0 6px;
-    gap: 8px;
+    gap: 6px;
   }
   .CategoryDiv, .FandomsDiv {
     width: 98vw;

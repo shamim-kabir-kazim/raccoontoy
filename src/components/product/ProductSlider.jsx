@@ -111,7 +111,7 @@ export default function ProductSlider() {
                 <span className="OrderBtnText">Order</span>
                 <span className="OrderBtnArrow">
                   {/* Right arrow SVG */}
-                  <svg width="21" height="20" viewBox="0 0 21 20" fill="none">
+                  <svg width="15" height="15" viewBox="0 0 20 20" fill="none">
                     <path d="M7 5L12 10L7 15" stroke="#222" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
                   </svg>
                 </span>

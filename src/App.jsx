@@ -3,6 +3,7 @@ import { BrowserRouter as Router, Routes, Route, Navigate } from "react-router-d
 import LandingPage from "./pages/LandingPage";
 import Header from "./components/Header";
 import SideMenu from "./components/SideMenu";
+import SorryPopup from "./components/SorryPopup";
 import "./App.css";
 
 function App() {
@@ -15,11 +16,14 @@ function App() {
     } else {
       document.body.style.overflow = "";
     }
-    return () => { document.body.style.overflow = ""; };
+    return () => {
+      document.body.style.overflow = "";
+    };
   }, [showMenu]);
 
   return (
     <Router>
+      <SorryPopup />
       {/* Only ONE Header here */}
       <Header onMenuClick={() => setShowMenu(true)} />
       <SideMenu open={showMenu} onClose={() => setShowMenu(false)} />

@@ -28,7 +28,7 @@ const SorryPopup = () => {
           <div className="IconBox" onClick={() => setVisible(false)}>
             <img
               className="CrossIcon"
-              src="https://placehold.co/33x33"
+              src="https://i.postimg.cc/zfgvQN4R/cross-svgrepo-com.png"
               alt="Close"
             />
           </div>
@@ -37,7 +37,7 @@ const SorryPopup = () => {
           <div className="RowSec1">
             <img
               className="Img"
-              src="https://placehold.co/166x176"
+              src="https://i.postimg.cc/L6Qs6hp1/img.png"
               alt="Sorry"
             />
             <div className="Text1">SORRY</div>
@@ -54,10 +54,10 @@ const SorryPopup = () => {
               <div className="Text">Visit</div>
             </div>
             <div className="IconDiv">
-              <img className="Icon1" src="https://placehold.co/45x45" alt="icon1" />
-              <img className="Icon2" src="https://placehold.co/45x45" alt="icon2" />
-              <img className="Icon3" src="https://placehold.co/45x45" alt="icon3" />
-              <img className="Icon4" src="https://placehold.co/45x45" alt="icon4" />
+              <img className="Icon1" src="https://i.postimg.cc/3NPbngGG/icon-1.png" alt="icon1" />
+              <img className="Icon2" src="https://i.postimg.cc/ZYggbhQq/icon-2.png" alt="icon2" />
+              <img className="Icon3" src="https://i.postimg.cc/GmN9ztgC/tiktok-logo-bold-svgrepo-com.png" alt="icon3" />
+              <img className="Icon4" src="https://i.postimg.cc/QtZCGPrY/whatsapp-svgrepo-com.png" alt="icon4" />
             </div>
           </div>
         </div>

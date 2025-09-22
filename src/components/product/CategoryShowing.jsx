@@ -8,8 +8,8 @@ import CatCard from "./CatCard";
 const categories = [
   {
     id: 1,
-    image: "https://i.postimg.cc/W4yYpXZR/Marvel-Dc-set.jpg",
-    title: "Action Figure"
+    image: "https://i.postimg.cc/Hs7kH4Sf/Frame-607.png",
+    title: "Marvel Action Figure"
   },
   {
     id: 2,

@@ -7,7 +7,7 @@ const Footer = () => {
       <div className="footer-section about">
         <h2>About Us</h2>
         <p>
-          Welcome to Raccon Toys, your one-stop shop for fun, imagination, and endless play! We offer a widehood truly magical. Whether you're shopping for a special gift or adding to a toy collection, Raccon Toys brings smiles to little faces and happy moments to every home.
+          Welcome to Raccoon Toy, your one-stop shop for fun, imagination, and endless play! We offer a widehood truly magical. Whether you're shopping for a special gift or adding to a toy collection, Raccoon Toy brings smiles to little faces and happy moments to every home.
         </p>
         <div className="footer-socials">
           <a href="https://instagram.com" aria-label="Instagram" target="_blank" rel="noopener noreferrer">
@@ -49,7 +49,7 @@ const Footer = () => {
       </div>
       <hr className="footer-divider" />
       <div className="footer-bottom-row">
-        <span className="footer-copyright">© 2025 Raccon Toys. All rights reserved.</span>
+        <span className="footer-copyright">© 2025 Raccoon Toy. All rights reserved.</span>
         <button className="footer-backtotop" aria-label="Back to top" onClick={() => window.scrollTo({ top: 0, behavior: "smooth" })}>
           <svg width="36" height="36" viewBox="0 0 36 36">
             <circle cx="18" cy="18" r="18" fill="#383838"/>

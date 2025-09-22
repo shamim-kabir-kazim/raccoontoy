@@ -9,16 +9,16 @@
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  gap: 10px; /* Space between image and category name */
+  gap: 10px;
   position: relative;
 }
 
 .cat-card-img-box {
-  width: 6rem;            /* w-20 = 80px */
-  height: 6rem;           /* h-24 = 96px */
+  width: 6rem;
+  height: 6rem;
   padding: 0;
-  background: #fee2e2;    /* bg-red-100 */
-  border-radius: 1rem;    /* rounded-2xl */
+  background: #fee2e2;
+  border-radius: 1rem;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -26,9 +26,9 @@
 }
 
 .cat-card-img {
-  width: 6rem;            /* w-20 = 80px */
-  height: 6rem;           /* h-24 = 96px */
-  object-fit: contain;
+  width: 100%;
+  height: 100%;
+  object-fit: contain; /* or cover if you want the image to fill box and crop */
   display: block;
 }
 
@@ -58,9 +58,13 @@
     width: 10rem;
     height: 11rem;
   }
+  .cat-card-img-box {
+    width: 6rem;
+    height: 6rem;
+  }
   .cat-card-img {
-    width: 4rem;
-    height: 4.8rem;
+    width: 100%;
+    height: 100%;
   }
 }
 
@@ -69,8 +73,12 @@
     width: 8.5rem;
     height: 9.5rem;
   }
+  .cat-card-img-box {
+    width: 6rem;
+    height: 6rem;
+  }
   .cat-card-img {
-    width: 3.2rem;
-    height: 3.8rem;
+    width: 100%;
+    height: 100%;
   }
 }

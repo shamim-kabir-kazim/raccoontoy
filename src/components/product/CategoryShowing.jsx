@@ -8,32 +8,68 @@ import CatCard from "./CatCard";
 const categories = [
   {
     id: 1,
-    image: "https://i.postimg.cc/W4yYpXZR/Marvel-Dc-set.jpg",
-    title: "Action Figure"
+    image: "https://i.postimg.cc/Hs7kH4Sf/Frame-607.png",
+    title: "Marvel Action Figure"
   },
   {
     id: 2,
-    image: "https://i.postimg.cc/nLh447yc/Chat-GPT-Image-Aug-2-2025-03-56-54-PM-1-1.png",
-    title: "Bricks"
+    image: "https://i.postimg.cc/4N1J6y6Y/dc-action-figure.png",
+    title: "DC Action Figure"
+  },
+    {
+    id: 14,
+    image: "https://i.postimg.cc/8PP8wJQm/naruto-action-figure.png",
+    title: "Anime Action Figure"
   },
   {
     id: 3,
+    image: "https://i.postimg.cc/8PP8wJQm/naruto-action-figure.png",
+    title: "Naruto Action Figure"
+  },
+  {
+    id: 4,
+    image: "https://i.postimg.cc/C5n5r5vD/pokemon-action-figure.png",
+    title: "Pokemon Action Figure"
+  },
+  {
+    id: 5,
+    image: "https://i.postimg.cc/90n0kJ6v/one-piece-action-figure.png",
+    title: "One Piece Action Figure"
+  },
+  {
+    id: 6,
+    image: "https://i.postimg.cc/3w7wFz0m/dragon-ballz-action-figure.png",
+    title: "Dragon Ballz Action Figure"
+  },
+  {
+    id: 8,
     image: "https://i.postimg.cc/XY8KBxDz/Chat-GPT-Image-Aug-2-2025-04-00-57-PM-1-1.png",
     title: "Doll's"
   },
   {
-    id: 4,
+    id: 9,
+    image: "https://i.postimg.cc/XY8KBxDz/super-hero-bricks.png",
+    title: "Super Hero Bricks"
+  },
+  {
+    id: 10,
+    image: "https://i.postimg.cc/XY8KBxDz/character-bricks.png",
+    title: "Character Bricks"
+  },
+  {
+    id: 11,
     image: "https://i.postimg.cc/N0C1pFt8/Chat-GPT-Image-Aug-2-2025-03-49-34-PM-1-2-1.png",
     title: "Key Chain"
   },
-    {
-    id: 5,
+  {
+    id: 12,
     image: "https://i.postimg.cc/N0C1pFt8/Chat-GPT-Image-Aug-2-2025-03-49-34-PM-1-2-1.png",
     title: "Decorative Items"
-  }, ]
+  }
+];
 
 const CategoryShowing = ({ 
-  title = "Categories",
+  title = "Popular Categories",
   showAllText = "Show all",
   onShowAllClick 
 }) => {

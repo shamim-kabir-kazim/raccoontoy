@@ -2,49 +2,35 @@ import React, { useRef } from "react";
 import "./CategoryShowing.css";
 import CatCard from "./CatCard";
 
+
+
 // Demo category items with real images
 const categories = [
   {
     id: 1,
-    image: "https://i.postimg.cc/N0C1pFt8/Chat-GPT-Image-Aug-2-2025-03-49-34-PM-1-2-1.png",
-    title: "Pikachu Bricks"
+    image: "https://i.postimg.cc/W4yYpXZR/Marvel-Dc-set.jpg",
+    title: "Action Figure"
   },
   {
     id: 2,
     image: "https://i.postimg.cc/nLh447yc/Chat-GPT-Image-Aug-2-2025-03-56-54-PM-1-1.png",
-    title: "Charmander Bricks"
+    title: "Bricks"
   },
   {
     id: 3,
     image: "https://i.postimg.cc/XY8KBxDz/Chat-GPT-Image-Aug-2-2025-04-00-57-PM-1-1.png",
-    title: "Black Panther"
+    title: "Doll's"
   },
   {
     id: 4,
     image: "https://i.postimg.cc/N0C1pFt8/Chat-GPT-Image-Aug-2-2025-03-49-34-PM-1-2-1.png",
-    title: "Eevee Plush"
+    title: "Key Chain"
   },
-  {
+    {
     id: 5,
-    image: "https://i.postimg.cc/nLh447yc/Chat-GPT-Image-Aug-2-2025-03-56-54-PM-1-1.png",
-    title: "Squirtle Toy"
-  },
-  {
-    id: 6,
-    image: "https://i.postimg.cc/XY8KBxDz/Chat-GPT-Image-Aug-2-2025-04-00-57-PM-1-1.png",
-    title: "Psyduck Figure"
-  },
-  {
-    id: 7,
     image: "https://i.postimg.cc/N0C1pFt8/Chat-GPT-Image-Aug-2-2025-03-49-34-PM-1-2-1.png",
-    title: "Jigglypuff Doll"
-  },
-  {
-    id: 8,
-    image: "https://i.postimg.cc/nLh447yc/Chat-GPT-Image-Aug-2-2025-03-56-54-PM-1-1.png",
-    title: "Meowth Model"
-  }
-];
+    title: "Decorative Items"
+  }, ]
 
 const CategoryShowing = ({ 
   title = "Categories",

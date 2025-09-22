@@ -21,6 +21,16 @@ const SorryPopup = () => {
 
   if (!visible) return null;
 
+  // Social URLs
+  const facebookUrl = "https://m.facebook.com/raccoontoy/";
+  const instaUrl = "https://www.instagram.com/raccoon_toy/?igsh=MTFsOTNmbDA2b2k3Ng%3D%3D#";
+  const tiktokUrl = "https://www.tiktok.com/@raccoon.toy?_t=ZS-8zZw7KbRWeP&_r=1";
+
+  // Open URL in new tab
+  const openLink = (url) => {
+    window.open(url, "_blank", "noopener,noreferrer");
+  };
+
   return (
     <div className="sorry-popup-overlay">
       <div className="Frame601" ref={popupRef}>
@@ -54,10 +64,32 @@ const SorryPopup = () => {
               <div className="Text">Visit</div>
             </div>
             <div className="IconDiv">
-              <img className="Icon1" src="https://i.postimg.cc/3NPbngGG/icon-1.png" alt="icon1" />
-              <img className="Icon2" src="https://i.postimg.cc/ZYggbhQq/icon-2.png" alt="icon2" />
-              <img className="Icon3" src="https://i.postimg.cc/GmN9ztgC/tiktok-logo-bold-svgrepo-com.png" alt="icon3" />
-              <img className="Icon4" src="https://i.postimg.cc/QtZCGPrY/whatsapp-svgrepo-com.png" alt="icon4" />
+              <img
+                className="Icon1"
+                src="https://i.postimg.cc/3NPbngGG/icon-1.png"
+                alt="Facebook"
+                style={{ cursor: "pointer" }}
+                onClick={() => openLink(facebookUrl)}
+              />
+              <img
+                className="Icon2"
+                src="https://i.postimg.cc/ZYggbhQq/icon-2.png"
+                alt="Instagram"
+                style={{ cursor: "pointer" }}
+                onClick={() => openLink(instaUrl)}
+              />
+              <img
+                className="Icon3"
+                src="https://i.postimg.cc/GmN9ztgC/tiktok-logo-bold-svgrepo-com.png"
+                alt="TikTok"
+                style={{ cursor: "pointer" }}
+                onClick={() => openLink(tiktokUrl)}
+              />
+              <img
+                className="Icon4"
+                src="https://i.postimg.cc/QtZCGPrY/whatsapp-svgrepo-com.png"
+                alt="WhatsApp"
+              />
             </div>
           </div>
         </div>

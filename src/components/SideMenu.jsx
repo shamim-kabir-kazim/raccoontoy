@@ -1,4 +1,5 @@
 import React, { useRef } from "react";
+import { useNavigate } from "react-router-dom";
 import "./SideMenu.css";
 
 const categories = [
@@ -15,6 +16,8 @@ const fandoms = [
 
 // You should replace this with your real authentication system!
 export default function SideMenu({ open, onClose, isLoggedIn = false }) {
+  const navigate = useNavigate();
+
   // Swipe to close
   const touchStartX = useRef(null);
   const touchEndX = useRef(null);
@@ -38,11 +41,11 @@ export default function SideMenu({ open, onClose, isLoggedIn = false }) {
 
   // Handlers for sign in/sign up
   const handleSignIn = () => {
-    // Implement your sign in logic/modal
-    alert("Sign In clicked!");
+    navigate("/login");
+    onClose();
   };
   const handleSignUp = () => {
-    // Implement your sign up logic/modal
+    // Implement your sign up logic/modal or navigate to a register page if you add one
     alert("Sign Up clicked!");
   };
 

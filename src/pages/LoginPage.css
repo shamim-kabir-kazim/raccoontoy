@@ -1,247 +1,509 @@
-/* Pixel display font for headings/buttons */
-@import url("https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap");
-/* Body font */
-@import url("https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap");
+/* Import Google Fonts */
+@import url("https://fonts.googleapis.com/css2?family=Jersey+10&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&display=swap");
 
+/* CSS Variables for colors */
 :root {
-  --bg-pink: #f7c6f4;
-  --bg-pink-2: #f5baf0;
-  --ink: #121212;
-  --ink-50: rgba(0,0,0,0.5);
+  --fuchsia-200: #f5d0fe;
+  --zinc-400: #a1a1aa;
+  --black: #000000;
   --white: #ffffff;
-  --primary: #6c71b5;   /* bluish button */
-  --primary-hover: #6268ab;
-  --secondary: #b2788e; /* mauve button */
-  --secondary-hover: #a66f85;
-  --field-bg: #ffffff;
-  --field-border: #101010;
-  --radius-lg: 14px;
-  --radius-md: 12px;
-  --shadow-soft: 0 10px 26px rgba(0,0,0,0.12);
-  --shadow-cloud: 0 14px 34px rgba(0,0,0,0.18);
-  --page-pad: clamp(16px, 4vw, 28px);
+  --slate-500: #64748b;
+  --stone-400: #a8a29e;
 }
 
-.LoginPage {
-  position: relative;
-  min-height: 100dvh;
-  padding: calc(var(--page-pad) + 6px) var(--page-pad) 140px;
-  background: radial-gradient(100% 100% at 50% 0%, var(--bg-pink) 0%, var(--bg-pink-2) 100%);
-  overflow-x: hidden;
-  font-family: Inter, system-ui, -apple-system, Segoe UI, Roboto, Arial, "Helvetica Neue", sans-serif;
-}
-
-/* Bottom decorative hills */
-.LoginPage-hills {
-  position: fixed;
-  left: 0;
-  right: 0;
-  bottom: 0;
-  width: 100%;
-  max-height: 46vh;
-  object-fit: cover;
-  pointer-events: none;
-  user-select: none;
-  z-index: 1;
-  opacity: 0.95;
-}
-
-/* Small clouds */
-.LoginPage-cloud {
-  position: absolute;
-  width: clamp(120px, 28vw, 220px);
-  filter: drop-shadow(var(--shadow-cloud));
-  z-index: 2;
-  user-select: none;
-  pointer-events: none;
-}
-.LoginPage-cloud--left {
-  top: 22vh;
-  left: min(6vw, 36px);
-}
-.LoginPage-cloud--right {
-  top: 26vh;
-  right: min(6vw, 36px);
-}
-
-/* Hero cloud with centered logo */
-.LoginPage-hero {
-  position: relative;
-  width: min(88vw, 520px);
-  margin: 8px auto 0 auto;
-  z-index: 3;
-}
-.LoginPage-heroCloud {
-  width: 100%;
-  height: auto;
-  display: block;
-  filter: drop-shadow(var(--shadow-cloud));
-}
-.LoginPage-heroLogo {
-  position: absolute;
-  inset: 0;
-  margin: auto;
-  width: 72%;
-  height: 72%;
-  object-fit: contain;
-}
-
-/* Title row with cat */
-.LoginPage-titleRow {
-  display: flex;
-  align-items: flex-end;
-  justify-content: center;
-  gap: clamp(6px, 1.8vw, 14px);
-  margin-top: clamp(18px, 4vh, 28px);
-  z-index: 3;
-  position: relative;
-}
-.LoginPage-title {
-  font-family: "Press Start 2P", monospace;
-  font-weight: 400;
-  color: #ffffff;
-  text-shadow: 0 4px 0 rgba(0,0,0,0.2), 0 10px 22px rgba(0,0,0,0.35);
-  font-size: clamp(28px, 7vw, 56px);
-  line-height: 1.1;
+/* Reset styles for mobile optimization */
+* {
   margin: 0;
+  padding: 0;
+  box-sizing: border-box;
 }
-.LoginPage-cat {
-  height: clamp(90px, 18vw, 170px);
-  width: auto;
-  object-fit: contain;
-  transform: translateY(6px);
-  filter: drop-shadow(0 8px 14px rgba(0,0,0,0.25));
-  user-select: none;
+
+body {
+  font-family: 'Inter', sans-serif;
+  overflow-x: hidden;
+}
+
+/* Main Login Container */
+.Login {
+  width: 384px;
+  height: 948px;
+  position: relative;
+  background: var(--fuchsia-200);
+  overflow: hidden;
+  margin: 0 auto;
+  max-width: 100vw;
+}
+
+/* Login Area Container */
+.LoginArea {
+  width: 384px;
+  height: 477px;
+  left: 13px;
+  top: 275px;
+  position: absolute;
+  overflow: hidden;
+}
+
+/* Email Field Container */
+.Frame306 {
+  width: 320px;
+  height: 80px;
+  left: 33px;
+  top: 99px;
+  position: absolute;
+  overflow: hidden;
+}
+
+.Frame307 {
+  width: 320px;
+  height: 40px;
+  left: 5px;
+  top: 29px;
+  position: absolute;
+  background: var(--white);
+  border-radius: 5px;
+  outline: 2px solid var(--black);
+  outline-offset: -2px;
+  overflow: hidden;
+}
+
+.EnterYourEmailAddress {
+  left: 11px;
+  top: 13px;
+  position: absolute;
+  justify-content: flex-start;
+  color: var(--zinc-400);
+  font-size: 12px;
+  font-weight: 500;
+  font-family: 'Inter', sans-serif;
   pointer-events: none;
 }
 
-/* Form */
-.LoginPage-form {
-  width: min(92vw, 640px);
-  margin: clamp(10px, 2.8vh, 20px) auto 0 auto;
-  z-index: 3;
-  position: relative;
-}
-
-.LoginPage-label {
-  display: block;
-  font-size: 18px;
-  font-weight: 700;
-  color: var(--ink);
-  margin: 18px 0 8px;
-}
-
-.LoginPage-input {
-  width: 100%;
-  background: var(--field-bg);
-  border: 3px solid var(--field-border);
-  border-radius: var(--radius-lg);
-  padding: 18px 18px;
-  font-size: 18px;
-  outline: none;
-  box-shadow: var(--shadow-soft);
-}
-.LoginPage-input::placeholder {
-  color: rgba(0,0,0,0.35);
-}
-
-/* Password field with eye toggle */
-.LoginPage-passwordWrap {
-  position: relative;
-}
-.LoginPage-input--password {
-  padding-right: 56px;
-}
-.LoginPage-togglePw {
+.Email {
+  left: 5px;
+  top: 10px;
   position: absolute;
-  right: 14px;
-  top: 50%;
-  transform: translateY(-50%);
-  width: 42px;
-  height: 42px;
-  border-radius: 999px;
-  border: none;
-  background: #eee;
-  color: #333;
-  display: grid;
-  place-items: center;
-  cursor: pointer;
-  box-shadow: 0 6px 14px rgba(0,0,0,0.12) inset;
-}
-.LoginPage-togglePw:hover {
-  background: #e6e6e6;
+  justify-content: flex-start;
+  color: var(--black);
+  font-size: 12px;
+  font-weight: 500;
+  font-family: 'Inter', sans-serif;
 }
 
-/* Forgot link */
-.LoginPage-forgot {
-  margin: 10px 0 18px;
-  padding: 0;
-  background: none;
-  border: none;
-  color: var(--ink);
-  font-weight: 600;
+/* Password Field Container */
+.Frame307.password-container {
+  width: 320px;
+  height: 80px;
+  left: 33px;
+  top: 177px;
+  position: absolute;
+  overflow: hidden;
+}
+
+.Frame307.password-input {
+  width: 320px;
+  height: 40px;
+  left: 5px;
+  top: 29px;
+  position: absolute;
+  background: var(--white);
+  border-radius: 5px;
+  outline: 2px solid var(--black);
+  outline-offset: -2px;
+  overflow: hidden;
+}
+
+.EnterYourPassword {
+  left: 11px;
+  top: 13px;
+  position: absolute;
+  justify-content: flex-start;
+  color: var(--zinc-400);
+  font-size: 12px;
+  font-weight: 500;
+  font-family: 'Inter', sans-serif;
+  pointer-events: none;
+}
+
+.HideSvgrepoCom1 {
+  width: 20px;
+  height: 20px;
+  left: 285px;
+  top: 10px;
+  position: absolute;
+  cursor: pointer;
+}
+
+.Password {
+  left: 5px;
+  top: 10px;
+  position: absolute;
+  justify-content: flex-start;
+  color: var(--black);
+  font-size: 12px;
+  font-weight: 500;
+  font-family: 'Inter', sans-serif;
+}
+
+/* Forgot Password */
+.ForgotPassword {
+  left: 38px;
+  top: 255px;
+  position: absolute;
+  justify-content: flex-start;
+  color: var(--black);
+  font-size: 10px;
+  font-weight: 500;
+  font-family: 'Inter', sans-serif;
+  cursor: pointer;
   text-decoration: none;
-  cursor: pointer;
 }
 
-/* Buttons */
-.LoginPage-btn {
+.ForgotPassword:hover {
+  text-decoration: underline;
+}
+
+/* Or text */
+.Or {
+  left: 187px;
+  top: 352px;
+  position: absolute;
+  justify-content: flex-start;
+  color: var(--black);
+  font-size: 20px;
+  font-weight: 500;
+  font-family: 'Inter', sans-serif;
+}
+
+/* Login Button */
+.LoginButton {
+  width: 320px;
+  height: 40px;
+  left: 38px;
+  top: 291px;
+  position: absolute;
+  background: var(--slate-500);
+  border-radius: 5px;
+  outline: 2px solid var(--white);
+  outline-offset: -2px;
+  overflow: hidden;
+  cursor: pointer;
+  border: none;
+}
+
+.LoginButton:hover {
+  background: #5a6c7d;
+}
+
+.LoginButton:disabled {
+  opacity: 0.7;
+  cursor: not-allowed;
+}
+
+.LoginButton .Login {
+  left: 138px;
+  top: 8px;
+  position: absolute;
+  justify-content: flex-start;
+  color: var(--white);
+  font-size: 24px;
+  font-weight: 400;
+  font-family: 'Jersey 10', monospace;
+}
+
+/* Register Button */
+.RegisterButton {
+  width: 320px;
+  height: 40px;
+  left: 38px;
+  top: 395px;
+  position: absolute;
+  background: var(--stone-400);
+  border-radius: 5px;
+  outline: 2px solid var(--white);
+  outline-offset: -2px;
+  overflow: hidden;
+  cursor: pointer;
+  border: none;
+}
+
+.RegisterButton:hover {
+  background: #9c9891;
+}
+
+.RegisterButton .Register {
+  left: 124px;
+  top: 8px;
+  position: absolute;
+  justify-content: flex-start;
+  color: var(--white);
+  font-size: 24px;
+  font-weight: 400;
+  font-family: 'Jersey 10', monospace;
+}
+
+/* Login Title and Cat */
+.LoginTitleAndCat {
+  width: 384px;
+  height: 96px;
+  padding: 3px 80px;
+  left: -4px;
+  top: 37px;
+  position: absolute;
+  display: inline-flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: flex-start;
+  gap: 10px;
+  overflow: hidden;
+}
+
+.LoginTitleAndCat2 {
   width: 100%;
-  border-radius: var(--radius-lg);
-  padding: 20px 18px;
-  border: 3px solid var(--field-border);
-  font-family: "Press Start 2P", monospace;
-  font-size: clamp(16px, 3.4vw, 22px);
-  line-height: 1;
-  cursor: pointer;
-  transition: transform 0.08s ease, filter 0.15s ease, background 0.15s ease;
-  box-shadow: var(--shadow-soft);
-}
-.LoginPage-btn:active {
-  transform: translateY(1px);
+  height: 80px;
+  display: inline-flex;
+  justify-content: center;
+  align-items: flex-start;
+  overflow: hidden;
 }
 
-.LoginPage-btn--primary {
-  background: var(--primary);
-  color: #fff;
-}
-.LoginPage-btn--primary:hover {
-  background: var(--primary-hover);
-}
-
-.LoginPage-btn--secondary {
-  margin-top: 12px;
-  background: var(--secondary);
-  color: #fff;
-}
-.LoginPage-btn--secondary:hover {
-  background: var(--secondary-hover);
+.EmtyDiv {
+  width: 64px;
+  height: 80px;
+  transform-origin: top left;
+  transform: rotate(180deg);
 }
 
-.LoginPage-or {
-  text-align: center;
-  margin: 20px 0 8px;
-  font-size: 28px;
-  font-weight: 700;
-  color: var(--ink);
+.LoginText {
+  justify-content: flex-start;
+  color: var(--white);
+  font-size: 48px;
+  font-weight: 400;
+  font-family: 'Jersey 10', monospace;
 }
 
-/* Responsiveness */
+.CatImage {
+  width: 64px;
+  height: 80px;
+}
+
+/* Bottom Hill */
+.BottomHill {
+  width: 384px;
+  height: 192px;
+  left: 0;
+  top: 760px;
+  position: absolute;
+}
+
+/* Cloud Sections */
+.CloudSection2 {
+  width: 384px;
+  height: 80px;
+  left: 1px;
+  top: 161px;
+  position: absolute;
+  overflow: hidden;
+}
+
+.WhiteCloud1 {
+  width: 96px;
+  height: 64px;
+  left: 323px;
+  top: 8px;
+  position: absolute;
+}
+
+.CloudSection3 {
+  width: 384px;
+  height: 80px;
+  left: 430px;
+  top: 293px;
+  position: absolute;
+  transform-origin: top left;
+  transform: rotate(180deg);
+  overflow: hidden;
+}
+
+.CloudSection3 .WhiteCloud1 {
+  left: 15px;
+  top: 8px;
+  position: absolute;
+}
+
+/* Logo and Main Cloud */
+.LogAndMainCloud {
+  width: 384px;
+  height: 288px;
+  left: 0;
+  top: 0;
+  position: absolute;
+  overflow: hidden;
+}
+
+.BackgroundCloudInsideLogo {
+  width: 288px;
+  height: 208px;
+  left: 73px;
+  top: 39px;
+  position: absolute;
+  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.15);
+  overflow: hidden;
+}
+
+.Logo {
+  width: 160px;
+  height: 96px;
+  left: 61px;
+  top: 56px;
+  position: absolute;
+}
+
+/* Ship at Bottom */
+.ShipAtTheBottom {
+  width: 112px;
+  height: 176px;
+  left: 158px;
+  top: 752px;
+  position: absolute;
+}
+
+/* Input Field Styles */
+.form-input {
+  width: 100%;
+  height: 100%;
+  border: none;
+  outline: none;
+  background: transparent;
+  padding: 0 11px;
+  font-size: 12px;
+  font-family: 'Inter', sans-serif;
+  color: var(--black);
+}
+
+.form-input::placeholder {
+  color: var(--zinc-400);
+}
+
+/* Mobile Responsive Styles */
 @media (max-width: 480px) {
-  .LoginPage-label {
-    font-size: 16px;
+  .Login {
+    width: 100vw;
+    min-height: 100vh;
+    height: auto;
+    transform: scale(0.9);
+    transform-origin: top center;
   }
-  .LoginPage-input {
-    padding: 16px 16px;
-    font-size: 16px;
-    border-width: 2.5px;
+  
+  .LoginArea {
+    width: calc(100vw - 26px);
+    left: 13px;
   }
-  .LoginPage-btn {
-    padding: 18px 16px;
-    border-width: 2.5px;
+  
+  .Frame306,
+  .Frame307.password-container {
+    width: calc(100vw - 66px);
+    left: 20px;
   }
-  .LoginPage-togglePw {
-    width: 38px;
-    height: 38px;
+  
+  .Frame307,
+  .Frame307.password-input {
+    width: calc(100vw - 76px);
+  }
+  
+  .LoginButton,
+  .RegisterButton {
+    width: calc(100vw - 76px);
+    left: 25px;
+  }
+  
+  .LoginButton .Login {
+    left: calc(50% - 25px);
+  }
+  
+  .RegisterButton .Register {
+    left: calc(50% - 35px);
+  }
+  
+  .Or {
+    left: calc(50% - 10px);
+  }
+  
+  .ForgotPassword {
+    left: 25px;
+  }
+  
+  .LoginTitleAndCat {
+    width: 100vw;
+    left: 0;
+    padding: 3px 20px;
+  }
+  
+  .LogAndMainCloud {
+    width: 100vw;
+  }
+  
+  .BackgroundCloudInsideLogo {
+    left: calc(50vw - 144px);
+  }
+  
+  .CloudSection2,
+  .CloudSection3 {
+    width: 100vw;
+  }
+  
+  .BottomHill {
+    width: 100vw;
+  }
+  
+  .ShipAtTheBottom {
+    left: calc(50vw - 56px);
+  }
+}
+
+@media (max-width: 390px) {
+  .Login {
+    transform: scale(0.85);
+  }
+  
+  .LoginText {
+    font-size: 42px;
+  }
+  
+  .CatImage {
+    width: 56px;
+    height: 70px;
+  }
+}
+
+@media (max-width: 360px) {
+  .Login {
+    transform: scale(0.8);
+  }
+  
+  .LoginText {
+    font-size: 38px;
+  }
+}
+
+/* Landscape mobile optimization */
+@media (max-width: 768px) and (orientation: landscape) {
+  .Login {
+    height: auto;
+    min-height: 100vh;
+    overflow-y: auto;
+  }
+  
+  .LoginArea {
+    top: 200px;
+  }
+  
+  .BottomHill {
+    top: 650px;
+  }
+  
+  .ShipAtTheBottom {
+    top: 642px;
   }
 }

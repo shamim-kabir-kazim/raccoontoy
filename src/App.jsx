@@ -4,6 +4,7 @@ import LandingPage from "./pages/LandingPage";
 import Header from "./components/Header";
 import SideMenu from "./components/SideMenu";
 import SorryPopup from "./components/SorryPopup";
+import LoginPage from "./pages/LoginPage";
 import "./App.css";
 
 function App() {
@@ -29,6 +30,7 @@ function App() {
       <SideMenu open={showMenu} onClose={() => setShowMenu(false)} />
       <Routes>
         <Route path="/" element={<LandingPage />} />
+        <Route path="/login" element={<LoginPage />} />
         {/* Add more routes here as your app grows */}
         <Route path="*" element={<Navigate to="/" />} />
       </Routes>

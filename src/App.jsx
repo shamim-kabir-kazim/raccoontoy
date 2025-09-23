@@ -29,7 +29,7 @@ function App() {
       <Header onMenuClick={() => setShowMenu(true)} />
       <SideMenu open={showMenu} onClose={() => setShowMenu(false)} />
       <Routes>
-        <Route path="/" element={<LandingPage />} />
+        <Route path="/Home" element={<LandingPage />} />
         <Route path="/login" element={<LoginPage />} />
         {/* Add more routes here as your app grows */}
         <Route path="*" element={<Navigate to="/" />} />

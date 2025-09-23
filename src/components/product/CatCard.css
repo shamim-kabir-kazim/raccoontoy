@@ -1,8 +1,6 @@
 .cat-card {
-  width: 13rem;           /* w-52 = 208px */
-  height: 14rem;          /* h-56 = 224px */
-  background: #fafaf9;    /* bg-stone-50 */
-  border-radius: 1rem;    /* rounded-2xl */
+  background: #fafaf9;
+  border-radius: 1rem;
   box-shadow: 0px 4px 4px 0px rgba(0,0,0,0.05);
   overflow: hidden;
   display: flex;
@@ -11,6 +9,22 @@
   align-items: center;
   gap: 10px;
   position: relative;
+  width: 100%;
+  min-width: 0;
+  height: auto;
+  box-sizing: border-box;
+}
+
+/* Add extra 20px height for mobile grid */
+@media (max-width: 600px) {
+  .cat-card {
+    height: calc(100% + 20px);
+  }
+}
+@media (max-width: 480px) {
+  .cat-card {
+    height: calc(100% + 20px);
+  }
 }
 
 .cat-card-img-box {
@@ -28,7 +42,7 @@
 .cat-card-img {
   width: 100%;
   height: 100%;
-  object-fit: contain; /* or cover if you want the image to fill box and crop */
+  object-fit: contain;
   display: block;
 }
 
@@ -52,33 +66,24 @@
   word-wrap: break-word;
 }
 
-/* Responsive design for mobile */
-@media (max-width: 768px) {
-  .cat-card {
-    width: 10rem;
-    height: 11rem;
+/* Responsive design for grid */
+@media (max-width: 900px) {
+  .cat-card-img-box {
+    width: 5rem;
+    height: 5rem;
   }
+}
+
+@media (max-width: 600px) {
   .cat-card-img-box {
     width: 6rem;
     height: 6rem;
-  }
-  .cat-card-img {
-    width: 100%;
-    height: 100%;
   }
 }
 
 @media (max-width: 480px) {
-  .cat-card {
-    width: 8.5rem;
-    height: 9.5rem;
-  }
   .cat-card-img-box {
-    width: 6rem;
-    height: 6rem;
-  }
-  .cat-card-img {
-    width: 100%;
-    height: 100%;
+    width: 5rem;
+    height: 5rem;
   }
 }

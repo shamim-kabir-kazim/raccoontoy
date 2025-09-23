@@ -35,10 +35,10 @@
 .category-scroll {
   display: flex;
   flex-direction: row;
-  gap: 8px;
+  gap: 8px 15px;
   overflow-x: auto;
   overflow-y: hidden;
-  padding: 0 36px 36px 36px;
+  padding: 36px 36px 36px 36px;
   scrollbar-width: thin;
   scrollbar-color: #ccc #f1f1f1;
   flex-wrap: nowrap;
@@ -65,29 +65,28 @@
   background: #f1f1f1;
 }
 
-@media (max-width: 768px) {
-  .category-scroll {
-    scrollbar-width: none;
-    -ms-overflow-style: none;
-  }
-  
-  .category-scroll::-webkit-scrollbar {
-    display: none;
-  }
-}
-
+/* Mobile grid style: three columns, increased row gap */
+/* Mobile grid style: three columns, increased row gap */
 @media (max-width: 600px) {
   .category-header {
     padding: 0 8px 8px 8px;
   }
-  
+
   .category-scroll {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 40px 8px; /* 40px between rows, 8px between columns */
     padding: 0 4px 16px 4px;
-    gap: 4px;
+    overflow-x: unset;
+    overflow-y: unset;
+    scrollbar-width: none;
+    -ms-overflow-style: none;
   }
-  
+
   .category-scroll > * {
-    min-width: 10rem;
+    min-width: 0;
+    width: 100%;
+    justify-self: stretch;
   }
 }
 
@@ -95,13 +94,8 @@
   .category-header {
     padding: 0 8px 8px 8px;
   }
-  
   .category-scroll {
-    padding: 0 4px 16px 4px;
-    gap: 4px;
-  }
-  
-  .category-scroll > * {
-    min-width: 8.5rem;
+    grid-template-columns: 1fr 1fr 1fr;
+    gap: 40px 8px; /* 40px between rows, 8px between columns */
   }
 }

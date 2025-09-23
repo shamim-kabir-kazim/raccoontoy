@@ -1,0 +1,247 @@
+/* Pixel display font for headings/buttons */
+@import url("https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap");
+/* Body font */
+@import url("https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap");
+
+:root {
+  --bg-pink: #f7c6f4;
+  --bg-pink-2: #f5baf0;
+  --ink: #121212;
+  --ink-50: rgba(0,0,0,0.5);
+  --white: #ffffff;
+  --primary: #6c71b5;   /* bluish button */
+  --primary-hover: #6268ab;
+  --secondary: #b2788e; /* mauve button */
+  --secondary-hover: #a66f85;
+  --field-bg: #ffffff;
+  --field-border: #101010;
+  --radius-lg: 14px;
+  --radius-md: 12px;
+  --shadow-soft: 0 10px 26px rgba(0,0,0,0.12);
+  --shadow-cloud: 0 14px 34px rgba(0,0,0,0.18);
+  --page-pad: clamp(16px, 4vw, 28px);
+}
+
+.LoginPage {
+  position: relative;
+  min-height: 100dvh;
+  padding: calc(var(--page-pad) + 6px) var(--page-pad) 140px;
+  background: radial-gradient(100% 100% at 50% 0%, var(--bg-pink) 0%, var(--bg-pink-2) 100%);
+  overflow-x: hidden;
+  font-family: Inter, system-ui, -apple-system, Segoe UI, Roboto, Arial, "Helvetica Neue", sans-serif;
+}
+
+/* Bottom decorative hills */
+.LoginPage-hills {
+  position: fixed;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  width: 100%;
+  max-height: 46vh;
+  object-fit: cover;
+  pointer-events: none;
+  user-select: none;
+  z-index: 1;
+  opacity: 0.95;
+}
+
+/* Small clouds */
+.LoginPage-cloud {
+  position: absolute;
+  width: clamp(120px, 28vw, 220px);
+  filter: drop-shadow(var(--shadow-cloud));
+  z-index: 2;
+  user-select: none;
+  pointer-events: none;
+}
+.LoginPage-cloud--left {
+  top: 22vh;
+  left: min(6vw, 36px);
+}
+.LoginPage-cloud--right {
+  top: 26vh;
+  right: min(6vw, 36px);
+}
+
+/* Hero cloud with centered logo */
+.LoginPage-hero {
+  position: relative;
+  width: min(88vw, 520px);
+  margin: 8px auto 0 auto;
+  z-index: 3;
+}
+.LoginPage-heroCloud {
+  width: 100%;
+  height: auto;
+  display: block;
+  filter: drop-shadow(var(--shadow-cloud));
+}
+.LoginPage-heroLogo {
+  position: absolute;
+  inset: 0;
+  margin: auto;
+  width: 72%;
+  height: 72%;
+  object-fit: contain;
+}
+
+/* Title row with cat */
+.LoginPage-titleRow {
+  display: flex;
+  align-items: flex-end;
+  justify-content: center;
+  gap: clamp(6px, 1.8vw, 14px);
+  margin-top: clamp(18px, 4vh, 28px);
+  z-index: 3;
+  position: relative;
+}
+.LoginPage-title {
+  font-family: "Press Start 2P", monospace;
+  font-weight: 400;
+  color: #ffffff;
+  text-shadow: 0 4px 0 rgba(0,0,0,0.2), 0 10px 22px rgba(0,0,0,0.35);
+  font-size: clamp(28px, 7vw, 56px);
+  line-height: 1.1;
+  margin: 0;
+}
+.LoginPage-cat {
+  height: clamp(90px, 18vw, 170px);
+  width: auto;
+  object-fit: contain;
+  transform: translateY(6px);
+  filter: drop-shadow(0 8px 14px rgba(0,0,0,0.25));
+  user-select: none;
+  pointer-events: none;
+}
+
+/* Form */
+.LoginPage-form {
+  width: min(92vw, 640px);
+  margin: clamp(10px, 2.8vh, 20px) auto 0 auto;
+  z-index: 3;
+  position: relative;
+}
+
+.LoginPage-label {
+  display: block;
+  font-size: 18px;
+  font-weight: 700;
+  color: var(--ink);
+  margin: 18px 0 8px;
+}
+
+.LoginPage-input {
+  width: 100%;
+  background: var(--field-bg);
+  border: 3px solid var(--field-border);
+  border-radius: var(--radius-lg);
+  padding: 18px 18px;
+  font-size: 18px;
+  outline: none;
+  box-shadow: var(--shadow-soft);
+}
+.LoginPage-input::placeholder {
+  color: rgba(0,0,0,0.35);
+}
+
+/* Password field with eye toggle */
+.LoginPage-passwordWrap {
+  position: relative;
+}
+.LoginPage-input--password {
+  padding-right: 56px;
+}
+.LoginPage-togglePw {
+  position: absolute;
+  right: 14px;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 42px;
+  height: 42px;
+  border-radius: 999px;
+  border: none;
+  background: #eee;
+  color: #333;
+  display: grid;
+  place-items: center;
+  cursor: pointer;
+  box-shadow: 0 6px 14px rgba(0,0,0,0.12) inset;
+}
+.LoginPage-togglePw:hover {
+  background: #e6e6e6;
+}
+
+/* Forgot link */
+.LoginPage-forgot {
+  margin: 10px 0 18px;
+  padding: 0;
+  background: none;
+  border: none;
+  color: var(--ink);
+  font-weight: 600;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+/* Buttons */
+.LoginPage-btn {
+  width: 100%;
+  border-radius: var(--radius-lg);
+  padding: 20px 18px;
+  border: 3px solid var(--field-border);
+  font-family: "Press Start 2P", monospace;
+  font-size: clamp(16px, 3.4vw, 22px);
+  line-height: 1;
+  cursor: pointer;
+  transition: transform 0.08s ease, filter 0.15s ease, background 0.15s ease;
+  box-shadow: var(--shadow-soft);
+}
+.LoginPage-btn:active {
+  transform: translateY(1px);
+}
+
+.LoginPage-btn--primary {
+  background: var(--primary);
+  color: #fff;
+}
+.LoginPage-btn--primary:hover {
+  background: var(--primary-hover);
+}
+
+.LoginPage-btn--secondary {
+  margin-top: 12px;
+  background: var(--secondary);
+  color: #fff;
+}
+.LoginPage-btn--secondary:hover {
+  background: var(--secondary-hover);
+}
+
+.LoginPage-or {
+  text-align: center;
+  margin: 20px 0 8px;
+  font-size: 28px;
+  font-weight: 700;
+  color: var(--ink);
+}
+
+/* Responsiveness */
+@media (max-width: 480px) {
+  .LoginPage-label {
+    font-size: 16px;
+  }
+  .LoginPage-input {
+    padding: 16px 16px;
+    font-size: 16px;
+    border-width: 2.5px;
+  }
+  .LoginPage-btn {
+    padding: 18px 16px;
+    border-width: 2.5px;
+  }
+  .LoginPage-togglePw {
+    width: 38px;
+    height: 38px;
+  }
+}

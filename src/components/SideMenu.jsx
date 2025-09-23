@@ -13,7 +13,8 @@ const fandoms = [
   "Demon Slayer"
 ];
 
-export default function SideMenu({ open, onClose }) {
+// You should replace this with your real authentication system!
+export default function SideMenu({ open, onClose, isLoggedIn = false }) {
   // Swipe to close
   const touchStartX = useRef(null);
   const touchEndX = useRef(null);
@@ -33,6 +34,16 @@ export default function SideMenu({ open, onClose }) {
     }
     touchStartX.current = null;
     touchEndX.current = null;
+  };
+
+  // Handlers for sign in/sign up
+  const handleSignIn = () => {
+    // Implement your sign in logic/modal
+    alert("Sign In clicked!");
+  };
+  const handleSignUp = () => {
+    // Implement your sign up logic/modal
+    alert("Sign Up clicked!");
   };
 
   return (
@@ -154,19 +165,36 @@ export default function SideMenu({ open, onClose }) {
             </div>
           </div>
 
-          {/* Row 5: Account/Logout */}
-          <div className="MenuRow row-5">
-            <div className="AccountLogutDiv" data-layer="account-logut-div">
-              <div className="UserProfileImg" data-layer="user-profile-img"></div>
-              <img
-                className="LogoutIcon"
-                data-layer="logout-icon"
-                src="https://i.postimg.cc/kGc63Kk8/logout-svgrepo-com-1.png"
-                alt="Logout"
-              />
-              <div className="UserName" data-layer="user-name">Shamim Kabir</div>
+          {/* Row 5: Account/Logout (only when logged in) */}
+          {isLoggedIn && (
+            <div className="MenuRow row-5">
+              <div className="AccountLogutDiv" data-layer="account-logut-div">
+                <div className="UserProfileImg" data-layer="user-profile-img"></div>
+                <img
+                  className="LogoutIcon"
+                  data-layer="logout-icon"
+                  src="https://i.postimg.cc/kGc63Kk8/logout-svgrepo-com-1.png"
+                  alt="Logout"
+                />
+                <div className="UserName" data-layer="user-name">Shamim Kabir</div>
+              </div>
             </div>
-          </div>
+          )}
+
+          {/* Row 6: Sign In / Sign Up (only when not logged in) */}
+          {!isLoggedIn && (
+            <div className="MenuRow row-6">
+              <div className="AuthButtonsDiv">
+                <button className="AuthButton SignInButton" onClick={handleSignIn}>
+                  Sign In
+                </button>
+                <button className="AuthButton SignUpButton" onClick={handleSignUp}>
+                  Sign Up
+                </button>
+              </div>
+            </div>
+          )}
+
         </div>
       </aside>
     </>

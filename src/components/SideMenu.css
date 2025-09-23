@@ -9,6 +9,7 @@
   background: rgb(186, 163, 255,0.74);
   backdrop-filter: blur(2px);  /* apply blur effect */
   -webkit-backdrop-filter: blur(2px); /* Safari support */
+
   border-top-right-radius: 30px;
   border-bottom-right-radius: 30px;
   overflow-y: auto;
@@ -75,7 +76,7 @@
 
 /* Menu Rows - General */
 .MenuRow {
-  width: 80%;
+  width: 80%; /* or whichever fixed width you use for other rows */
   display: flex;
   flex-direction: row;
   gap: 8px;
@@ -84,6 +85,7 @@
   margin: 0;
   margin-bottom: 10px;
   margin-top: 0;
+  
 }
 
 /* Numbered Rows for future targeting if needed */
@@ -322,8 +324,7 @@
   font-weight: 700;
   text-align: center;
 }
-
-/* Modern Auth Buttons - Row 6 */
+/* Row 6 styles */
 .MenuRow.row-6 {
   margin-top: auto !important;
   margin-bottom: 22px;
@@ -334,63 +335,42 @@
 
 .AuthButtonsDiv {
   display: flex;
-  gap: 18px;
+  gap: 16px;
   width: 100%;
   justify-content: center;
   align-items: center;
 }
 
 .AuthButton {
-  display: inline-block;
-  min-width: 120px;
-  padding: 12px 0;
-  border-radius: 14px;
-  font-size: 1.08rem;
-  font-family: 'Inter', Arial, sans-serif;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  padding: 10px 24px;
+  border-radius: 8px;
+  font-size: 1rem;
+  font-family: Inter, Arial, sans-serif;
   font-weight: 600;
-  letter-spacing: 0.03em;
   border: none;
-  outline: none;
-  background: linear-gradient(90deg, #7F7FD5 0%, #86A8E7 50%, #91EAE4 100%);
-  color: #222;
-  box-shadow: 0 4px 18px rgba(91, 128, 255, 0.13);
-  transition:
-    background 0.28s cubic-bezier(.4,0,.2,1),
-    box-shadow 0.21s cubic-bezier(.4,0,.2,1),
-    color 0.21s cubic-bezier(.4,0,.2,1),
-    transform 0.17s cubic-bezier(.4,0,.2,1);
+  background: #fff;
+  color: #673ab7;
   cursor: pointer;
-  position: relative;
-  z-index: 1;
+  box-shadow: 0 1px 6px rgba(60,20,110,0.09);
+  transition: background 0.2s, color 0.2s;
 }
 
 .AuthButton.SignInButton {
-  background: linear-gradient(90deg, #ffecd2 0%, #fcb69f 100%);
-  color: #ff5e62;
-  box-shadow: 0 2px 12px rgba(255, 94, 98, 0.13);
-}
-
-.AuthButton.SignUpButton {
-  background: linear-gradient(90deg, #e0c3fc 0%, #8ec5fc 100%);
+  background: #ede7f6;
   color: #5e35b1;
-  box-shadow: 0 2px 12px rgba(126, 53, 177, 0.13);
+}
+.AuthButton.SignUpButton {
+  background: #fffde7;
+  color: #ff9800;
 }
 
-.AuthButton:hover, .AuthButton:focus {
-  transform: translateY(-2px) scale(1.04);
-  box-shadow: 0 6px 24px rgba(91, 128, 255, 0.21);
-  background: linear-gradient(90deg, #6a82fb 0%, #fc5c7d 100%);
-  color: #fff;
-}
-
-.AuthButton.SignInButton:hover, .AuthButton.SignInButton:focus {
-  background: linear-gradient(90deg, #fcb69f 0%, #ffecd2 100%);
-  color: #fff;
-}
-
-.AuthButton.SignUpButton:hover, .AuthButton.SignUpButton:focus {
-  background: linear-gradient(90deg, #8ec5fc 0%, #e0c3fc 100%);
-  color: #fff;
+.AuthButton:hover,
+.AuthButton:focus {
+  background: #d1c4e9;
+  color: #311b92;
 }
 
 /* Account/Logout */

@@ -5,7 +5,9 @@
   z-index: 1200;
   width: 80%;
   height: 100vh;
-  min-height: 520px;
+  height: 100dvh; /* Use dynamic viewport height for mobile */
+  min-height: 100vh;
+  min-height: 100dvh; /* Use dynamic viewport height for mobile */
   background: rgb(186, 163, 255,0.74);
   backdrop-filter: blur(2px);  /* apply blur effect */
   -webkit-backdrop-filter: blur(2px); /* Safari support */
@@ -33,6 +35,8 @@
   height: 100%;
   justify-content: flex-start;
   align-items: center;
+  padding: 10px 0;
+  box-sizing: border-box;
 }
 
 .SideMenu-backdrop {
@@ -42,6 +46,7 @@
   left: 0;
   width: 100vw;
   height: 100vh;
+  height: 100dvh; /* Use dynamic viewport height for mobile */
   background: rgba(40, 40, 40, 0.19);
   opacity: 0;
   pointer-events: none;
@@ -52,26 +57,27 @@
   pointer-events: auto;
 }
 
-/* Logo */
+/* Logo - Fixed positioning and sizing */
 .LogoDiv {
   width: 259px;
-  height: 119px;
-  margin: 0 auto;
-  margin-top: 0;
-  overflow: hidden;
+  height: 100px;
+  margin: 10px auto;
+  overflow: visible; /* Changed from hidden to visible */
   border-radius: 15px;
   display: flex;
   align-items: center;
   justify-content: center;
   position: relative;
+  flex-shrink: 0;
 }
 .Logo {
   width: 123px;
   height: 73px;
-  position: absolute;
-  left: 50%;
-  top: 23px;
-  transform: translateX(-50%);
+  position: relative; /* Changed from absolute to relative */
+  left: auto; /* Reset positioning */
+  top: auto; /* Reset positioning */
+  transform: none; /* Remove transform */
+  object-fit: contain; /* Ensure proper scaling */
 }
 
 /* Menu Rows - General */
@@ -83,9 +89,9 @@
   justify-content: flex-start;
   align-items: center;
   margin: 0;
-  margin-bottom: 10px;
+  margin-bottom: 8px;
   margin-top: 0;
-  
+  flex-shrink: 0;
 }
 
 /* Numbered Rows for future targeting if needed */
@@ -95,7 +101,7 @@
 .MenuRow.row-4,
 .MenuRow.row-5 {
   gap: 8px;
-  margin-bottom: 10px;
+  margin-bottom: 8px;
   padding: 0 18px;
 }
 
@@ -152,6 +158,7 @@
   border-radius: 15px;
   display: flex;
   flex-direction: column;
+  max-height: 200px; /* Limit height on mobile */
 }
 .CategoryDivHeader {
   width: 100%;
@@ -160,6 +167,7 @@
   overflow: hidden;
   display: flex;
   align-items: center;
+  flex-shrink: 0;
 }
 .CategoriesHeaderTitle {
   color: white;
@@ -182,6 +190,7 @@
   display: flex;
   flex-direction: column;
   gap: 6px;
+  overflow-y: auto;
 }
 .CategoryMenuItems {
   width: 100%;
@@ -216,6 +225,7 @@
   border-radius: 15px;
   display: flex;
   flex-direction: column;
+  max-height: 200px; /* Limit height on mobile */
 }
 .FandomsHeaderSection {
   width: 100%;
@@ -224,6 +234,7 @@
   overflow: hidden;
   display: flex;
   align-items: center;
+  flex-shrink: 0;
 }
 .FandomsHeaderTitle {
   color: white;
@@ -246,6 +257,7 @@
   display: flex;
   flex-direction: column;
   gap: 6px;
+  overflow-y: auto;
 }
 .FandomsMenuItems {
   width: 100%;
@@ -324,7 +336,8 @@
   font-weight: 700;
   text-align: center;
 }
-/* Row 6 styles */
+
+/* Row 6 styles - Updated for vertical layout */
 .MenuRow.row-6 {
   margin-top: auto !important;
   margin-bottom: 22px;
@@ -335,8 +348,9 @@
 
 .AuthButtonsDiv {
   display: flex;
-  gap: 16px;
-  width: 100%;
+  flex-direction: column;
+  gap: 12px;
+  width: 200px;
   justify-content: center;
   align-items: center;
 }
@@ -344,33 +358,39 @@
 .AuthButton {
   display: flex;
   align-items: center;
-  gap: 6px;
-  padding: 10px 24px;
+  justify-content: center;
+  padding: 12px 20px;
   border-radius: 8px;
-  font-size: 1rem;
+  font-size: 14px;
   font-family: Inter, Arial, sans-serif;
   font-weight: 600;
-  border: none;
-  background: #fff;
-  color: #673ab7;
   cursor: pointer;
-  box-shadow: 0 1px 6px rgba(60,20,110,0.09);
-  transition: background 0.2s, color 0.2s;
+  transition: all 0.2s ease;
+  width: 100%;
+  min-height: 44px;
+  border: 2px solid;
 }
 
 .AuthButton.SignInButton {
-  background: #ede7f6;
-  color: #5e35b1;
-}
-.AuthButton.SignUpButton {
-  background: #fffde7;
-  color: #ff9800;
+  background: #000;
+  color: white;
+  border-color: #000;
 }
 
-.AuthButton:hover,
-.AuthButton:focus {
-  background: #d1c4e9;
-  color: #311b92;
+.AuthButton.SignUpButton {
+  background: white;
+  color: #000;
+  border-color: #000;
+}
+
+.AuthButton.SignInButton:hover {
+  background: #333;
+  border-color: #333;
+}
+
+.AuthButton.SignUpButton:hover {
+  background: #f5f5f5;
+  border-color: #333;
 }
 
 /* Account/Logout */
@@ -416,6 +436,51 @@
   white-space: nowrap;
 }
 
+/* Mobile Specific Adjustments */
+@media (max-width: 768px) {
+  .SideMenu.slide {
+    /* Ensure proper height on mobile */
+    height: 100vh;
+    height: 100dvh;
+    min-height: 100vh;
+    min-height: 100dvh;
+  }
+  
+  .SideMenu-content {
+    padding: 5px 0;
+  }
+  
+  .LogoDiv {
+    height: 90px;
+    margin: 5px auto;
+    width: 220px;
+  }
+  
+  .Logo {
+    width: 100px;
+    height: 60px;
+  }
+  
+  .MenuRow {
+    margin-bottom: 6px;
+  }
+  
+  .CategoryDiv,
+  .FandomsDiv {
+    max-height: 150px;
+  }
+  
+  .AuthButtonsDiv {
+    width: 180px;
+  }
+  
+  .AuthButton {
+    padding: 10px 16px;
+    min-height: 40px;
+    font-size: 13px;
+  }
+}
+
 /* Responsive */
 @media (max-width: 370px) {
   .SideMenu {
@@ -426,17 +491,34 @@
   .SideMenu-content {
     width: 100vw;
     min-width: 0;
+    padding: 5px 0;
   }
   .MenuRow, .MenuRow.row-1, .MenuRow.row-2, .MenuRow.row-3, .MenuRow.row-4, .MenuRow.row-5 {
     padding: 0 6px;
     gap: 6px;
+    margin-bottom: 5px;
   }
   .CategoryDiv, .FandomsDiv {
     width: 98vw;
     min-width: 0;
+    max-height: 120px;
   }
   .AccountLogutDiv {
     width: 98vw;
     left: 1vw;
+  }
+  .AuthButtonsDiv {
+    width: 90vw;
+  }
+  
+  .LogoDiv {
+    height: 80px;
+    width: 95vw;
+    margin: 5px auto;
+  }
+  
+  .Logo {
+    width: 90px;
+    height: 55px;
   }
 }

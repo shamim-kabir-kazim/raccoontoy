@@ -181,7 +181,7 @@ export default function SideMenu({ open, onClose, isLoggedIn = false }) {
             </div>
           )}
 
-          {/* Row 6: Sign In / Sign Up (only when not logged in) */}
+          {/* Row 6: Sign In / Sign Up (only when not logged in) - Updated without icons */}
           {!isLoggedIn && (
             <div className="MenuRow row-6">
               <div className="AuthButtonsDiv">

@@ -27,12 +27,12 @@ body {
 
 /* Main Login Container */
 .Login {
-  width: 430px;
+  width: 100vw;
   height: 948px;
   position: relative;
   background: var(--background-purple);
   overflow: hidden;
-  margin: 0 auto;
+  margin: 0px;
   max-width: 100vw;
 }
 

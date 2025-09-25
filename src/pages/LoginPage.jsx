@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import "./LoginPage.css";
+import BottomNavBar from "../components/BottomNavBar"; // <-- Added
 
 /**
  * LoginPage - Updated to match new Figma design with glassmorphism effect
@@ -175,6 +176,7 @@ export default function LoginPage({
           <span className="signup-link" onClick={handleSignUp}> Sign Up</span>
         </div>
       </div>
+      <BottomNavBar /> {/* <-- Added: Bottom navigation like LandingPage */}
     </div>
   );
 }

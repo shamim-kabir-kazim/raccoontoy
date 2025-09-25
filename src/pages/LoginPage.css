@@ -20,39 +20,43 @@
   box-sizing: border-box;
 }
 
-body {
+body,
+html {
   font-family: 'Inter', sans-serif;
-  overflow-x: hidden;
+  width: 100vw;
+  height: 100vh;
+  min-height: 100vh;
+  overflow: hidden;
 }
 
-/* Main Login Container */
-.Login {
+/* Main Login Container - center content vertically and horizontally, fill viewport */
+.log-Login {
   width: 100vw;
+  height: 100vh;
   min-height: 100vh;
-  height: auto;
-  position: relative;
   background: var(--background-purple);
   overflow: hidden;
   margin: 0;
   max-width: 100vw;
-  /* Removed transform: scale(...) */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
 }
 
 /* Login Area Container with Blur Background */
-.LoginArea {
+.log-LoginArea {
   width: 380px;
   height: 608px;
-  left: 25px;
-  top: 170px;
-  position: absolute;
   background: rgba(255, 255, 255, 0.25);
   overflow: hidden;
   border-radius: 30px;
   backdrop-filter: blur(2px);
+  position: relative;
 }
 
 /* Header Frame with Logo/Title */
-.Frame62511 {
+.log-Frame62511 {
   width: 380px;
   height: 132px;
   left: 0px;
@@ -61,7 +65,7 @@ body {
 }
 
 /* Input Fields Container */
-.Frame626 {
+.log-Frame626 {
   width: 380px;
   padding-left: 35px;
   padding-right: 35px;
@@ -77,7 +81,7 @@ body {
 }
 
 /* Individual Input Field Container */
-.LoginDiv {
+.log-LoginDiv {
   width: 326px;
   height: 98px;
   position: relative;
@@ -85,7 +89,7 @@ body {
 }
 
 /* Input Area Styling */
-.InputArea {
+.log-InputArea {
   width: 319px;
   height: 49px;
   left: 5px;
@@ -99,7 +103,7 @@ body {
 }
 
 /* Input Field Styling */
-.form-input {
+.log-form-input {
   width: 100%;
   height: 100%;
   border: none;
@@ -111,13 +115,13 @@ body {
   color: var(--black);
 }
 
-.form-input::placeholder {
+.log-form-input::placeholder {
   color: var(--gray-placeholder);
   font-weight: 500;
 }
 
 /* Input Labels */
-.EmailText {
+.log-EmailText {
   left: 5px;
   top: 10px;
   position: absolute;
@@ -128,7 +132,7 @@ body {
 }
 
 /* Password Toggle Button */
-.PasswordHideAndShowButton {
+.log-PasswordHideAndShowButton {
   width: 21px;
   height: 21px;
   left: 276px;
@@ -138,7 +142,7 @@ body {
 }
 
 /* Forgot Password Link */
-.ForgotPassword {
+.log-ForgotPassword {
   width: 319px;
   left: 32px;
   top: 330px;
@@ -151,12 +155,12 @@ body {
   text-decoration: none;
 }
 
-.ForgotPassword:hover {
+.log-ForgotPassword:hover {
   text-decoration: underline;
 }
 
 /* Login Button */
-.LoginButton {
+.log-LoginButton {
   width: 319px;
   height: 56px;
   left: 32px;
@@ -174,7 +178,7 @@ body {
   justify-content: center;
 }
 
-.LoginButton .Login {
+.log-LoginButton .log-Login {
   position: absolute;
   color: var(--white);
   font-size: 36px;
@@ -183,7 +187,7 @@ body {
 }
 
 /* Google Sign-in Button */
-.GoogleSigninButton {
+.log-GoogleSigninButton {
   width: 319px;
   padding: 10px 21px;
   left: 32px;
@@ -202,12 +206,12 @@ body {
   border: none;
 }
 
-.GoogleIcon {
+.log-GoogleIcon {
   width: 31px;
   height: 31px;
 }
 
-.GoogleText {
+.log-GoogleText {
   color: var(--black);
   font-size: 16px;
   font-family: 'Inter', sans-serif;
@@ -215,20 +219,20 @@ body {
 }
 
 /* Sign Up Text */
-.SignUpText {
+.log-SignUpText {
   left: 80px;
   top: 554px;
   position: absolute;
 }
 
-.SignUpText .normal-text {
+.log-SignUpText .log-normal-text {
   color: var(--text-white);
   font-size: 16px;
   font-family: 'Inter', sans-serif;
   font-weight: 500;
 }
 
-.SignUpText .signup-link {
+.log-SignUpText .log-signup-link {
   color: var(--signup-link);
   font-size: 16px;
   font-family: 'Inter', sans-serif;
@@ -237,12 +241,12 @@ body {
   text-decoration: none;
 }
 
-.SignUpText .signup-link:hover {
+.log-SignUpText .log-signup-link:hover {
   text-decoration: underline;
 }
 
 /* Or Text */
-.Or {
+.log-Or {
   width: 256px;
   left: 62px;
   top: 442px;
@@ -256,76 +260,80 @@ body {
 
 /* Mobile Responsive Styles */
 @media (max-width: 480px) {
-  .Login {
+  .log-Login {
     width: 100vw;
+    height: 100vh;
     min-height: 100vh;
-    height: auto;
-    /* Removed transform: scale(0.9); */
+    /* Center content vertically and horizontally */
+    display: flex;
+    align-items: center;
+    justify-content: center;
   }
   
-  .LoginArea {
+  .log-LoginArea {
     width: calc(100vw - 50px);
-    left: 25px;
-    right: 25px;
+    left: unset;
+    right: unset;
+    top: unset;
+    min-height: 400px;
+    max-height: 95vh;
   }
   
-  .Frame626 {
+  .log-Frame626 {
     width: calc(100vw - 50px);
     padding-left: 20px;
     padding-right: 20px;
   }
   
-  .LoginDiv {
+  .log-LoginDiv {
     width: calc(100vw - 90px);
   }
   
-  .InputArea {
+  .log-InputArea {
     width: calc(100vw - 100px);
   }
   
-  .LoginButton,
-  .GoogleSigninButton {
+  .log-LoginButton,
+  .log-GoogleSigninButton {
     width: calc(100vw - 100px);
     left: 25px;
   }
   
-  .ForgotPassword {
+  .log-ForgotPassword {
     left: 25px;
     width: calc(100vw - 100px);
   }
   
-  .Or {
+  .log-Or {
     left: 0;
     width: 100vw;
   }
   
-  .SignUpText {
+  .log-SignUpText {
     left: 50px;
     width: calc(100vw - 100px);
   }
 }
 
 @media (max-width: 390px) {
-  .Login {
-    /* Removed transform: scale(0.85); */
-  }
+  .log-LoginArea { min-height: 300px; }
 }
 
 @media (max-width: 360px) {
-  .Login {
-    /* Removed transform: scale(0.8); */
-  }
+  .log-LoginArea { min-height: 220px; }
 }
 
 /* Landscape mobile optimization */
 @media (max-width: 768px) and (orientation: landscape) {
-  .Login {
-    height: auto;
-    min-height: 100vh;
-    overflow-y: auto;
+  .log-Login {
+    height: 100vh !important;
+    min-height: 100vh !important;
+    overflow-y: hidden !important;
+    display: flex;
+    align-items: center;
+    justify-content: center;
   }
-  
-  .LoginArea {
-    top: 100px;
+  .log-LoginArea {
+    top: unset;
   }
 }

@@ -1,16 +1,7 @@
 import React, { useState } from "react";
 import "./LoginPage.css";
-import BottomNavBar from "../components/BottomNavBar"; // <-- Added
+import BottomNavBar from "../components/BottomNavBar";
 
-/**
- * LoginPage - Updated to match new Figma design with glassmorphism effect
- *
- * Props:
- * - onSubmit: (email, password) => void | Promise<void>
- * - onForgotPassword: () => void
- * - onSignUp: () => void
- * - onGoogleSignIn: () => void
- */
 export default function LoginPage({
   onSubmit,
   onForgotPassword,
@@ -73,110 +64,87 @@ export default function LoginPage({
   };
 
   return (
-    <div data-layer="Login" className="Login">
-      {/* Login Area with Glassmorphism Effect */}
-      <div data-layer="login area" className="LoginArea">
-        {/* Header Frame */}
+    <div className="log-Login">
+      <div className="log-LoginArea">
         <img 
-          data-layer="Frame 625 (1) 1" 
-          className="Frame62511" 
+          className="log-Frame62511" 
           src="https://i.postimg.cc/XNZwMs6C/Frame_625_(1).png" 
           alt="Header"
         />
-        
-        {/* Input Fields Container */}
-        <div data-layer="Frame 626" className="Frame626">
+        <div className="log-Frame626">
           <form onSubmit={handleSubmit}>
-            {/* Email Field */}
-            <div data-layer="login-div" className="LoginDiv">
-              <div data-layer="input area" className="InputArea">
+            <div className="log-LoginDiv">
+              <div className="log-InputArea">
                 <input
                   type="email"
-                  className="form-input"
+                  className="log-form-input"
                   placeholder="Enter Your Email Address"
                   value={email}
                   onChange={(e) => setEmail(e.target.value)}
                   required
                 />
               </div>
-              <div data-layer="email text" className="EmailText">Email</div>
+              <div className="log-EmailText">Email</div>
             </div>
-
-            {/* Password Field */}
-            <div data-layer="login-div" className="LoginDiv">
-              <div data-layer="input area" className="InputArea">
+            <div className="log-LoginDiv">
+              <div className="log-InputArea">
                 <input
                   type={showPassword ? "text" : "password"}
-                  className="form-input"
+                  className="log-form-input"
                   placeholder="Enter Your Password"
                   value={password}
                   onChange={(e) => setPassword(e.target.value)}
                   required
                 />
                 <img
-                  data-layer="hide-svgrepo-com 2"
-                  className="PasswordHideAndShowButton"
+                  className="log-PasswordHideAndShowButton"
                   src="https://i.postimg.cc/2yPQJZSM/hide-svgrepo-com-1.png"
                   alt="Toggle password visibility"
                   onClick={togglePasswordVisibility}
                 />
               </div>
-              <div data-layer="email text" className="EmailText">Password</div>
+              <div className="log-EmailText">Password</div>
             </div>
           </form>
         </div>
-
-        {/* Forgot Password Link */}
         <a
           href="#"
-          data-layer="Forgot Password ?"
-          className="ForgotPassword"
+          className="log-ForgotPassword"
           onClick={handleForgotPassword}
         >
           Forgot Password ?
         </a>
-
-        {/* Login Button */}
         <button
           type="submit"
-          data-layer="login button"
-          className="LoginButton"
+          className="log-LoginButton"
           onClick={handleSubmit}
           disabled={submitting || !email || !password}
         >
-          <div data-layer="Login" className="Login">
+          <div className="log-Login">
             {submitting ? "Loading..." : "Login"}
           </div>
         </button>
-
-        {/* Or Text */}
-        <div data-layer="or" className="Or">or</div>
-
-        {/* Google Sign-in Button */}
+        <div className="log-Or">or</div>
         <button
           type="button"
-          data-layer="login button"
-          className="GoogleSigninButton"
+          className="log-GoogleSigninButton"
           onClick={handleGoogleSignIn}
         >
           <img
-            data-layer="google-svgrepo-com 1"
-            className="GoogleIcon"
+            className="log-GoogleIcon"
             src="https://i.postimg.cc/0rRkhkRc/google-svgrepo-com.png"
             alt="Google"
           />
-          <div data-layer="Continue With Google" className="GoogleText">
+          <div className="log-GoogleText">
             Continue With Google
           </div>
         </button>
-
-        {/* Sign Up Text */}
-        <div data-layer="Dont Have an account ! Sign Up" className="SignUpText">
-          <span className="normal-text">Dont Have an account !</span>
-          <span className="signup-link" onClick={handleSignUp}> Sign Up</span>
+        <div className="log-SignUpText">
+          <span className="log-normal-text">Dont Have an account !</span>
+          <span className="log-signup-link" onClick={handleSignUp}> Sign Up</span>
         </div>
       </div>
-      <BottomNavBar /> {/* <-- Added: Bottom navigation like LandingPage */}
+      <BottomNavBar />
     </div>
   );
 }

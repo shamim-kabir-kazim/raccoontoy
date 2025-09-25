@@ -6,18 +6,11 @@
 :root {
   --background-purple: #BAA3FF;
   --white: #ffffff;
-<<<<<<< HEAD
   --black: #000000;
   --gray-placeholder: #BABABA;
   --login-button: #6D6AAC;
   --signup-link: #445CD4;
   --text-white: #FAFAFA;
-=======
-  --slate-500: #64748b;
-  --slate-600: #475569;
-  --stone-400: #a8a29e;
-  --stone-500: #78716c;
->>>>>>> 4c412cc8bf53e62cf32db59da368475a93af7bb0
 }
 
 /* Reset styles for mobile optimization */
@@ -43,7 +36,6 @@ body {
   max-width: 100vw;
 }
 
-<<<<<<< HEAD
 /* Login Area Container with Blur Background */
 .LoginArea {
   width: 380px;
@@ -123,91 +115,10 @@ body {
 }
 
 /* Input Labels */
-=======
-/* Updated Login Area Container - New dimensions */
-.LoginArea {
-  width: 384px;
-  height: 384px;
-  position: relative;
-  overflow: hidden;
-  left: 13px;
-  top: 275px;
-}
-
-/* Updated Login Title and Cat - New positioning */
-.LoginTitleAndCat {
-  width: 384px;
-  height: 96px;
-  padding: 3px 80px;
-  left: 0;
-  top: 47px;
-  position: absolute;
-  display: inline-flex;
-  flex-direction: column;
-  justify-content: flex-start;
-  align-items: flex-start;
-  gap: 10px;
-  overflow: hidden;
-}
-
-.LoginTitleAndCat2 {
-  width: 100%;
-  height: 80px;
-  display: inline-flex;
-  justify-content: center;
-  align-items: flex-start;
-  overflow: hidden;
-}
-
-.EmtyDiv {
-  width: 64px;
-  height: 80px;
-  transform-origin: top left;
-  transform: rotate(180deg);
-}
-
-.LoginText {
-  justify-content: flex-start;
-  color: var(--white);
-  font-size: 48px;
-  font-weight: 400;
-  font-family: 'Jersey 10', monospace;
-}
-
-.CatImage {
-  width: 64px;
-  height: 80px;
-}
-
-/* Updated Email Field Container - New class names and positioning */
-.LoginDiv {
-  width: 320px;
-  height: 80px;
-  left: 38px;
-  top: 109px;
-  position: absolute;
-  overflow: hidden;
-}
-
-.InputArea {
-  width: 320px;
-  height: 40px;
-  left: 5px;
-  top: 29px;
-  position: absolute;
-  background: var(--white);
-  border-radius: 5px;
-  outline: 2px solid var(--black);
-  outline-offset: -2px;
-  overflow: hidden;
-}
-
->>>>>>> 4c412cc8bf53e62cf32db59da368475a93af7bb0
 .EmailText {
   left: 5px;
   top: 10px;
   position: absolute;
-<<<<<<< HEAD
   color: var(--black);
   font-size: 15px;
   font-family: 'Inter', sans-serif;
@@ -220,48 +131,10 @@ body {
   height: 21px;
   left: 276px;
   top: 14.50px;
-=======
-  justify-content: flex-start;
-  color: var(--black);
-  font-size: 12px;
-  font-weight: 500;
-  font-family: 'Inter', sans-serif;
-}
-
-/* Updated Password Field Container - New class names and positioning */
-.PasswordDiv {
-  width: 320px;
-  height: 80px;
-  left: 38px;
-  top: 197px;
-  position: absolute;
-  overflow: hidden;
-}
-
-.PasswordInputArea {
-  width: 320px;
-  height: 40px;
-  left: 5px;
-  top: 29px;
-  position: absolute;
-  background: var(--white);
-  border-radius: 5px;
-  outline: 2px solid var(--black);
-  outline-offset: -2px;
-  overflow: hidden;
-}
-
-.PasswordHideAndShowButton {
-  width: 20px;
-  height: 20px;
-  left: 285px;
-  top: 10px;
->>>>>>> 4c412cc8bf53e62cf32db59da368475a93af7bb0
   position: absolute;
   cursor: pointer;
 }
 
-<<<<<<< HEAD
 /* Forgot Password Link */
 .ForgotPassword {
   width: 319px;
@@ -272,30 +145,6 @@ body {
   font-size: 15px;
   font-family: 'Inter', sans-serif;
   font-weight: 500;
-=======
-.Passwordtext {
-  left: 5px;
-  top: 10px;
-  position: absolute;
-  justify-content: flex-start;
-  color: var(--black);
-  font-size: 12px;
-  font-weight: 500;
-  font-family: 'Inter', sans-serif;
-}
-
-/* Updated Forgot Password - New positioning and width */
-.ForgotPassword {
-  width: 320px;
-  left: 43px;
-  top: 285px;
-  position: absolute;
-  justify-content: flex-start;
-  color: var(--black);
-  font-size: 10px;
-  font-weight: 500;
-  font-family: 'Inter', sans-serif;
->>>>>>> 4c412cc8bf53e62cf32db59da368475a93af7bb0
   cursor: pointer;
   text-decoration: none;
 }
@@ -304,7 +153,6 @@ body {
   text-decoration: underline;
 }
 
-<<<<<<< HEAD
 /* Login Button */
 .LoginButton {
   width: 319px;
@@ -317,26 +165,11 @@ body {
   border-radius: 5px;
   outline: 2px var(--white) solid;
   outline-offset: -2px;
-=======
-/* ENHANCED Login Button - IMPROVED VISIBILITY */
-.LoginButton {
-  width: 320px;
-  height: 40px;
-  left: 42.5px;
-  top: 307px;
-  position: absolute;
-  background: var(--slate-500);
-  border-radius: 5px;
-  outline: 2px solid var(--white);
-  outline-offset: -2px;
-  overflow: hidden;
->>>>>>> 4c412cc8bf53e62cf32db59da368475a93af7bb0
   cursor: pointer;
   border: none;
   display: flex;
   align-items: center;
   justify-content: center;
-<<<<<<< HEAD
 }
 
 .LoginButton .Login {
@@ -373,179 +206,6 @@ body {
 }
 
 .GoogleText {
-=======
-  transition: background-color 0.2s ease;
-  z-index: 10; /* Ensure button is above other elements */
-}
-
-.LoginButton:hover {
-  background: var(--slate-600);
-}
-
-.LoginButton:disabled {
-  opacity: 0.7;
-  cursor: not-allowed;
-}
-
-.LoginButton .Login {
-  left: 138px;
-  top: 8px;
-  position: absolute;
-  justify-content: flex-start;
-  color: var(--white);
-  font-size: 24px;
-  font-weight: 400;
-  font-family: 'Jersey 10', monospace;
-}
-
-/* Updated Or text - New positioning with text-center */
-.Or {
-  width: 384px;
-  left: 0;
-  top: 359px;
-  position: absolute;
-  text-align: center;
-  justify-content: flex-start;
-  color: var(--black);
-  font-size: 20px;
-  font-weight: 500;
-  font-family: 'Inter', sans-serif;
-}
-
-/* ENHANCED Register Button - IMPROVED VISIBILITY */
-.RegisterButton {
-  width: 320px;
-  height: 40px;
-  left: 42.5px;
-  top: 393px;
-  position: absolute;
-  background: var(--stone-400);
-  border-radius: 5px;
-  outline: 2px solid var(--white);
-  outline-offset: -2px;
-  overflow: hidden;
-  cursor: pointer;
-  border: none;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  transition: background-color 0.2s ease;
-  z-index: 10; /* Ensure button is above other elements */
-}
-
-.RegisterButton:hover {
-  background: var(--stone-500);
-}
-
-.RegisterButton .Register {
-  left: 124px;
-  top: 8px;
-  position: absolute;
-  justify-content: flex-start;
-  color: var(--white);
-  font-size: 24px;
-  font-weight: 400;
-  font-family: 'Jersey 10', monospace;
-}
-
-/* Logo and Main Cloud */
-.LogAndMainCloud {
-  width: 384px;
-  height: 288px;
-  left: 0;
-  top: 0;
-  position: absolute;
-  overflow: hidden;
-}
-
-/* FIXED: Background Cloud Inside Logo - NO DROP SHADOW */
-.BackgroundCloudInsideLogo {
-  width: 288px;
-  height: 208px;
-  left: 73px;
-  top: 39px;
-  position: absolute;
-  /* REMOVED: box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.15); */
-  overflow: hidden;
-  background-size: cover;
-  background-position: center;
-  background-repeat: no-repeat;
-  border-radius: 15px;
-}
-
-.Logo {
-  width: 160px;
-  height: 96px;
-  left: 61px;
-  top: 56px;
-  position: absolute;
-  z-index: 2;
-}
-
-/* Cloud Sections */
-.CloudSection2 {
-  width: 384px;
-  height: 80px;
-  left: 1px;
-  top: 161px;
-  position: absolute;
-  overflow: hidden;
-}
-
-.WhiteCloud1 {
-  width: 96px;
-  height: 64px;
-  left: 323px;
-  top: 8px;
-  position: absolute;
-}
-
-.CloudSection3 {
-  width: 384px;
-  height: 80px;
-  left: 430px;
-  top: 293px;
-  position: absolute;
-  transform-origin: top left;
-  transform: rotate(180deg);
-  overflow: hidden;
-}
-
-.CloudSection3 .WhiteCloud1 {
-  left: 15px;
-  top: 8px;
-  position: absolute;
-}
-
-/* Bottom Hill */
-.BottomHill {
-  width: 384px;
-  height: 192px;
-  left: 0;
-  top: 760px;
-  position: absolute;
-}
-
-/* Ship at Bottom */
-.ShipAtTheBottom {
-  width: 112px;
-  height: 176px;
-  left: 158px;
-  top: 752px;
-  position: absolute;
-}
-
-/* Input Field Styles */
-.form-input {
-  width: 100%;
-  height: 100%;
-  border: none;
-  outline: none;
-  background: transparent;
-  padding: 0 11px;
-  font-size: 12px;
-  font-family: 'Inter', sans-serif;
->>>>>>> 4c412cc8bf53e62cf32db59da368475a93af7bb0
   color: var(--black);
   font-size: 16px;
   font-family: 'Inter', sans-serif;
@@ -603,28 +263,7 @@ body {
   }
   
   .LoginArea {
-<<<<<<< HEAD
     width: calc(100vw - 50px);
-=======
-    width: calc(100vw - 26px);
-    left: 13px;
-  }
-  
-  .LoginDiv,
-  .PasswordDiv {
-    width: calc(100vw - 66px);
-    left: 20px;
-  }
-  
-  .InputArea,
-  .PasswordInputArea {
-    width: calc(100vw - 76px);
-  }
-  
-  .LoginButton,
-  .RegisterButton {
-    width: calc(100vw - 76px);
->>>>>>> 4c412cc8bf53e62cf32db59da368475a93af7bb0
     left: 25px;
   }
   
@@ -638,7 +277,6 @@ body {
     width: calc(100vw - 90px);
   }
   
-<<<<<<< HEAD
   .InputArea {
     width: calc(100vw - 100px);
   }
@@ -647,20 +285,11 @@ body {
   .GoogleSigninButton {
     width: calc(100vw - 100px);
     left: 25px;
-=======
-  .Or {
-    left: 0;
-    width: 100vw;
->>>>>>> 4c412cc8bf53e62cf32db59da368475a93af7bb0
   }
   
   .ForgotPassword {
     left: 25px;
-<<<<<<< HEAD
     width: calc(100vw - 100px);
-=======
-    width: calc(100vw - 76px);
->>>>>>> 4c412cc8bf53e62cf32db59da368475a93af7bb0
   }
   
   .Or {

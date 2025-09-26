@@ -18,7 +18,7 @@ export default function LoginPage({
   const inputAreaRef = useRef(null);
   const topPartRef = useRef(null);
 
-  // Improved function to position header to touch input area
+  // Improved function to position header to touch input area with 0px gap
   const positionHeaderToInput = () => {
     if (headerRef.current && inputAreaRef.current && topPartRef.current) {
       const header = headerRef.current;
@@ -46,15 +46,15 @@ export default function LoginPage({
         // Calculate gap between header bottom and input top
         const gap = inputTop - headerBottom;
         
-        // Apply transform to close the gap (subtract 2px for slight overlap)
-        if (gap > 2) {
-          header.style.transform = `translateY(${gap - 2}px)`;
-        } else if (gap < -2) {
-          // If overlapping too much, push apart slightly
-          header.style.transform = `translateY(${gap + 2}px)`;
+        // Apply transform to close the gap completely (0px gap)
+        if (gap > 0) {
+          header.style.transform = `translateY(${gap}px)`;
+        } else if (gap < 0) {
+          // If overlapping, push apart slightly
+          header.style.transform = `translateY(${gap}px)`;
         }
         
-        console.log(`Gap: ${gap}px, Applied transform: translateY(${gap > 2 ? gap - 2 : gap < -2 ? gap + 2 : 0}px)`);
+        console.log(`Gap: ${gap}px, Applied transform: translateY(${gap}px)`);
       } catch (error) {
         console.error('Error positioning header:', error);
       }

@@ -410,6 +410,7 @@ html {
   .log-Frame62511 {
     height: 100px;
     top: 40px;
+    background-color: red;
   }
   
   .log-Frame626 {
@@ -417,6 +418,7 @@ html {
     padding-right: 25px;
     top: 112px;
     gap: 6px;
+    background-color: yellow;
     
   }
   

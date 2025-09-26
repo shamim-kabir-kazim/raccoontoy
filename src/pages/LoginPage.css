@@ -433,7 +433,7 @@ html {
     border-radius: 16px;
     padding: var(--spacing-sm);
     gap: 15px; /* KEEP 15px gap on small mobile */
-    padding-bottom: 30px;
+    padding-bottom: 50px;
   }
   
   /* SMALL MOBILE: Header touches input - NO GAP - JavaScript handles positioning */
@@ -491,6 +491,7 @@ html {
     border-radius: 12px;
     min-height: auto;
     gap: 15px; /* KEEP 15px gap on very small mobile */
+    padding-bottom: 30px;
   }
   
   /* VERY SMALL MOBILE: Header touches input - NO GAP - JavaScript handles positioning */

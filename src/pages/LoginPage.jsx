@@ -1,6 +1,7 @@
 import React, { useState, useEffect, useRef } from "react";
 import "./LoginPage.css";
 import BottomNavBar from "../components/BottomNavBar";
+import loginCatImage from "../assets/other/login&cat.png";
 
 export default function LoginPage({
   onSubmit,
@@ -187,8 +188,8 @@ export default function LoginPage({
           <img 
             ref={headerRef}
             className="log-Frame62511" 
-            src="https://i.postimg.cc/XNZwMs6C/Frame_625_(1).png" 
-            alt="Header"
+            src={loginCatImage} 
+            alt="Login Header with Cat"
             onLoad={() => setTimeout(positionHeaderToInput, 10)}
           />
           <div className="log-Frame626">

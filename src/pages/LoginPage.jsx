@@ -111,7 +111,7 @@ export default function LoginPage({
           </div>
           <a
             href="#"
-            className="log-ForgotPassword small-forgot-password"
+            className="log-ForgotPassword"
             onClick={handleForgotPassword}
           >
             Forgot Password ?
@@ -126,9 +126,7 @@ export default function LoginPage({
             onClick={handleSubmit}
             disabled={submitting || !email || !password}
           >
-            <div className="log-Login login-text-visible">
-              {submitting ? "Loading..." : "Login"}
-            </div>
+            {submitting ? "Loading..." : "Login"}
           </button>
           <div className="log-Or">or</div>
           <button

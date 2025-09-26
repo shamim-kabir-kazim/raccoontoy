@@ -87,14 +87,13 @@ html {
   gap: var(--spacing-md);
 }
 
-/* Header Frame - MANUALLY POSITIONED LOWER */
+/* Header Frame - NO MANUAL TRANSFORMS (JavaScript handles positioning) */
 .log-Frame62511 {
   width: 100%;
   max-width: 350px;
   height: auto;
   display: block;
   margin-bottom: var(--spacing-sm); /* NORMAL MARGIN FOR DESKTOP */
-  transform: translateY(8px); /* MANUALLY MOVE 8px DOWN - CHANGE THIS VALUE */
 }
 
 /* Input Fields Container - RESPONSIVE FLEXBOX */
@@ -252,10 +251,10 @@ html {
   font-weight: 500;
 }
 
-/* Sign Up Text - RESPONSIVE */
+/* Sign Up Text - FIXED 5px SPACING */
 .log-SignUpText {
   text-align: center;
-  margin-top: var(--spacing-sm);
+  margin-top: 5px; /* FIXED 5px gap from Google button */
 }
 
 .log-SignUpText .log-normal-text {
@@ -282,7 +281,7 @@ html {
 
 /* RESPONSIVE BREAKPOINTS */
 
-/* Mobile First Approach - HEADER TOUCHES INPUT ON MOBILE */
+/* Mobile First Approach - JavaScript handles header positioning */
 @media (max-width: 768px) {
   .log-Login {
     min-height: var(--available-height-mobile);
@@ -304,10 +303,9 @@ html {
     gap: 0; /* NO INTERNAL GAP on mobile */
   }
   
-  /* MOBILE: Header image touches input field + MANUAL POSITION */
+  /* MOBILE: JavaScript handles positioning - remove transforms */
   .log-Frame62511 {
     margin-bottom: 0; /* NO BOTTOM MARGIN on mobile */
-    transform: translateY(12px); /* MANUALLY MOVE 12px DOWN ON MOBILE - CHANGE THIS VALUE */
   }
   
   .bottom-part {
@@ -327,6 +325,11 @@ html {
   .log-ForgotPassword {
     margin-top: 0.125rem; /* Even closer on mobile */
   }
+  
+  /* Sign up text with 5px spacing on mobile */
+  .log-SignUpText {
+    margin-top: 5px; /* KEEP 5px gap on mobile */
+  }
 }
 
 /* Tablet */
@@ -337,14 +340,18 @@ html {
     gap: 15px; /* KEEP 15px gap on tablet */
   }
   
-  /* TABLET: Keep normal spacing + MANUAL POSITION */
+  /* TABLET: Keep normal spacing - JavaScript handles positioning */
   .top-part {
     gap: var(--spacing-md); /* NORMAL SPACING on tablet */
   }
   
   .log-Frame62511 {
     margin-bottom: var(--spacing-sm); /* NORMAL MARGIN on tablet */
-    transform: translateY(6px); /* MANUALLY MOVE 6px DOWN ON TABLET - CHANGE THIS VALUE */
+  }
+  
+  /* Sign up text with 5px spacing on tablet */
+  .log-SignUpText {
+    margin-top: 5px; /* KEEP 5px gap on tablet */
   }
 }
 
@@ -356,18 +363,22 @@ html {
     gap: 15px; /* KEEP 15px gap on desktop */
   }
   
-  /* DESKTOP: Keep normal spacing + MANUAL POSITION */
+  /* DESKTOP: Keep normal spacing - JavaScript handles positioning */
   .top-part {
     gap: var(--spacing-md); /* NORMAL SPACING on desktop */
   }
   
   .log-Frame62511 {
     margin-bottom: var(--spacing-sm); /* NORMAL MARGIN on desktop */
-    transform: translateY(8px); /* MANUALLY MOVE 8px DOWN ON DESKTOP - CHANGE THIS VALUE */
   }
   
   .bottom-part {
     gap: var(--spacing-lg);
+  }
+  
+  /* Sign up text with 5px spacing on desktop */
+  .log-SignUpText {
+    margin-top: 5px; /* KEEP 5px gap on desktop */
   }
 }
 
@@ -378,18 +389,22 @@ html {
     gap: 15px; /* KEEP 15px gap on large desktop */
   }
   
-  /* LARGE DESKTOP: Keep normal spacing + MANUAL POSITION */
+  /* LARGE DESKTOP: Keep normal spacing - JavaScript handles positioning */
   .top-part {
     gap: var(--spacing-md); /* NORMAL SPACING on large desktop */
   }
   
   .log-Frame62511 {
     margin-bottom: var(--spacing-sm); /* NORMAL MARGIN on large desktop */
-    transform: translateY(10px); /* MANUALLY MOVE 10px DOWN ON LARGE DESKTOP - CHANGE THIS VALUE */
+  }
+  
+  /* Sign up text with 5px spacing on large desktop */
+  .log-SignUpText {
+    margin-top: 5px; /* KEEP 5px gap on large desktop */
   }
 }
 
-/* Small Mobile - HEADER TOUCHES INPUT + MANUAL POSITION */
+/* Small Mobile - JavaScript handles header positioning */
 @media (max-width: 480px) {
   .log-Login {
     padding: var(--spacing-xs);
@@ -405,14 +420,13 @@ html {
     padding-bottom: 30px;
   }
   
-  /* SMALL MOBILE: Header touches input - NO GAP + MANUAL POSITION */
+  /* SMALL MOBILE: Header touches input - NO GAP - JavaScript handles positioning */
   .top-part {
     gap: 0; /* NO INTERNAL GAP on small mobile */
   }
   
   .log-Frame62511 {
     margin-bottom: 0; /* NO BOTTOM MARGIN on small mobile */
-    transform: translateY(25px); /* MANUALLY MOVE 15px DOWN ON SMALL MOBILE - CHANGE THIS VALUE */
   }
   
   .log-InputArea {
@@ -439,9 +453,14 @@ html {
   .log-Frame626 {
     margin-top: 0; /* NO TOP MARGIN on small mobile */
   }
+  
+  /* Sign up text with 5px spacing on small mobile */
+  .log-SignUpText {
+    margin-top: 5px; /* KEEP 5px gap on small mobile */
+  }
 }
 
-/* Very Small Mobile - HEADER TOUCHES INPUT + MANUAL POSITION */
+/* Very Small Mobile - JavaScript handles header positioning */
 @media (max-width: 360px) {
   :root {
     --spacing-xs: 0.375rem;
@@ -458,14 +477,13 @@ html {
     gap: 15px; /* KEEP 15px gap on very small mobile */
   }
   
-  /* VERY SMALL MOBILE: Header touches input - NO GAP + MANUAL POSITION */
+  /* VERY SMALL MOBILE: Header touches input - NO GAP - JavaScript handles positioning */
   .top-part {
     gap: 0; /* NO INTERNAL GAP on very small mobile */
   }
   
   .log-Frame62511 {
     margin-bottom: 0; /* NO BOTTOM MARGIN on very small mobile */
-    transform: translateY(18px); /* MANUALLY MOVE 18px DOWN ON VERY SMALL MOBILE - CHANGE THIS VALUE */
   }
   
   .log-InputArea {
@@ -494,9 +512,14 @@ html {
   .log-Frame626 {
     margin-top: 0; /* NO TOP MARGIN on very small mobile */
   }
+  
+  /* Sign up text with 5px spacing on very small mobile */
+  .log-SignUpText {
+    margin-top: 5px; /* KEEP 5px gap on very small mobile */
+  }
 }
 
-/* Landscape orientation - HEADER TOUCHES INPUT + MANUAL POSITION */
+/* Landscape orientation - JavaScript handles header positioning */
 @media (max-width: 768px) and (orientation: landscape) {
   .log-Login {
     min-height: calc(100vh - 65px - 68px);
@@ -511,18 +534,22 @@ html {
     gap: 15px; /* KEEP 15px gap in landscape */
   }
   
-  /* LANDSCAPE: Header touches input - NO GAP + MANUAL POSITION */
+  /* LANDSCAPE: Header touches input - NO GAP - JavaScript handles positioning */
   .top-part {
     gap: 0; /* NO INTERNAL GAP in landscape */
   }
   
   .log-Frame62511 {
     margin-bottom: 0; /* NO BOTTOM MARGIN in landscape */
-    transform: translateY(10px); /* MANUALLY MOVE 10px DOWN IN LANDSCAPE - CHANGE THIS VALUE */
   }
   
   .bottom-part {
     gap: var(--spacing-xs);
+  }
+  
+  /* Sign up text with 5px spacing in landscape */
+  .log-SignUpText {
+    margin-top: 5px; /* KEEP 5px gap in landscape */
   }
 }
 

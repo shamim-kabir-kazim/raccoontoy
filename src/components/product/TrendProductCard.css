@@ -64,18 +64,19 @@
   z-index: 3;
 }
 
-/* Card Body */
+/* Card Body - ENSURES CENTERING OF CHILDREN */
 .tren-card-body {
   display: flex;
   flex-direction: column;
-  align-items: center;
-  flex: 1 1 auto;
+  align-items: center; /* Centers all children horizontally */
   justify-content: flex-start;
   position: relative;
   height: 100%;
+  width: 100%;
+  margin-top: 15px;
 }
 
-/* Image Section */
+/* Image Section - PERFECTLY CENTERED WITHIN CARD BODY */
 .tren-img-circle {
   width: 153px;
   height: 153px;
@@ -84,16 +85,19 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  margin: 0 auto;
+  /* CENTERING THE CIRCLE DIV ITSELF */
+  margin-left: auto;
+  margin-right: auto;
+  /* OR alternatively, you can use: */
+  /* align-self: center; */
   overflow: hidden;
-  margin-top: 0; /* start at top */
+  flex-shrink: 0;
 }
 
 .tren-product-img {
-  width: 153px;
-  height: 153px;
-  object-fit: contain;
-  border-radius: 50%;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
   display: block;
   background: transparent;
 }
@@ -147,7 +151,7 @@
   font-size: 12px;
   font-weight: 600;
   cursor: pointer;
-  margin: 0 auto 0 auto;
+  margin: 0 auto;
 }
 
 /* Responsive */
@@ -159,6 +163,7 @@
     max-width: 180px;
     border-radius: 16px;
     margin: 0;
+    padding-top: 20px;
   }
   .tren-top-section {
     height: 36px;
@@ -168,29 +173,72 @@
     left: 9px;
   }
   .tren-img-circle {
-    width: 110px;
-    height: 110px;
+    width: 90px;
+    height: 90px;
+    /* ENSURE CENTERING ON MOBILE */
+    margin-left: auto;
+    margin-right: auto;
   }
   .tren-product-img {
-    width: 110px;
-    height: 110px;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
   }
   .tren-info {
-    margin-top: 5px;
-    margin-bottom: 5px;
+    margin-top: 3px;
+    margin-bottom: 3px;
   }
   .tren-name {
-    font-size: 12px;
+    font-size: 11px;
+    line-height: 1.2;
   }
   .tren-subtitle {
-    font-size: 9px;
+    font-size: 8px;
+    margin-top: 1px;
   }
   .tren-price {
-    font-size: 11px;
+    font-size: 10px;
+    margin-top: 3px;
   }
   .tren-buy-btn {
+    width: 70px;
+    height: 24px;
+    font-size: 9px;
+    margin-top: 2px;
+  }
+}
+
+/* Extra small devices (under 360px) */
+@media (max-width: 360px) {
+  .tren-trend-card {
+    width: 140px;
+    height: 190px;
+    padding-top: 15px;
+  }
+  .tren-img-circle {
     width: 80px;
-    height: 26px;
+    height: 80px;
+    /* ENSURE CENTERING ON VERY SMALL SCREENS */
+    margin-left: auto;
+    margin-right: auto;
+  }
+  .tren-info {
+    margin-top: 2px;
+    margin-bottom: 2px;
+  }
+  .tren-name {
     font-size: 10px;
+  }
+  .tren-subtitle {
+    font-size: 7px;
+  }
+  .tren-price {
+    font-size: 9px;
+    margin-top: 2px;
+  }
+  .tren-buy-btn {
+    width: 65px;
+    height: 22px;
+    font-size: 8px;
   }
 }

@@ -5,6 +5,7 @@ import Header from "./components/Header";
 import SideMenu from "./components/SideMenu";
 import SorryPopup from "./components/SorryPopup";
 import LoginPage from "./pages/LoginPage";
+import SignUpPage from "./pages/SignUpPage"; // ADD THIS IMPORT
 import "./App.css";
 
 function App() {
@@ -31,6 +32,7 @@ function App() {
       <Routes>
         <Route path="/" element={<LandingPage />} />
         <Route path="/login" element={<LoginPage />} />
+        <Route path="/signup" element={<SignUpPage />} /> {/* ADD THIS ROUTE */}
         {/* Add more routes here as your app grows */}
         <Route path="*" element={<Navigate to="/" />} />
       </Routes>

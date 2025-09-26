@@ -44,9 +44,11 @@ export default function SideMenu({ open, onClose, isLoggedIn = false }) {
     navigate("/login");
     onClose();
   };
+  
+  // UPDATED: Navigate to signup page instead of showing alert
   const handleSignUp = () => {
-    // Implement your sign up logic/modal or navigate to a register page if you add one
-    alert("Sign Up clicked!");
+    navigate("/signup");
+    onClose();
   };
 
   return (

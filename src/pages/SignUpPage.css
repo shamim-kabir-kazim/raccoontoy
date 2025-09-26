@@ -8,16 +8,18 @@
   --white: #ffffff;
   --black: #000000;
   --gray-placeholder: #BABABA;
-  --login-button: #6D6AAC;
-  --signup-link: #445CD4;
+  --signup-button: #6D6AAC;
+  --login-link: #445CD4;
   --text-white: #FAFAFA;
+  --error-color: #ff4757;
+  --success-color: #2ed573;
   
-  /* Responsive spacing */
-  --spacing-xs: 0.5rem;
-  --spacing-sm: 1rem;
-  --spacing-md: 1.5rem;
-  --spacing-lg: 2rem;
-  --spacing-xl: 3rem;
+  /* Responsive spacing - REDUCED FOR COMPACT DESIGN */
+  --spacing-xs: 0.25rem;
+  --spacing-sm: 0.5rem;
+  --spacing-md: 0.75rem;
+  --spacing-lg: 1rem;
+  --spacing-xl: 1.5rem;
   
   /* Dynamic space calculations */
   --header-height-desktop: 96px;
@@ -43,8 +45,8 @@ html {
   min-height: 100vh;
 }
 
-/* Main Login Container - FULLY RESPONSIVE */
-.log-Login {
+/* Main SignUp Container - FULLY RESPONSIVE */
+.sup-SignUp {
   width: 100%;
   min-height: var(--available-height-desktop);
   background: var(--background-purple);
@@ -54,67 +56,70 @@ html {
   padding: var(--spacing-md);
 }
 
-/* Login Area Container - RESPONSIVE FLEXBOX */
-.log-LoginArea {
+/* SignUp Area Container - RESPONSIVE FLEXBOX - REDUCED HEIGHT */
+.sup-SignUpArea {
   width: 100%;
   max-width: 420px;
-  min-height: 600px;
+  min-height: 600px; /* REDUCED from 700px to 600px */
   background: rgba(255, 255, 255, 0.25);
   border-radius: 30px;
   backdrop-filter: blur(2px);
   display: flex;
   flex-direction: column;
   justify-content: center;
-  padding: var(--spacing-lg);
-  gap: 15px; /* FIXED 15px GAP between top-part and bottom-part */
+  padding: var(--spacing-lg); /* REDUCED padding */
+  gap: 10px; /* REDUCED from 15px to 10px GAP */
 }
 
-/* Top part container - NORMAL GAP FOR DESKTOP */
+/* Top part container - REDUCED GAP */
 .top-part {
   width: 100%;
   display: flex;
   flex-direction: column;
   align-items: center;
-  gap: var(--spacing-md); /* NORMAL SPACING FOR DESKTOP */
+  gap: var(--spacing-sm); /* REDUCED SPACING */
 }
 
-/* Bottom part container - RESPONSIVE */
+/* Bottom part container - REDUCED GAP */
 .bottom-part {
   width: 100%;
   display: flex;
   flex-direction: column;
   align-items: center;
-  gap: var(--spacing-md);
+  gap: var(--spacing-sm); /* REDUCED GAP */
 }
 
-/* Header Frame - NO MANUAL TRANSFORMS (JavaScript handles positioning) */
-.log-Frame62511 {
+/* Sign Up Title - Jersey 10 Font - REDUCED SIZE */
+.sup-SignUpTitle {
   width: 100%;
-  max-width: 350px;
-  height: auto;
-  display: block;
-  margin-bottom: var(--spacing-sm); /* NORMAL MARGIN FOR DESKTOP */
+  text-align: center;
+  color: var(--white);
+  font-size: clamp(2.5rem, 6vw, 3.5rem); /* REDUCED from 3rem-4.5rem to 2.5rem-3.5rem */
+  font-family: 'Jersey 10', monospace;
+  font-weight: 400;
+  margin-bottom: var(--spacing-xs); /* REDUCED margin */
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.1);
 }
 
-/* Input Fields Container - RESPONSIVE FLEXBOX */
-.log-Frame626 {
+/* Input Fields Container - REDUCED GAP */
+.sup-Frame626 {
   width: 100%;
   display: flex;
   flex-direction: column;
-  gap: var(--spacing-sm);
+  gap: var(--spacing-xs); /* REDUCED from var(--spacing-sm) */
   margin-top: 0;
 }
 
-/* Individual Input Field Container - RESPONSIVE - FIXED ORDER */
-.log-LoginDiv {
+/* Individual Input Field Container - REDUCED GAP */
+.sup-InputDiv {
   width: 100%;
   display: flex;
   flex-direction: column;
-  gap: var(--spacing-xs);
+  gap: 0.125rem; /* REDUCED from var(--spacing-xs) */
 }
 
 /* Input Labels - RESPONSIVE - POSITIONED FIRST */
-.log-EmailText {
+.sup-InputLabel {
   color: var(--black);
   font-size: clamp(0.875rem, 2vw, 1rem);
   font-family: 'Inter', sans-serif;
@@ -123,7 +128,7 @@ html {
 }
 
 /* Input Area - RESPONSIVE - POSITIONED SECOND */
-.log-InputArea {
+.sup-InputArea {
   position: relative;
   width: 100%;
   height: clamp(45px, 8vw, 55px);
@@ -134,7 +139,7 @@ html {
 }
 
 /* Input Field - RESPONSIVE - NO FOCUS OUTLINE */
-.log-form-input {
+.sup-form-input {
   width: 100%;
   height: 100%;
   border: none;
@@ -147,18 +152,18 @@ html {
   border-radius: 8px;
 }
 
-.log-form-input::placeholder {
+.sup-form-input::placeholder {
   color: var(--gray-placeholder);
   font-weight: 500;
 }
 
 /* Remove focus outline from input fields */
-.log-form-input:focus {
+.sup-form-input:focus {
   outline: none !important;
 }
 
 /* Password Toggle Button - RESPONSIVE */
-.log-PasswordHideAndShowButton {
+.sup-PasswordToggleButton {
   position: absolute;
   right: 1rem;
   top: 50%;
@@ -168,33 +173,69 @@ html {
   cursor: pointer;
 }
 
-/* Forgot Password Link - RESPONSIVE - FIXED WIDTH AND SPACING - NO FOCUS OUTLINE */
-.log-ForgotPassword {
-  width: 100%; /* Same width as input area */
-  text-align: left;
-  color: var(--black);
-  font-size: clamp(0.8125rem, 2vw, 0.9375rem);
-  font-family: 'Inter', sans-serif;
-  font-weight: 500;
-  cursor: pointer;
-  text-decoration: none;
-  margin-top: 0.25rem; /* Reduced from var(--spacing-xs) to bring it closer */
+/* Checkbox Section - REDUCED SPACING */
+.sup-CheckboxSection {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: 0.25rem; /* REDUCED from 0.5rem */
+  margin-top: 0.25rem; /* REDUCED from 0.5rem */
 }
 
-.log-ForgotPassword:hover {
+.sup-CheckboxDiv {
+  width: 100%;
+  display: flex;
+  align-items: flex-start;
+  gap: 0.375rem; /* REDUCED from 0.5rem */
+}
+
+.sup-checkbox {
+  width: 16px; /* REDUCED from 18px */
+  height: 16px; /* REDUCED from 18px */
+  margin: 0;
+  cursor: pointer;
+  accent-color: var(--signup-button);
+}
+
+.sup-CheckboxLabel {
+  color: var(--black);
+  font-size: clamp(0.75rem, 1.8vw, 0.875rem); /* REDUCED font size */
+  font-family: 'Inter', sans-serif;
+  font-weight: 500;
+  line-height: 1.3; /* REDUCED line height */
+  cursor: pointer;
+  flex: 1;
+}
+
+.sup-link {
+  color: var(--login-link);
+  cursor: pointer;
   text-decoration: underline;
 }
 
-/* Remove focus outline from forgot password link */
-.log-ForgotPassword:focus {
-  outline: none !important;
+.sup-link:hover {
+  color: #3748c9;
 }
 
-/* Login Button - RESPONSIVE */
-.log-LoginButton {
+/* Error Messages - REDUCED SIZE */
+.sup-error {
+  color: var(--error-color);
+  font-size: clamp(0.7rem, 1.6vw, 0.8rem); /* REDUCED font size */
+  font-family: 'Inter', sans-serif;
+  font-weight: 500;
+  order: 3; /* Position after input */
+}
+
+.sup-submit-error {
+  text-align: center;
+  margin-bottom: 0.25rem; /* REDUCED margin */
+}
+
+/* Sign Up Button - RESPONSIVE */
+.sup-SignUpButton {
   width: 100%;
   height: clamp(50px, 10vw, 60px);
-  background: var(--login-button);
+  background: var(--signup-button);
   border-radius: 8px;
   border: 2px solid var(--white);
   cursor: pointer;
@@ -206,22 +247,22 @@ html {
   font-family: 'Jersey 10', monospace;
   font-weight: 400;
   transition: all 0.3s ease;
-  margin-top: 10px;
+  margin-top: 5px; /* REDUCED from 10px */
 }
 
-.log-LoginButton:hover {
+.sup-SignUpButton:hover {
   transform: translateY(-2px);
   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
 }
 
-.log-LoginButton:disabled {
+.sup-SignUpButton:disabled {
   opacity: 0.7;
   cursor: not-allowed;
   transform: none;
 }
 
 /* Or Text - RESPONSIVE */
-.log-Or {
+.sup-Or {
   width: 100%;
   text-align: center;
   color: var(--text-white);
@@ -231,7 +272,7 @@ html {
 }
 
 /* Google Sign-in Button - RESPONSIVE */
-.log-GoogleSigninButton {
+.sup-GoogleSigninButton {
   width: 100%;
   height: clamp(50px, 10vw, 60px);
   background: var(--white);
@@ -245,38 +286,38 @@ html {
   transition: all 0.3s ease;
 }
 
-.log-GoogleSigninButton:hover {
+.sup-GoogleSigninButton:hover {
   transform: translateY(-2px);
   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
 }
 
-.log-GoogleIcon {
+.sup-GoogleIcon {
   width: clamp(24px, 5vw, 32px);
   height: clamp(24px, 5vw, 32px);
 }
 
-.log-GoogleText {
+.sup-GoogleText {
   color: var(--black);
   font-size: clamp(0.875rem, 2.5vw, 1rem);
   font-family: 'Inter', sans-serif;
   font-weight: 500;
 }
 
-/* Sign Up Text - FIXED 5px SPACING */
-.log-SignUpText {
+/* Login Text - REDUCED SPACING */
+.sup-LoginText {
   text-align: center;
-  margin-top: 5px; /* FIXED 5px gap from Google button */
+  margin-top: 3px; /* REDUCED from 5px to 3px */
 }
 
-.log-SignUpText .log-normal-text {
+.sup-LoginText .sup-normal-text {
   color: var(--text-white);
   font-size: clamp(0.875rem, 2.5vw, 1rem);
   font-family: 'Inter', sans-serif;
   font-weight: 500;
 }
 
-.log-SignUpText .log-signup-link {
-  color: var(--signup-link);
+.sup-LoginText .sup-login-link {
+  color: var(--login-link);
   font-size: clamp(0.875rem, 2.5vw, 1rem);
   font-family: 'Inter', sans-serif;
   font-weight: 500;
@@ -285,13 +326,13 @@ html {
   transition: color 0.3s ease;
 }
 
-.log-SignUpText .log-signup-link:hover {
+.sup-LoginText .sup-login-link:hover {
   text-decoration: underline;
   color: #3748c9;
 }
 
-/* Remove focus outline from signup link */
-.log-signup-link:focus {
+/* Remove focus outline from login link */
+.sup-login-link:focus {
   outline: none !important;
 }
 
@@ -299,19 +340,19 @@ html {
 
 /* Mobile First Approach - JavaScript handles header positioning */
 @media (max-width: 768px) {
-  .log-Login {
+  .sup-SignUp {
     min-height: var(--available-height-mobile);
     padding: var(--spacing-sm);
     align-items: flex-start;
     padding-top: var(--spacing-lg);
   }
   
-  .log-LoginArea {
+  .sup-SignUpArea {
     max-width: 100%;
     min-height: auto;
     border-radius: 20px;
     padding: var(--spacing-md);
-    gap: 15px; /* KEEP 15px gap on mobile */
+    gap: 8px; /* REDUCED gap on mobile */
   }
   
   /* MOBILE: Header touches input - NO GAP inside top-part */
@@ -320,120 +361,117 @@ html {
   }
   
   /* MOBILE: JavaScript handles positioning - remove transforms */
-  .log-Frame62511 {
+  .sup-SignUpTitle {
     margin-bottom: 0; /* NO BOTTOM MARGIN on mobile */
   }
   
   .bottom-part {
-    gap: var(--spacing-sm);
+    gap: var(--spacing-xs); /* REDUCED gap */
   }
   
-  .log-Frame626 {
-    gap: var(--spacing-xs);
+  .sup-Frame626 {
+    gap: 0.125rem; /* VERY SMALL gap */
     margin-top: 0; /* NO TOP MARGIN on mobile */
   }
   
-  .log-LoginDiv {
-    gap: 0.25rem;
+  .sup-InputDiv {
+    gap: 0.125rem; /* VERY SMALL gap */
   }
   
-  /* Forgot password spacing adjustment for mobile */
-  .log-ForgotPassword {
-    margin-top: 0.125rem; /* Even closer on mobile */
-  }
-  
-  /* Sign up text with 5px spacing on mobile */
-  .log-SignUpText {
-    margin-top: 5px; /* KEEP 5px gap on mobile */
+  /* Login text with reduced spacing on mobile */
+  .sup-LoginText {
+    margin-top: 3px; /* KEEP 3px gap on mobile */
   }
 }
 
 /* Tablet */
 @media (min-width: 769px) and (max-width: 1024px) {
-  .log-LoginArea {
+  .sup-SignUpArea {
     max-width: 450px;
     padding: var(--spacing-xl);
-    gap: 15px; /* KEEP 15px gap on tablet */
+    gap: 10px; /* KEEP 10px gap on tablet */
+    min-height: 650px; /* REDUCED height */
   }
   
-  /* TABLET: Keep normal spacing - JavaScript handles positioning */
+  /* TABLET: Keep reduced spacing - JavaScript handles positioning */
   .top-part {
-    gap: var(--spacing-md); /* NORMAL SPACING on tablet */
+    gap: var(--spacing-sm); /* REDUCED SPACING on tablet */
   }
   
-  .log-Frame62511 {
-    margin-bottom: var(--spacing-sm); /* NORMAL MARGIN on tablet */
+  .sup-SignUpTitle {
+    margin-bottom: var(--spacing-xs); /* REDUCED MARGIN on tablet */
   }
   
-  /* Sign up text with 5px spacing on tablet */
-  .log-SignUpText {
-    margin-top: 5px; /* KEEP 5px gap on tablet */
+  /* Login text with reduced spacing on tablet */
+  .sup-LoginText {
+    margin-top: 3px; /* KEEP 3px gap on tablet */
   }
 }
 
 /* Desktop */
 @media (min-width: 1025px) {
-  .log-LoginArea {
+  .sup-SignUpArea {
     max-width: 480px;
     padding: var(--spacing-xl);
-    gap: 15px; /* KEEP 15px gap on desktop */
+    gap: 10px; /* KEEP 10px gap on desktop */
+    min-height: 650px; /* REDUCED height */
   }
   
-  /* DESKTOP: Keep normal spacing - JavaScript handles positioning */
+  /* DESKTOP: Keep reduced spacing - JavaScript handles positioning */
   .top-part {
-    gap: var(--spacing-md); /* NORMAL SPACING on desktop */
+    gap: var(--spacing-sm); /* REDUCED SPACING on desktop */
   }
   
-  .log-Frame62511 {
-    margin-bottom: var(--spacing-sm); /* NORMAL MARGIN on desktop */
+  .sup-SignUpTitle {
+    margin-bottom: var(--spacing-xs); /* REDUCED MARGIN on desktop */
   }
   
   .bottom-part {
-    gap: var(--spacing-lg);
+    gap: var(--spacing-md); /* REDUCED gap */
   }
   
-  /* Sign up text with 5px spacing on desktop */
-  .log-SignUpText {
-    margin-top: 5px; /* KEEP 5px gap on desktop */
+  /* Login text with reduced spacing on desktop */
+  .sup-LoginText {
+    margin-top: 3px; /* KEEP 3px gap on desktop */
   }
 }
 
 /* Large Desktop */
 @media (min-width: 1440px) {
-  .log-LoginArea {
+  .sup-SignUpArea {
     max-width: 520px;
-    gap: 15px; /* KEEP 15px gap on large desktop */
+    gap: 10px; /* KEEP 10px gap on large desktop */
   }
   
-  /* LARGE DESKTOP: Keep normal spacing - JavaScript handles positioning */
+  /* LARGE DESKTOP: Keep reduced spacing - JavaScript handles positioning */
   .top-part {
-    gap: var(--spacing-md); /* NORMAL SPACING on large desktop */
+    gap: var(--spacing-sm); /* REDUCED SPACING on large desktop */
   }
   
-  .log-Frame62511 {
-    margin-bottom: var(--spacing-sm); /* NORMAL MARGIN on large desktop */
+  .sup-SignUpTitle {
+    margin-bottom: var(--spacing-xs); /* REDUCED MARGIN on large desktop */
   }
   
-  /* Sign up text with 5px spacing on large desktop */
-  .log-SignUpText {
-    margin-top: 5px; /* KEEP 5px gap on large desktop */
+  /* Login text with reduced spacing on large desktop */
+  .sup-LoginText {
+    margin-top: 3px; /* KEEP 3px gap on large desktop */
   }
 }
 
 /* Small Mobile - JavaScript handles header positioning */
 @media (max-width: 480px) {
-  .log-Login {
+  .sup-SignUp {
     padding: var(--spacing-xs);
     padding-top: var(--spacing-md);
   }
   
-  .log-LoginArea {
+  .sup-SignUpArea {
     max-width: 360px; /* REDUCED from 100% to make it smaller */
     width: 90vw; /* Constrain width to 90% of viewport */
     border-radius: 16px;
     padding: var(--spacing-sm);
-    gap: 15px; /* KEEP 15px gap on small mobile */
-    padding-bottom: 50px;
+    gap: 15px; /* KEEP 8px gap on small mobile */
+    padding-bottom: 40px; /* REDUCED padding */
     padding-left: 25px;
     padding-right: 25px;
     padding-top: 25px;
@@ -444,57 +482,47 @@ html {
     gap: 0; /* NO INTERNAL GAP on small mobile */
   }
   
-  .log-Frame62511 {
-    margin-bottom: 0; /* NO BOTTOM MARGIN on small mobile */
+  .sup-SignUpTitle {
+    margin-bottom:10px; /* NO BOTTOM MARGIN on small mobile */
   }
   
-  .log-InputArea {
+  .sup-InputArea {
     height: 45px;
     border-radius: 6px;
   }
   
-  .log-form-input {
+  .sup-form-input {
     padding: 0 0.75rem;
   }
   
-  .log-LoginButton,
-  .log-GoogleSigninButton {
+  .sup-SignUpButton,
+  .sup-GoogleSigninButton {
     height: 48px;
     border-radius: 6px;
   }
   
-  /* Forgot password matches input area width and closer spacing */
-  .log-ForgotPassword {
-    width: 100%; /* Same as input area */
-    margin-top: 0; /* Remove top margin completely */
-  }
-  
-  .log-Frame626 {
+  .sup-Frame626 {
     margin-top: 0; /* NO TOP MARGIN on small mobile */
   }
   
-  /* Sign up text with 5px spacing on small mobile */
-  .log-SignUpText {
-    margin-top: 5px; /* KEEP 5px gap on small mobile */
+  /* Login text with reduced spacing on small mobile */
+  .sup-LoginText {
+    margin-top: 3px; /* KEEP 3px gap on small mobile */
   }
 }
 
 /* Very Small Mobile - JavaScript handles header positioning */
 @media (max-width: 360px) {
-  :root {
-    --spacing-xs: 0.375rem;
-    --spacing-sm: 0.75rem;
-    --spacing-md: 1rem;
-    --spacing-lg: 1.25rem;
-  }
-  
-  .log-LoginArea {
+  .sup-SignUpArea {
     max-width: 280px; /* FURTHER REDUCED for very small screens */
     width: 85vw; /* Constrain width to 85% of viewport */
     border-radius: 12px;
     min-height: auto;
-    gap: 15px; /* KEEP 15px gap on very small mobile */
-    padding-bottom: 30px;
+    gap: 10px; /* KEEP 8px gap on small mobile */
+    padding-bottom: 30px; /* REDUCED padding */
+    padding-left: 20px;
+    padding-right: 20px;
+    padding-top: 20px;
   }
   
   /* VERY SMALL MOBILE: Header touches input - NO GAP - JavaScript handles positioning */
@@ -502,56 +530,58 @@ html {
     gap: 0; /* NO INTERNAL GAP on very small mobile */
   }
   
-  .log-Frame62511 {
+  .sup-SignUpTitle {
     margin-bottom: 0; /* NO BOTTOM MARGIN on very small mobile */
   }
   
-  .log-InputArea {
+  .sup-InputArea {
     height: 42px;
     border-radius: 4px;
     border-width: 1px;
   }
   
-  .log-form-input {
+  .sup-form-input {
     padding: 0 0.5rem;
   }
   
-  .log-LoginButton,
-  .log-GoogleSigninButton {
+  .sup-SignUpButton,
+  .sup-GoogleSigninButton {
     height: 44px;
     border-radius: 4px;
   }
   
-  /* Forgot password matches input area and no spacing */
-  .log-ForgotPassword {
-    width: 100%; /* Same as input area */
-    margin-top: 0; /* No top margin */
-    font-size: 0.75rem; /* Slightly smaller text */
-  }
-  
-  .log-Frame626 {
+  .sup-Frame626 {
     margin-top: 0; /* NO TOP MARGIN on very small mobile */
   }
   
-  /* Sign up text with 5px spacing on very small mobile */
-  .log-SignUpText {
-    margin-top: 5px; /* KEEP 5px gap on very small mobile */
+  /* Login text with reduced spacing on very small mobile */
+  .sup-LoginText {
+    margin-top: 3px; /* KEEP 3px gap on very small mobile */
+  }
+
+  .sup-CheckboxLabel {
+    font-size: 0.7rem; /* REDUCED font size */
+  }
+
+  .sup-checkbox {
+    width: 14px; /* FURTHER REDUCED */
+    height: 14px;
   }
 }
 
 /* Landscape orientation - JavaScript handles header positioning */
 @media (max-width: 768px) and (orientation: landscape) {
-  .log-Login {
+  .sup-SignUp {
     min-height: calc(100vh - 65px - 68px);
     padding-top: var(--spacing-sm);
     overflow-y: auto;
   }
   
-  .log-LoginArea {
+  .sup-SignUpArea {
     min-height: auto;
     max-height: calc(100vh - 100px);
     overflow-y: auto;
-    gap: 15px; /* KEEP 15px gap in landscape */
+    gap: 6px; /* REDUCED gap in landscape */
   }
   
   /* LANDSCAPE: Header touches input - NO GAP - JavaScript handles positioning */
@@ -559,35 +589,35 @@ html {
     gap: 0; /* NO INTERNAL GAP in landscape */
   }
   
-  .log-Frame62511 {
+  .sup-SignUpTitle {
     margin-bottom: 0; /* NO BOTTOM MARGIN in landscape */
   }
   
   .bottom-part {
-    gap: var(--spacing-xs);
+    gap: 0.25rem; /* VERY SMALL gap */
   }
   
-  /* Sign up text with 5px spacing in landscape */
-  .log-SignUpText {
-    margin-top: 5px; /* KEEP 5px gap in landscape */
+  /* Login text with reduced spacing in landscape */
+  .sup-LoginText {
+    margin-top: 2px; /* EVEN SMALLER gap in landscape */
   }
 }
 
 /* High DPI displays */
 @media (-webkit-min-device-pixel-ratio: 2), (min-resolution: 192dpi) {
-  .log-InputArea {
+  .sup-InputArea {
     border-width: 1px;
   }
   
-  .log-LoginButton,
-  .log-GoogleSigninButton {
+  .sup-SignUpButton,
+  .sup-GoogleSigninButton {
     border-width: 1px;
   }
 }
 
 /* Focus states for buttons only (removed input and link focus states) */
-.log-LoginButton:focus,
-.log-GoogleSigninButton:focus {
+.sup-SignUpButton:focus,
+.sup-GoogleSigninButton:focus {
   outline: 2px solid var(--black);
   outline-offset: 2px;
 }
@@ -599,12 +629,12 @@ html {
 
 /* Print styles */
 @media print {
-  .log-Login {
+  .sup-SignUp {
     background: white;
     color: black;
   }
   
-  .log-LoginArea {
+  .sup-SignUpArea {
     background: white;
     border: 2px solid black;
     backdrop-filter: none;

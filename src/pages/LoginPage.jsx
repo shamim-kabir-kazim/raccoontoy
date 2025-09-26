@@ -2,6 +2,9 @@ import React, { useState, useEffect, useRef } from "react";
 import "./LoginPage.css";
 import BottomNavBar from "../components/BottomNavBar";
 import loginCatImage from "../assets/other/login&cat.png";
+import googleIcon from "../assets/other/google-icon.png";
+import hideEyeIcon from "../assets/other/hide-eye.png";
+import showEyeIcon from "../assets/other/show-eye.png";
 
 export default function LoginPage({
   onSubmit,
@@ -222,8 +225,8 @@ export default function LoginPage({
                   />
                   <img
                     className="log-PasswordHideAndShowButton"
-                    src="https://i.postimg.cc/2yPQJZSM/hide-svgrepo-com-1.png"
-                    alt="Toggle password visibility"
+                    src={showPassword ? showEyeIcon : hideEyeIcon}
+                    alt={showPassword ? "Hide password" : "Show password"}
                     onClick={togglePasswordVisibility}
                   />
                 </div>
@@ -258,7 +261,7 @@ export default function LoginPage({
           >
             <img
               className="log-GoogleIcon"
-              src="https://i.postimg.cc/0rRkhkRc/google-svgrepo-com.png"
+              src={googleIcon}
               alt="Google"
             />
             <div className="log-GoogleText">

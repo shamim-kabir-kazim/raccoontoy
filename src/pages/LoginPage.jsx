@@ -1,4 +1,5 @@
 import React, { useState, useEffect, useRef } from "react";
+import { useNavigate } from "react-router-dom"; // Add this import
 import "./LoginPage.css";
 import BottomNavBar from "../components/BottomNavBar";
 import loginCatImage from "../assets/other/login&cat.png";
@@ -12,6 +13,8 @@ export default function LoginPage({
   onSignUp,
   onGoogleSignIn,
 }) {
+  const navigate = useNavigate(); // Add this hook
+  
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [showPassword, setShowPassword] = useState(false);
@@ -161,13 +164,10 @@ export default function LoginPage({
     }
   };
 
+  // Update this function to use navigate
   const handleSignUp = (e) => {
     e.preventDefault();
-    if (onSignUp) {
-      onSignUp();
-    } else {
-      alert("Sign Up clicked (demo)");
-    }
+    navigate("/signup"); // Navigate to signup page
   };
 
   const handleGoogleSignIn = (e) => {

@@ -45,30 +45,33 @@ html {
   min-height: 100vh;
 }
 
-/* Main SignUp Container - FULLY RESPONSIVE */
+/* Main SignUp Container - FULLY RESPONSIVE - MADE SCROLLABLE */
 .sup-SignUp {
   width: 100%;
   min-height: var(--available-height-desktop);
   background: var(--background-purple);
   display: flex;
-  align-items: center;
+  align-items: flex-start; /* Changed from center to flex-start for scrolling */
   justify-content: center;
   padding: var(--spacing-md);
+  padding-top: var(--spacing-lg); /* Add top padding */
+  overflow-y: auto; /* Enable vertical scrolling */
 }
 
 /* SignUp Area Container - RESPONSIVE FLEXBOX - REDUCED HEIGHT */
 .sup-SignUpArea {
   width: 100%;
   max-width: 420px;
-  min-height: 600px; /* REDUCED from 700px to 600px */
+  min-height: auto; /* Changed from 600px to auto for better scrolling */
   background: rgba(255, 255, 255, 0.25);
   border-radius: 30px;
   backdrop-filter: blur(2px);
   display: flex;
   flex-direction: column;
-  justify-content: center;
+  justify-content: flex-start; /* Changed from center to flex-start */
   padding: var(--spacing-lg); /* REDUCED padding */
   gap: 10px; /* REDUCED from 15px to 10px GAP */
+  margin: var(--spacing-md) 0; /* Add margin for better scrolling */
 }
 
 /* Top part container - REDUCED GAP */
@@ -89,7 +92,7 @@ html {
   gap: var(--spacing-sm); /* REDUCED GAP */
 }
 
-/* Sign Up Title - Jersey 10 Font - REDUCED SIZE */
+/* Sign Up Title - Jersey 10 Font - ADDED BOTTOM MARGIN FOR ALL DEVICES */
 .sup-SignUpTitle {
   width: 100%;
   text-align: center;
@@ -97,7 +100,7 @@ html {
   font-size: clamp(2.5rem, 6vw, 3.5rem); /* REDUCED from 3rem-4.5rem to 2.5rem-3.5rem */
   font-family: 'Jersey 10', monospace;
   font-weight: 400;
-  margin-bottom: var(--spacing-xs); /* REDUCED margin */
+  margin-bottom: 18px; /* ADDED 18px bottom margin for all devices */
   text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.1);
 }
 
@@ -336,15 +339,16 @@ html {
   outline: none !important;
 }
 
-/* RESPONSIVE BREAKPOINTS */
+/* RESPONSIVE BREAKPOINTS - UPDATED FOR SCROLLABLE DESIGN */
 
-/* Mobile First Approach - JavaScript handles header positioning */
+/* Mobile First Approach */
 @media (max-width: 768px) {
   .sup-SignUp {
     min-height: var(--available-height-mobile);
     padding: var(--spacing-sm);
     align-items: flex-start;
     padding-top: var(--spacing-lg);
+    padding-bottom: var(--spacing-lg); /* Add bottom padding for scrolling */
   }
   
   .sup-SignUpArea {
@@ -353,16 +357,11 @@ html {
     border-radius: 20px;
     padding: var(--spacing-md);
     gap: 8px; /* REDUCED gap on mobile */
+    margin: 0; /* Remove margin on mobile */
   }
   
-  /* MOBILE: Header touches input - NO GAP inside top-part */
-  .top-part {
-    gap: 0; /* NO INTERNAL GAP on mobile */
-  }
-  
-  /* MOBILE: JavaScript handles positioning - remove transforms */
   .sup-SignUpTitle {
-    margin-bottom: 0; /* NO BOTTOM MARGIN on mobile */
+    margin-bottom: 15px; /* KEEP 15px bottom margin on mobile */
   }
   
   .bottom-part {
@@ -390,16 +389,11 @@ html {
     max-width: 450px;
     padding: var(--spacing-xl);
     gap: 10px; /* KEEP 10px gap on tablet */
-    min-height: 650px; /* REDUCED height */
-  }
-  
-  /* TABLET: Keep reduced spacing - JavaScript handles positioning */
-  .top-part {
-    gap: var(--spacing-sm); /* REDUCED SPACING on tablet */
+    min-height: auto; /* Changed from fixed height */
   }
   
   .sup-SignUpTitle {
-    margin-bottom: var(--spacing-xs); /* REDUCED MARGIN on tablet */
+    margin-bottom: 17px; /* KEEP 17px bottom margin on tablet */
   }
   
   /* Login text with reduced spacing on tablet */
@@ -414,16 +408,11 @@ html {
     max-width: 480px;
     padding: var(--spacing-xl);
     gap: 10px; /* KEEP 10px gap on desktop */
-    min-height: 650px; /* REDUCED height */
-  }
-  
-  /* DESKTOP: Keep reduced spacing - JavaScript handles positioning */
-  .top-part {
-    gap: var(--spacing-sm); /* REDUCED SPACING on desktop */
+    min-height: auto; /* Changed from fixed height */
   }
   
   .sup-SignUpTitle {
-    margin-bottom: var(--spacing-xs); /* REDUCED MARGIN on desktop */
+    margin-bottom: 18px; /* KEEP 18px bottom margin on desktop */
   }
   
   .bottom-part {
@@ -443,13 +432,8 @@ html {
     gap: 10px; /* KEEP 10px gap on large desktop */
   }
   
-  /* LARGE DESKTOP: Keep reduced spacing - JavaScript handles positioning */
-  .top-part {
-    gap: var(--spacing-sm); /* REDUCED SPACING on large desktop */
-  }
-  
   .sup-SignUpTitle {
-    margin-bottom: var(--spacing-xs); /* REDUCED MARGIN on large desktop */
+    margin-bottom: 20px; /* KEEP 20px bottom margin on large desktop */
   }
   
   /* Login text with reduced spacing on large desktop */
@@ -458,11 +442,12 @@ html {
   }
 }
 
-/* Small Mobile - JavaScript handles header positioning */
+/* Small Mobile */
 @media (max-width: 480px) {
   .sup-SignUp {
     padding: var(--spacing-xs);
     padding-top: var(--spacing-md);
+    padding-bottom: var(--spacing-lg); /* Ensure bottom padding for scrolling */
   }
   
   .sup-SignUpArea {
@@ -470,20 +455,16 @@ html {
     width: 90vw; /* Constrain width to 90% of viewport */
     border-radius: 16px;
     padding: var(--spacing-sm);
-    gap: 15px; /* KEEP 8px gap on small mobile */
+    gap: 15px; /* KEEP gap on small mobile */
     padding-bottom: 40px; /* REDUCED padding */
     padding-left: 25px;
     padding-right: 25px;
     padding-top: 25px;
-  }
-  
-  /* SMALL MOBILE: Header touches input - NO GAP - JavaScript handles positioning */
-  .top-part {
-    gap: 0; /* NO INTERNAL GAP on small mobile */
+    margin-bottom: 100px;
   }
   
   .sup-SignUpTitle {
-    margin-bottom:10px; /* NO BOTTOM MARGIN on small mobile */
+    margin-bottom: 15px; /* KEEP 15px bottom margin on small mobile */
   }
   
   .sup-InputArea {
@@ -511,27 +492,22 @@ html {
   }
 }
 
-/* Very Small Mobile - JavaScript handles header positioning */
+/* Very Small Mobile */
 @media (max-width: 360px) {
   .sup-SignUpArea {
     max-width: 280px; /* FURTHER REDUCED for very small screens */
     width: 85vw; /* Constrain width to 85% of viewport */
     border-radius: 12px;
     min-height: auto;
-    gap: 10px; /* KEEP 8px gap on small mobile */
+    gap: 10px; /* KEEP gap on very small mobile */
     padding-bottom: 30px; /* REDUCED padding */
     padding-left: 20px;
     padding-right: 20px;
     padding-top: 20px;
   }
   
-  /* VERY SMALL MOBILE: Header touches input - NO GAP - JavaScript handles positioning */
-  .top-part {
-    gap: 0; /* NO INTERNAL GAP on very small mobile */
-  }
-  
   .sup-SignUpTitle {
-    margin-bottom: 0; /* NO BOTTOM MARGIN on very small mobile */
+    margin-bottom: 15px; /* KEEP 15px bottom margin on very small mobile */
   }
   
   .sup-InputArea {
@@ -569,28 +545,24 @@ html {
   }
 }
 
-/* Landscape orientation - JavaScript handles header positioning */
+/* Landscape orientation */
 @media (max-width: 768px) and (orientation: landscape) {
   .sup-SignUp {
     min-height: calc(100vh - 65px - 68px);
     padding-top: var(--spacing-sm);
     overflow-y: auto;
+    padding-bottom: var(--spacing-md); /* Add bottom padding */
   }
   
   .sup-SignUpArea {
     min-height: auto;
-    max-height: calc(100vh - 100px);
-    overflow-y: auto;
+    max-height: none; /* Remove max height restriction */
+    overflow-y: visible; /* Allow content to flow naturally */
     gap: 6px; /* REDUCED gap in landscape */
   }
   
-  /* LANDSCAPE: Header touches input - NO GAP - JavaScript handles positioning */
-  .top-part {
-    gap: 0; /* NO INTERNAL GAP in landscape */
-  }
-  
   .sup-SignUpTitle {
-    margin-bottom: 0; /* NO BOTTOM MARGIN in landscape */
+    margin-bottom: 15px; /* KEEP 15px bottom margin in landscape */
   }
   
   .bottom-part {

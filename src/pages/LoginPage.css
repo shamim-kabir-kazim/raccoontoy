@@ -43,30 +43,33 @@ html {
   min-height: 100vh;
 }
 
-/* Main Login Container - FULLY RESPONSIVE */
+/* Main Login Container - FULLY RESPONSIVE - MADE SCROLLABLE */
 .log-Login {
   width: 100%;
   min-height: var(--available-height-desktop);
   background: var(--background-purple);
   display: flex;
-  align-items: center;
+  align-items: flex-start; /* Changed from center to flex-start for scrolling */
   justify-content: center;
   padding: var(--spacing-md);
+  padding-top: var(--spacing-lg); /* Add top padding */
+  overflow-y: auto; /* Enable vertical scrolling */
 }
 
 /* Login Area Container - RESPONSIVE FLEXBOX */
 .log-LoginArea {
   width: 100%;
   max-width: 420px;
-  min-height: 600px;
+  min-height: auto; /* Changed from 600px to auto for better scrolling */
   background: rgba(255, 255, 255, 0.25);
   border-radius: 30px;
   backdrop-filter: blur(2px);
   display: flex;
   flex-direction: column;
-  justify-content: center;
+  justify-content: flex-start; /* Changed from center to flex-start */
   padding: var(--spacing-lg);
   gap: 15px; /* FIXED 15px GAP between top-part and bottom-part */
+  margin: var(--spacing-md) 0; /* Add margin for better scrolling */
 }
 
 /* Top part container - NORMAL GAP FOR DESKTOP */
@@ -295,7 +298,7 @@ html {
   outline: none !important;
 }
 
-/* RESPONSIVE BREAKPOINTS */
+/* RESPONSIVE BREAKPOINTS - UPDATED FOR SCROLLABLE DESIGN */
 
 /* Mobile First Approach - JavaScript handles header positioning */
 @media (max-width: 768px) {
@@ -304,6 +307,7 @@ html {
     padding: var(--spacing-sm);
     align-items: flex-start;
     padding-top: var(--spacing-lg);
+    padding-bottom: var(--spacing-lg); /* Add bottom padding for scrolling */
   }
   
   .log-LoginArea {
@@ -312,6 +316,7 @@ html {
     border-radius: 20px;
     padding: var(--spacing-md);
     gap: 15px; /* KEEP 15px gap on mobile */
+    margin: 0; /* Remove margin on mobile */
   }
   
   /* MOBILE: Header touches input - NO GAP inside top-part */
@@ -425,6 +430,7 @@ html {
   .log-Login {
     padding: var(--spacing-xs);
     padding-top: var(--spacing-md);
+    padding-bottom: var(--spacing-lg); /* Ensure bottom padding for scrolling */
   }
   
   .log-LoginArea {
@@ -437,6 +443,7 @@ html {
     padding-left: 25px;
     padding-right: 25px;
     padding-top: 25px;
+    margin-bottom: 100px;
   }
   
   /* SMALL MOBILE: Header touches input - NO GAP - JavaScript handles positioning */
@@ -545,12 +552,13 @@ html {
     min-height: calc(100vh - 65px - 68px);
     padding-top: var(--spacing-sm);
     overflow-y: auto;
+    padding-bottom: var(--spacing-md); /* Add bottom padding */
   }
   
   .log-LoginArea {
     min-height: auto;
-    max-height: calc(100vh - 100px);
-    overflow-y: auto;
+    max-height: none; /* Remove max height restriction */
+    overflow-y: visible; /* Allow content to flow naturally */
     gap: 15px; /* KEEP 15px gap in landscape */
   }
   

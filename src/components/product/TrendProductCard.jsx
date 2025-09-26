@@ -12,32 +12,32 @@ const TrendProductCard = ({
   favoriteIcon = "https://placehold.co/21x21",
 }) => {
   return (
-    <div className="trend-card">
+    <div className="tren-trend-card">
       {/* Top badges and heart (overlay, absolute) */}
-      <div className="top-section">
-        <div className="badge-wrapper">
-          <div className="discount-badge">{discount}</div>
-          {soldOut && <div className="sold-out">sold out</div>}
+      <div className="tren-top-section">
+        <div className="tren-badge-wrapper">
+          <div className="tren-discount-badge">{discount}</div>
+          {soldOut && <div className="tren-sold-out">sold out</div>}
         </div>
-        <img src={favoriteIcon} alt="favorite" className="favorite-icon" />
+        <img src={favoriteIcon} alt="favorite" className="tren-favorite-icon" />
       </div>
       {/* Main vertical layout */}
-      <div className="card-body">
+      <div className="tren-card-body">
         {/* Image Section (starts at top) */}
-        <div className="img-circle">
-          <img src={image} alt={name} className="product-img" />
+        <div className="tren-img-circle">
+          <img src={image} alt={name} className="tren-product-img" />
         </div>
         {/* Info Section */}
-        <div className="info">
-          <div className="name">{name}</div>
-          <div className="subtitle">{subtitle}</div>
-          <div className="price">
-            <span className="old">{oldPrice}</span>
-            <span className="new">{newPrice}</span>
+        <div className="tren-info">
+          <div className="tren-name">{name}</div>
+          <div className="tren-subtitle">{subtitle}</div>
+          <div className="tren-price">
+            <span className="tren-old">{oldPrice}</span>
+            <span className="tren-new">{newPrice}</span>
           </div>
         </div>
         {/* Button Section */}
-        <button className="buy-btn">Buy Now</button>
+        <button className="tren-buy-btn">Buy Now</button>
       </div>
     </div>
   );

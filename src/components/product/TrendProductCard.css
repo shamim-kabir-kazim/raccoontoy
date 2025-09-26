@@ -1,4 +1,4 @@
-.trend-card {
+.tren-trend-card {
   width: 210px;
   height: 257px;
   background: #fff;
@@ -13,7 +13,7 @@
 }
 
 /* Top Section (overlay) */
-.top-section {
+.tren-top-section {
   position: absolute;
   top: 0;
   left: 0;
@@ -23,7 +23,7 @@
   pointer-events: none;
 }
 
-.badge-wrapper {
+.tren-badge-wrapper {
   position: absolute;
   top: 8px;
   left: 14px;
@@ -33,7 +33,7 @@
   z-index: 3;
 }
 
-.discount-badge {
+.tren-discount-badge {
   background: #ffaeae;
   color: #fff;
   font-size: 11px;
@@ -44,7 +44,7 @@
   box-shadow: 0 1px 6px rgba(0,0,0,0.06);
 }
 
-.sold-out {
+.tren-sold-out {
   background: #fff;
   color: #000;
   font-size: 11px;
@@ -55,7 +55,7 @@
   box-shadow: 0 1px 6px rgba(0,0,0,0.09);
 }
 
-.favorite-icon {
+.tren-favorite-icon {
   position: absolute;
   top: 13px;
   right: 20px;
@@ -65,7 +65,7 @@
 }
 
 /* Card Body */
-.card-body {
+.tren-card-body {
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -76,7 +76,7 @@
 }
 
 /* Image Section */
-.img-circle {
+.tren-img-circle {
   width: 153px;
   height: 153px;
   background: #ffe0e0;
@@ -89,7 +89,7 @@
   margin-top: 0; /* start at top */
 }
 
-.product-img {
+.tren-product-img {
   width: 153px;
   height: 153px;
   object-fit: contain;
@@ -99,45 +99,45 @@
 }
 
 /* Info Section */
-.info {
+.tren-info {
   width: 100%;
   text-align: center;
   margin-top: 5px;
   margin-bottom: 5px;
 }
 
-.name {
+.tren-name {
   font-size: 13px;
   font-weight: 300;
   color: #000;
 }
 
-.subtitle {
+.tren-subtitle {
   font-size: 10px;
   font-weight: 300;
   color: #000;
   margin-top: 2px;
 }
 
-.price {
+.tren-price {
   margin-top: 6px;
   font-size: 12px;
   font-weight: 300;
 }
 
-.price .old {
+.tren-price .tren-old {
   text-decoration: line-through;
   color: #6f6f6f;
   margin-right: 6px;
 }
 
-.price .new {
+.tren-price .tren-new {
   color: #000;
   font-weight: 400;
 }
 
 /* Button Section */
-.buy-btn {
+.tren-buy-btn {
   width: 117px;
   height: 35px;
   border: none;
@@ -152,7 +152,7 @@
 
 /* Responsive */
 @media (max-width: 480px) {
-  .trend-card {
+  .tren-trend-card {
     width: 160px;
     height: 210px;
     min-width: 140px;
@@ -160,35 +160,35 @@
     border-radius: 16px;
     margin: 0;
   }
-  .top-section {
+  .tren-top-section {
     height: 36px;
   }
-  .badge-wrapper {
+  .tren-badge-wrapper {
     top: 5px;
     left: 9px;
   }
-  .img-circle {
+  .tren-img-circle {
     width: 110px;
     height: 110px;
   }
-  .product-img {
+  .tren-product-img {
     width: 110px;
     height: 110px;
   }
-  .info {
+  .tren-info {
     margin-top: 5px;
     margin-bottom: 5px;
   }
-  .name {
+  .tren-name {
     font-size: 12px;
   }
-  .subtitle {
+  .tren-subtitle {
     font-size: 9px;
   }
-  .price {
+  .tren-price {
     font-size: 11px;
   }
-  .buy-btn {
+  .tren-buy-btn {
     width: 80px;
     height: 26px;
     font-size: 10px;

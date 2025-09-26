@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import { useNavigate } from "react-router-dom"; // Add this import
 import "./SignUpPage.css";
 import BottomNavBar from "../components/BottomNavBar";
 import googleIcon from "../assets/other/google-icon.png";
@@ -10,6 +11,8 @@ export default function SignUpPage({
   onLogin,
   onGoogleSignIn,
 }) {
+  const navigate = useNavigate(); // Add this hook
+  
   const [formData, setFormData] = useState({
     fullName: "",
     email: "",
@@ -119,13 +122,10 @@ export default function SignUpPage({
     }
   };
 
+  // Update this function to use navigate
   const handleLogin = (e) => {
     e.preventDefault();
-    if (onLogin) {
-      onLogin();
-    } else {
-      alert("Login clicked (demo)");
-    }
+    navigate("/login"); // Navigate to login page
   };
 
   const handleGoogleSignIn = (e) => {

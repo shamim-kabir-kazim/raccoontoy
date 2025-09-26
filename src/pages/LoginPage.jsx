@@ -209,7 +209,7 @@ export default function LoginPage({
                 </div>
                 <div className="log-EmailText">Email</div>
               </div>
-              <div className="log-LoginDiv">
+              <div className="log-LoginDiv" style={{ marginTop: '10px' }}>
                 <div className="log-InputArea">
                   <input
                     type={showPassword ? "text" : "password"}

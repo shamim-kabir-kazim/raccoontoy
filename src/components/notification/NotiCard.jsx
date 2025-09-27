@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from "react";
+import Linkify from 'react-linkify';
 import "./NotiCard.css";
 
 export default function NotiCard({
@@ -6,10 +7,11 @@ export default function NotiCard({
   message = "Welcome to Raccoon Toy",
   time = "2:20PM",
   iconSrc = "https://placehold.co/39x39",
-  onClick,
+  isExpanded = false,
+  isRead = false, // Receive the isRead prop
+  onCardClick,
   className = "",
 }) {
-  // Device detection for iOS optimizations
   const [isIOS, setIsIOS] = useState(false);
 
   useEffect(() => {
@@ -18,23 +20,43 @@ export default function NotiCard({
     setIsIOS(iOS);
   }, []);
 
-  const handleClick = () => {
-    if (onClick) {
-      onClick();
+  const handleCardClick = () => {
+    if (onCardClick) {
+      onCardClick();
     }
   };
 
+  const linkDecorator = (href, text, key) => (
+    <a 
+      href={href} 
+      key={key} 
+      target="_blank" 
+      rel="noopener noreferrer"
+      onClick={(event) => event.stopPropagation()}
+    >
+      {text}
+    </a>
+  );
+
+  const cardClasses = `
+    noti-card 
+    ${isIOS ? 'ios-device' : ''} 
+    ${isExpanded ? 'expanded' : ''} 
+    ${isRead ? 'read' : 'unread'} // Add read/unread classes
+    ${className}
+  `.trim();
+
   return (
     <div 
-      className={`noti-card ${isIOS ? 'ios-device' : ''} ${className}`}
-      onClick={handleClick}
-      role={onClick ? "button" : undefined}
-      tabIndex={onClick ? 0 : undefined}
-      onKeyPress={onClick ? (e) => {
+      className={cardClasses}
+      onClick={handleCardClick}
+      role="button"
+      tabIndex={0}
+      onKeyPress={(e) => {
         if (e.key === 'Enter' || e.key === ' ') {
-          handleClick();
+          handleCardClick();
         }
-      } : undefined}
+      }}
     >
       <div className="noti-card-icon-wrapper">
         <img 
@@ -50,7 +72,11 @@ export default function NotiCard({
       <div className="noti-card-content">
         <div className="noti-card-text-section">
           <div className="noti-card-title">{title}</div>
-          <div className="noti-card-message">{message}</div>
+          <div className="noti-card-message">
+            <Linkify componentDecorator={linkDecorator}>
+              {message}
+            </Linkify>
+          </div>
         </div>
         
         <div className="noti-card-time-section">

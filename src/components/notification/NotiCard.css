@@ -3,497 +3,154 @@
 
 /* CSS Variables for NotiCard */
 :root {
-  /* NotiCard specific colors */
-  --noti-bg: rgba(0, 0, 0, 0.25);
+  /* UPDATED: Read/Unread background colors */
+  --noti-unread-bg: rgba(255, 255, 255, 0.8);
+  --noti-read-bg: rgba(255, 255, 255, 0.5);
   --noti-icon-bg: #ffffff;
-  --noti-text-white: #ffffff;
-  --noti-title-color: #ffffff;
-  --noti-message-color: #ffffff;
-  --noti-time-color: #ffffff;
-  
-  /* Responsive spacing */
-  --noti-spacing-xs: 0.3125rem; /* 5px */
-  --noti-spacing-sm: 0.5rem; /* 8px */
-  --noti-spacing-md: 0.625rem; /* 10px */
-  --noti-spacing-lg: 0.8125rem; /* 13px */
-  --noti-spacing-xl: 0.9375rem; /* 15px */
-  --noti-spacing-xxl: 1.25rem; /* 20px */
+  --noti-title-color: #000000; /* Changed to black for better contrast */
+  --noti-message-color: #333333; /* Changed to dark gray */
+  --noti-time-color: #555555; /* Changed to medium gray */
+  --noti-link-color: #0056b3;
+  --noti-spacing-xs: 0.3125rem;
+  --noti-spacing-sm: 0.5rem;
+  --noti-spacing-md: 0.625rem;
+  --noti-spacing-lg: 0.8125rem;
+  --noti-spacing-xl: 0.9375rem;
+  --noti-spacing-xxl: 1.25rem;
 }
 
-/* Main NotiCard Container - FULLY RESPONSIVE */
+/* Main NotiCard Container */
 .noti-card {
   width: 100%;
   max-width: 378px;
-  height: auto;
   min-height: 89px;
-  padding-left: var(--noti-spacing-xl);
-  padding-right: var(--noti-spacing-xl);
-  padding-top: var(--noti-spacing-xl);
-  padding-bottom: var(--noti-spacing-xl);
-  background: var(--noti-bg);
+  padding: var(--noti-spacing-xl);
   border-radius: 25px;
-  backdrop-filter: blur(2px);
-  -webkit-backdrop-filter: blur(2px);
-  
+  backdrop-filter: blur(4px);
+  -webkit-backdrop-filter: blur(4px);
   display: flex;
-  justify-content: flex-start;
   align-items: center;
   gap: var(--noti-spacing-xs);
-  
   overflow: hidden;
   box-sizing: border-box;
-  
-  /* Smooth transitions */
-  transition: transform 0.2s ease, box-shadow 0.2s ease;
-  
-  /* Cursor pointer if clickable */
-  cursor: default;
-}
-
-.noti-card[role="button"] {
+  transition: all 0.3s ease-in-out;
   cursor: pointer;
+  border: 1px solid rgba(0, 0, 0, 0.05);
 }
 
-.noti-card[role="button"]:hover {
-  transform: translateY(-1px);
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+/* NEW: Read/Unread styles */
+.noti-card.unread {
+  background: var(--noti-unread-bg);
+}
+.noti-card.read {
+  background: var(--noti-read-bg);
 }
 
-.noti-card[role="button"]:active {
-  transform: translateY(0);
-}
-
-/* Icon Container - RESPONSIVE */
+/* Icon Container */
 .noti-card-icon-wrapper {
   width: clamp(55px, 12vw, 59px);
   height: clamp(55px, 12vw, 59px);
-  min-width: 55px;
-  min-height: 55px;
-  
   padding: var(--noti-spacing-xxl);
   background: var(--noti-icon-bg);
   border-radius: 50%;
-  
   display: flex;
   justify-content: center;
   align-items: center;
-  
   flex-shrink: 0;
   box-sizing: border-box;
 }
 
-/* Icon Image - RESPONSIVE */
 .noti-card-icon {
   width: clamp(35px, 8vw, 39px);
   height: clamp(35px, 8vw, 39px);
   object-fit: cover;
-  border-radius: 50%;
 }
 
-/* Content Area - RESPONSIVE FLEXBOX */
+/* Content Area */
 .noti-card-content {
   flex: 1;
-  height: auto;
   min-height: clamp(55px, 12vw, 65px);
-  
   display: flex;
   justify-content: space-between;
   align-items: center;
-  
   overflow: hidden;
 }
 
-/* Text Section - RESPONSIVE */
+/* Text Section */
 .noti-card-text-section {
   flex: 1;
   max-width: clamp(160px, 35vw, 183px);
-  
   padding: var(--noti-spacing-sm);
-  
   display: flex;
   flex-direction: column;
-  justify-content: flex-start;
-  align-items: flex-start;
   gap: var(--noti-spacing-lg);
-  
   overflow: hidden;
 }
 
-/* Title - RESPONSIVE TYPOGRAPHY */
 .noti-card-title {
-  width: 100%;
   color: var(--noti-title-color);
   font-size: clamp(14px, 3.5vw, 16px);
   font-family: 'Inter', sans-serif;
   font-weight: 600;
-  line-height: 1.2;
-  
-  word-wrap: break-word;
-  overflow-wrap: break-word;
-  
-  /* Truncate if too long */
   white-space: nowrap;
   overflow: hidden;
   text-overflow: ellipsis;
 }
 
-/* Message - RESPONSIVE TYPOGRAPHY */
 .noti-card-message {
-  width: 100%;
   color: var(--noti-message-color);
   font-size: clamp(12px, 3vw, 14px);
   font-family: 'Inter', sans-serif;
   font-weight: 400;
-  line-height: 1.3;
-  
-  text-align: left;
-  word-wrap: break-word;
-  overflow-wrap: break-word;
-  
-  /* Allow up to 2 lines */
   display: -webkit-box;
   -webkit-line-clamp: 2;
   -webkit-box-orient: vertical;
   overflow: hidden;
+  transition: all 0.3s ease-in-out;
 }
 
-/* Time Section - RESPONSIVE */
+.noti-card-message a {
+  color: var(--noti-link-color);
+  text-decoration: underline;
+  font-weight: 500;
+}
+
 .noti-card-time-section {
-  min-height: clamp(55px, 12vw, 65px);
-  padding-left: 11px;
-  padding-right: 11px;
-  padding-top: 9px;
-  padding-bottom: 9px;
-  
+  padding: 9px 11px;
   display: flex;
-  justify-content: center;
   align-items: flex-end;
-  
-  flex-shrink: 0;
-  overflow: hidden;
 }
-
-/* Time Text - RESPONSIVE TYPOGRAPHY */
 .noti-card-time {
   color: var(--noti-time-color);
   font-size: clamp(11px, 2.5vw, 13px);
-  font-family: 'Inter', sans-serif;
-  font-weight: 400;
-  line-height: 1.2;
-  
-  text-align: center;
-  white-space: nowrap;
 }
 
-/* ================================================================= */
-/* RESPONSIVE BREAKPOINTS */
-/* ================================================================= */
-
-/* Mobile First Approach */
-@media (max-width: 768px) {
-  .noti-card {
-    max-width: 100%;
-    width: 100%;
-    min-height: 85px;
-    padding: var(--noti-spacing-md);
-    border-radius: 20px;
-    gap: var(--noti-spacing-xs);
-  }
-  
-  .noti-card-icon-wrapper {
-    width: 55px;
-    height: 55px;
-    padding: 18px;
-  }
-  
-  .noti-card-icon {
-    width: 35px;
-    height: 35px;
-  }
-  
-  .noti-card-content {
-    min-height: 55px;
-  }
-  
-  .noti-card-text-section {
-    max-width: 160px;
-    padding: 6px;
-    gap: 10px;
-  }
-  
-  .noti-card-time-section {
-    min-height: 55px;
-    padding: 8px 10px;
-  }
+/* EXPANDED STATE */
+.noti-card.expanded .noti-card-message {
+  -webkit-line-clamp: 20;
+  overflow: visible;
+  white-space: normal;
 }
 
-/* Small Mobile */
-@media (max-width: 480px) {
-  .noti-card {
-    max-width: 100%;
-    min-height: 80px;
-    padding: 12px;
-    border-radius: 18px;
-    gap: 8px;
-  }
-  
-  .noti-card-icon-wrapper {
-    width: 50px;
-    height: 50px;
-    padding: 16px;
-  }
-  
-  .noti-card-icon {
-    width: 32px;
-    height: 32px;
-  }
-  
-  .noti-card-content {
-    min-height: 50px;
-  }
-  
-  .noti-card-text-section {
-    max-width: 140px;
-    padding: 4px;
-    gap: 8px;
-  }
-  
-  .noti-card-time-section {
-    min-height: 50px;
-    padding: 6px 8px;
-  }
-}
 
-/* Very Small Mobile */
-@media (max-width: 360px) {
-  .noti-card {
-    min-height: 75px;
-    padding: 10px;
-    border-radius: 16px;
-    gap: 6px;
-  }
-  
-  .noti-card-icon-wrapper {
-    width: 45px;
-    height: 45px;
-    padding: 14px;
-  }
-  
-  .noti-card-icon {
-    width: 28px;
-    height: 28px;
-  }
-  
-  .noti-card-content {
-    min-height: 45px;
-  }
-  
-  .noti-card-text-section {
-    max-width: 120px;
-    padding: 3px;
-    gap: 6px;
-  }
-  
-  .noti-card-time-section {
-    min-height: 45px;
-    padding: 4px 6px;
-  }
-}
 
-/* Tablet */
-@media (min-width: 769px) and (max-width: 1024px) {
-  .noti-card {
-    max-width: 400px;
-    min-height: 90px;
-    padding: var(--noti-spacing-xl);
-    border-radius: 26px;
-  }
-  
-  .noti-card-icon-wrapper {
-    width: 60px;
-    height: 60px;
-    padding: var(--noti-spacing-xxl);
-  }
-  
-  .noti-card-icon {
-    width: 40px;
-    height: 40px;
-  }
-  
-  .noti-card-content {
-    min-height: 60px;
-  }
-  
-  .noti-card-text-section {
-    max-width: 190px;
-    gap: var(--noti-spacing-lg);
-  }
-  
-  .noti-card-time-section {
-    min-height: 60px;
-    padding: 10px 12px;
-  }
-}
-
-/* Desktop */
-@media (min-width: 1025px) {
-  .noti-card {
-    max-width: 420px;
-    min-height: 89px;
-    padding: var(--noti-spacing-xl);
-    border-radius: 25px;
-  }
-  
-  .noti-card-icon-wrapper {
-    width: 59px;
-    height: 59px;
-    padding: var(--noti-spacing-xxl);
-  }
-  
-  .noti-card-icon {
-    width: 39px;
-    height: 39px;
-  }
-  
-  .noti-card-content {
-    min-height: 65px;
-  }
-  
-  .noti-card-text-section {
-    max-width: 183px;
-    padding: var(--noti-spacing-sm);
-    gap: var(--noti-spacing-lg);
-  }
-  
-  .noti-card-time-section {
-    min-height: 65px;
-    padding: 9px 11px;
-  }
-}
-
-/* Large Desktop */
-@media (min-width: 1440px) {
-  .noti-card {
-    max-width: 450px;
-  }
-  
-  .noti-card-text-section {
-    max-width: 200px;
-  }
-}
-
-/* High DPI displays */
-@media (-webkit-min-device-pixel-ratio: 2), (min-resolution: 192dpi) {
-  .noti-card {
-    border-radius: 25px;
-  }
-  
-  .noti-card-icon-wrapper {
-    border-radius: 50%;
-  }
-}
-
-/* Focus states for accessibility */
-.noti-card[role="button"]:focus {
-  outline: 2px solid var(--noti-text-white);
-  outline-offset: 2px;
-}
-
-/* ================================================================= */
-/* iOS SPECIFIC PERFORMANCE OPTIMIZATIONS - ADDED AS EXTENSIONS */
-/* ================================================================= */
-
-/* iOS Device Specific Optimizations - Only Applied on iOS */
-.noti-card.ios-device {
-  /* Remove backdrop-filter for iOS performance */
-  background: rgba(0, 0, 0, 0.35) !important;
-  backdrop-filter: none !important;
-  -webkit-backdrop-filter: none !important;
-  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
-  
-  /* Force hardware acceleration */
-  transform: translate3d(0, 0, 0);
-  -webkit-perspective: 1000px;
-  -webkit-backface-visibility: hidden;
-  backface-visibility: hidden;
-}
-
-/* iOS: Optimize all interactive elements */
-.noti-card.ios-device {
-  -webkit-tap-highlight-color: transparent !important;
-  touch-action: manipulation;
-}
-
-/* iOS: Optimize font rendering */
-.noti-card.ios-device .noti-card-title,
-.noti-card.ios-device .noti-card-message,
-.noti-card.ios-device .noti-card-time {
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-}
-
-/* iOS: Optimize button transitions */
-.noti-card.ios-device[role="button"] {
-  transition: transform 0.15s ease !important;
-  transform: translateZ(0);
-  -webkit-backface-visibility: hidden;
-  backface-visibility: hidden;
-}
-
-.noti-card.ios-device[role="button"]:hover {
-  transform: translateY(-1px) translateZ(0) !important;
-}
-
-.noti-card.ios-device[role="button"]:active {
-  transform: translateY(0) translateZ(0) !important;
-}
-
-/* iOS: Optimize image rendering */
-.noti-card.ios-device .noti-card-icon {
-  transform: translateZ(0);
-  -webkit-backface-visibility: hidden;
-  backface-visibility: hidden;
-}
-
-/* iOS: Enhanced backgrounds on mobile */
-@media (max-width: 768px) {
-  .noti-card.ios-device {
-    background: rgba(0, 0, 0, 0.4) !important;
-    box-shadow: 0 2px 12px rgba(0, 0, 0, 0.15);
-  }
-}
-
-@media (max-width: 480px) {
-  .noti-card.ios-device {
-    background: rgba(0, 0, 0, 0.45) !important;
-  }
-}
-
-/* Dark mode support (optional) */
-@media (prefers-color-scheme: dark) {
-  .noti-card {
-    --noti-bg: rgba(255, 255, 255, 0.1);
-    --noti-icon-bg: rgba(255, 255, 255, 0.9);
-  }
-  
-  .noti-card.ios-device {
-    background: rgba(255, 255, 255, 0.15) !important;
-  }
-}
-
-/* Print styles */
-@media print {
-  .noti-card {
-    background: white;
-    color: black;
-    border: 1px solid black;
-    backdrop-filter: none;
-    box-shadow: none;
-  }
-  
-  .noti-card-title,
-  .noti-card-message,
-  .noti-card-time {
-    color: black;
-  }
-}
+/* All original responsive and special styles remain untouched below */
+@media (max-width: 768px) { .noti-card { max-width: 100%; width: 100%; min-height: 85px; padding: var(--noti-spacing-md); border-radius: 20px; gap: var(--noti-spacing-xs); } .noti-card-icon-wrapper { width: 55px; height: 55px; padding: 18px; } .noti-card-icon { width: 35px; height: 35px; } .noti-card-content { min-height: 55px; } .noti-card-text-section { max-width: 160px; padding: 6px; gap: 10px; } .noti-card-time-section { min-height: 55px; padding: 8px 10px; } }
+@media (max-width: 480px) { .noti-card { min-height: 80px; padding: 12px; border-radius: 18px; gap: 8px; } .noti-card-icon-wrapper { width: 50px; height: 50px; padding: 16px; } .noti-card-icon { width: 32px; height: 32px; } .noti-card-content { min-height: 50px; } .noti-card-text-section { max-width: 140px; padding: 4px; gap: 8px; } .noti-card-time-section { min-height: 50px; padding: 6px 8px; } }
+@media (max-width: 360px) { .noti-card { min-height: 75px; padding: 10px; border-radius: 16px; gap: 6px; } .noti-card-icon-wrapper { width: 45px; height: 45px; padding: 14px; } .noti-card-icon { width: 28px; height: 28px; } .noti-card-content { min-height: 45px; } .noti-card-text-section { max-width: 120px; padding: 3px; gap: 6px; } .noti-card-time-section { min-height: 45px; padding: 4px 6px; } }
+@media (min-width: 769px) and (max-width: 1024px) { .noti-card { max-width: 400px; min-height: 90px; padding: var(--noti-spacing-xl); border-radius: 26px; } .noti-card-icon-wrapper { width: 60px; height: 60px; padding: var(--noti-spacing-xxl); } .noti-card-icon { width: 40px; height: 40px; } .noti-card-content { min-height: 60px; } .noti-card-text-section { max-width: 190px; gap: var(--noti-spacing-lg); } .noti-card-time-section { min-height: 60px; padding: 10px 12px; } }
+@media (min-width: 1025px) { .noti-card { max-width: 420px; min-height: 89px; padding: var(--noti-spacing-xl); border-radius: 25px; } .noti-card-icon-wrapper { width: 59px; height: 59px; padding: var(--noti-spacing-xxl); } .noti-card-icon { width: 39px; height: 39px; } .noti-card-content { min-height: 65px; } .noti-card-text-section { max-width: 183px; padding: var(--noti-spacing-sm); gap: var(--noti-spacing-lg); } .noti-card-time-section { min-height: 65px; padding: 9px 11px; } }
+@media (min-width: 1440px) { .noti-card { max-width: 450px; } .noti-card-text-section { max-width: 200px; } }
+@media (-webkit-min-device-pixel-ratio: 2), (min-resolution: 192dpi) { .noti-card { border-radius: 25px; } .noti-card-icon-wrapper { border-radius: 50%; } }
+.noti-card[role="button"]:focus { outline: 2px solid var(--noti-text-white); outline-offset: 2px; }
+.noti-card.ios-device { background: rgba(0, 0, 0, 0.35) !important; backdrop-filter: none !important; -webkit-backdrop-filter: none !important; box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1); transform: translate3d(0, 0, 0); -webkit-perspective: 1000px; -webkit-backface-visibility: hidden; backface-visibility: hidden; }
+.noti-card.ios-device { -webkit-tap-highlight-color: transparent !important; touch-action: manipulation; }
+.noti-card.ios-device .noti-card-title, .noti-card.ios-device .noti-card-message, .noti-card.ios-device .noti-card-time { -webkit-font-smoothing: antialiased; -moz-osx-font-smoothing: grayscale; }
+.noti-card.ios-device[role="button"] { transition: transform 0.15s ease !important; transform: translateZ(0); -webkit-backface-visibility: hidden; backface-visibility: hidden; }
+.noti-card.ios-device[role="button"]:hover { transform: translateY(-1px) translateZ(0) !important; }
+.noti-card.ios-device[role="button"]:active { transform: translateY(0) translateZ(0) !important; }
+.noti-card.ios-device .noti-card-icon { transform: translateZ(0); -webkit-backface-visibility: hidden; backface-visibility: hidden; }
+@media (max-width: 768px) { .noti-card.ios-device { background: rgba(0, 0, 0, 0.4) !important; box-shadow: 0 2px 12px rgba(0, 0, 0, 0.15); } }
+@media (max-width: 480px) { .noti-card.ios-device { background: rgba(0, 0, 0, 0.45) !important; } }
+@media (prefers-color-scheme: dark) { .noti-card { --noti-bg: rgba(255, 255, 255, 0.1); --noti-icon-bg: rgba(255, 255, 255, 0.9); } .noti-card.ios-device { background: rgba(255, 255, 255, 0.15) !important; } }
+@media print { .noti-card { background: white; color: black; border: 1px solid black; backdrop-filter: none; box-shadow: none; } .noti-card-title, .noti-card-message, .noti-card-time { color: black; } }

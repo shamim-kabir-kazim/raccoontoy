@@ -618,3 +618,95 @@ html {
     backdrop-filter: none;
   }
 }
+
+/* ================================================================= */
+/* iOS SPECIFIC PERFORMANCE OPTIMIZATIONS - ADDED AS EXTENSIONS */
+/* ================================================================= */
+
+/* iOS Device Specific Optimizations - Only Applied on iOS */
+.log-Login.ios-device {
+  /* Enhanced scrolling for iOS */
+  -webkit-overflow-scrolling: touch !important;
+  transform: translateZ(0);
+  will-change: scroll-position;
+}
+
+.log-Login.ios-device .log-LoginArea {
+  /* Remove backdrop-filter for iOS performance */
+  background: rgba(255, 255, 255, 0.85) !important;
+  backdrop-filter: none !important;
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
+  /* Force hardware acceleration */
+  transform: translate3d(0, 0, 0);
+  -webkit-perspective: 1000px;
+  -webkit-backface-visibility: hidden;
+  backface-visibility: hidden;
+}
+
+/* iOS: Optimize all interactive elements */
+.log-Login.ios-device .log-form-input,
+.log-Login.ios-device .log-PasswordHideAndShowButton,
+.log-Login.ios-device .log-ForgotPassword,
+.log-Login.ios-device .log-LoginButton,
+.log-Login.ios-device .log-GoogleSigninButton,
+.log-Login.ios-device .log-signup-link {
+  -webkit-tap-highlight-color: transparent !important;
+  touch-action: manipulation;
+}
+
+/* iOS: Prevent zoom on input focus */
+.log-Login.ios-device .log-form-input {
+  font-size: max(16px, clamp(0.875rem, 2.5vw, 1rem)) !important;
+  -webkit-appearance: none;
+}
+
+/* iOS: Optimize font rendering */
+.log-Login.ios-device .log-EmailText,
+.log-Login.ios-device .log-ForgotPassword,
+.log-Login.ios-device .log-Or,
+.log-Login.ios-device .log-GoogleText,
+.log-Login.ios-device .log-normal-text,
+.log-Login.ios-device .log-signup-link {
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* iOS: Optimize button transitions */
+.log-Login.ios-device .log-LoginButton,
+.log-Login.ios-device .log-GoogleSigninButton {
+  transition: transform 0.2s ease !important;
+  transform: translateZ(0);
+  -webkit-backface-visibility: hidden;
+  backface-visibility: hidden;
+}
+
+.log-Login.ios-device .log-LoginButton:hover,
+.log-Login.ios-device .log-GoogleSigninButton:hover {
+  transform: translateY(-2px) translateZ(0) !important;
+}
+
+.log-Login.ios-device .log-LoginButton:active,
+.log-Login.ios-device .log-GoogleSigninButton:active {
+  transform: translateY(0) translateZ(0) !important;
+}
+
+/* iOS: Optimize header image */
+.log-Login.ios-device .log-Frame62511 {
+  transform: translateZ(0);
+  -webkit-backface-visibility: hidden;
+  backface-visibility: hidden;
+}
+
+/* iOS: Enhanced backgrounds on mobile */
+@media (max-width: 768px) {
+  .log-Login.ios-device .log-LoginArea {
+    background: rgba(255, 255, 255, 0.9) !important;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.15);
+  }
+}
+
+@media (max-width: 480px) {
+  .log-Login.ios-device .log-LoginArea {
+    background: rgba(255, 255, 255, 0.95) !important;
+  }
+}

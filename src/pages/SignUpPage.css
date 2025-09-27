@@ -612,3 +612,91 @@ html {
     backdrop-filter: none;
   }
 }
+
+/* ================================================================= */
+/* iOS SPECIFIC PERFORMANCE OPTIMIZATIONS - ADDED AS EXTENSIONS */
+/* ================================================================= */
+
+/* iOS Device Specific Optimizations - Only Applied on iOS */
+.sup-SignUp.ios-device {
+  /* Enhanced scrolling for iOS */
+  -webkit-overflow-scrolling: touch !important;
+  transform: translateZ(0);
+  will-change: scroll-position;
+}
+
+.sup-SignUp.ios-device .sup-SignUpArea {
+  /* Remove backdrop-filter for iOS performance */
+  background: rgba(255, 255, 255, 0.85) !important;
+  backdrop-filter: none !important;
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
+  /* Force hardware acceleration */
+  transform: translate3d(0, 0, 0);
+  -webkit-perspective: 1000px;
+  -webkit-backface-visibility: hidden;
+  backface-visibility: hidden;
+}
+
+/* iOS: Optimize all interactive elements */
+.sup-SignUp.ios-device .sup-form-input,
+.sup-SignUp.ios-device .sup-PasswordToggleButton,
+.sup-SignUp.ios-device .sup-checkbox,
+.sup-SignUp.ios-device .sup-link,
+.sup-SignUp.ios-device .sup-SignUpButton,
+.sup-SignUp.ios-device .sup-GoogleSigninButton,
+.sup-SignUp.ios-device .sup-login-link {
+  -webkit-tap-highlight-color: transparent !important;
+  touch-action: manipulation;
+}
+
+/* iOS: Prevent zoom on input focus */
+.sup-SignUp.ios-device .sup-form-input {
+  font-size: max(16px, clamp(0.875rem, 2.5vw, 1rem)) !important;
+  -webkit-appearance: none;
+}
+
+/* iOS: Optimize font rendering */
+.sup-SignUp.ios-device .sup-SignUpTitle,
+.sup-SignUp.ios-device .sup-InputLabel,
+.sup-SignUp.ios-device .sup-CheckboxLabel,
+.sup-SignUp.ios-device .sup-error,
+.sup-SignUp.ios-device .sup-Or,
+.sup-SignUp.ios-device .sup-GoogleText,
+.sup-SignUp.ios-device .sup-normal-text,
+.sup-SignUp.ios-device .sup-login-link {
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* iOS: Optimize button transitions */
+.sup-SignUp.ios-device .sup-SignUpButton,
+.sup-SignUp.ios-device .sup-GoogleSigninButton {
+  transition: transform 0.2s ease !important;
+  transform: translateZ(0);
+  -webkit-backface-visibility: hidden;
+  backface-visibility: hidden;
+}
+
+.sup-SignUp.ios-device .sup-SignUpButton:hover,
+.sup-SignUp.ios-device .sup-GoogleSigninButton:hover {
+  transform: translateY(-2px) translateZ(0) !important;
+}
+
+.sup-SignUp.ios-device .sup-SignUpButton:active,
+.sup-SignUp.ios-device .sup-GoogleSigninButton:active {
+  transform: translateY(0) translateZ(0) !important;
+}
+
+/* iOS: Enhanced backgrounds on mobile */
+@media (max-width: 768px) {
+  .sup-SignUp.ios-device .sup-SignUpArea {
+    background: rgba(255, 255, 255, 0.9) !important;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.15);
+  }
+}
+
+@media (max-width: 480px) {
+  .sup-SignUp.ios-device .sup-SignUpArea {
+    background: rgba(255, 255, 255, 0.95) !important;
+  }
+}

@@ -19,11 +19,21 @@ export default function LoginPage({
   const [password, setPassword] = useState("");
   const [showPassword, setShowPassword] = useState(false);
   const [submitting, setSubmitting] = useState(false);
+
+  // Device detection for iOS optimizations
+  const [isIOS, setIsIOS] = useState(false);
   
   // Refs for positioning elements
   const headerRef = useRef(null);
   const inputAreaRef = useRef(null);
   const topPartRef = useRef(null);
+
+  // Device detection on mount
+  useEffect(() => {
+    const userAgent = navigator.userAgent || navigator.vendor || window.opera;
+    const iOS = /iPad|iPhone|iPod/.test(userAgent) && !window.MSStream;
+    setIsIOS(iOS);
+  }, []);
 
   // Improved function to position header to touch input area with 0px gap
   const positionHeaderToInput = () => {
@@ -55,10 +65,18 @@ export default function LoginPage({
         
         // Apply transform to close the gap completely (0px gap)
         if (gap > 0) {
-          header.style.transform = `translateY(${gap}px)`;
+          if (isIOS) {
+            header.style.transform = `translateY(${gap}px) translateZ(0)`;
+          } else {
+            header.style.transform = `translateY(${gap}px)`;
+          }
         } else if (gap < 0) {
           // If overlapping, push apart slightly
-          header.style.transform = `translateY(${gap}px)`;
+          if (isIOS) {
+            header.style.transform = `translateY(${gap}px) translateZ(0)`;
+          } else {
+            header.style.transform = `translateY(${gap}px)`;
+          }
         }
         
         console.log(`Gap: ${gap}px, Applied transform: translateY(${gap}px)`);
@@ -129,7 +147,7 @@ export default function LoginPage({
         resizeObserver.disconnect();
       }
     };
-  }, []);
+  }, [isIOS]);
 
   // Re-position when content changes
   useEffect(() => {
@@ -184,7 +202,7 @@ export default function LoginPage({
   };
 
   return (
-    <div className="log-Login">
+    <div className={`log-Login ${isIOS ? 'ios-device' : ''}`}>
       <div className="log-LoginArea">
         {/* TOP PART: Frame 625, Frame 626, Forgot Password */}
         <div ref={topPartRef} className="top-part">

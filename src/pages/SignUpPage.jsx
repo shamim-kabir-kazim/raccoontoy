@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import { useNavigate } from "react-router-dom"; // Add this import
 import "./SignUpPage.css";
 import BottomNavBar from "../components/BottomNavBar";
@@ -24,6 +24,15 @@ export default function SignUpPage({
   const [agreedToPrivacy, setAgreedToPrivacy] = useState(false);
   const [submitting, setSubmitting] = useState(false);
   const [errors, setErrors] = useState({});
+
+  // Device detection for iOS optimizations
+  const [isIOS, setIsIOS] = useState(false);
+
+  useEffect(() => {
+    const userAgent = navigator.userAgent || navigator.vendor || window.opera;
+    const iOS = /iPad|iPhone|iPod/.test(userAgent) && !window.MSStream;
+    setIsIOS(iOS);
+  }, []);
 
   const validateForm = () => {
     const newErrors = {};
@@ -142,7 +151,7 @@ export default function SignUpPage({
   };
 
   return (
-    <div className="sup-SignUp">
+    <div className={`sup-SignUp ${isIOS ? 'ios-device' : ''}`}>
       <div className="sup-SignUpArea">
         {/* TOP PART: Sign Up Title, Form Fields */}
         <div className="top-part">

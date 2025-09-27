@@ -46,8 +46,8 @@ export default function NotificationPage() {
   });
 
   return (
-    <div className="notification-page-container">
-      <div className="notification-page">
+    <div className="main-container">
+      <div className="notification-page-container">
         <div className="toggle-section">
           <div
             className={`toggle-button ${activeTab === "all" ? "active" : ""}`}

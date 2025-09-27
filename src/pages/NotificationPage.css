@@ -1,43 +1,61 @@
-/* New main container for the entire view below the header */
+/* Main container for the entire view below the header */
 .main-container {
   position: relative;
   width: 100vw;
   height: calc(100vh - 96px); 
   display: flex;
   flex-direction: column;
+  align-items: center; /* Horizontally center the child container */
+  justify-content: flex-start; /* Aligns the container to the top */
+  padding-top: 20px; /* Adds space between header and container */
+  box-sizing: border-box;
 }
 
 /* This container now holds the scrollable content */
 .notification-page-container {
-  width: calc(100% - 20px); /* Full width minus side margins */
+  width: 95%;
   max-width: 420px;
-  margin: 10px auto; /* Center with top/bottom margin */
+  height: 65vh;
   background: rgba(254, 254, 254, 0.25);
   backdrop-filter: blur(2px);
   -webkit-backdrop-filter: blur(2px);
   border-radius: 30px;
   display: flex;
   flex-direction: column;
-  flex: 1;
   overflow: hidden;
-  padding: 20px;
+  flex-grow: 0;
+  flex-shrink: 0; /* Prevent shrinking */
+  padding: 10px 5px;
 }
 
 /* Toggle buttons section */
 .toggle-section {
   display: flex;
-  gap: 10px; /* Reduced gap */
-  padding: 10px;
+  gap: 10px;
+  padding: 20px 15px 15px 15px;
   justify-content: center;
   align-items: center;
+  position: relative;
+}
+
+/* Separator style */
+.toggle-section::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 5%;
+  width: 90%;
+  height: 1px;
+  background-color: rgba(0, 0, 0, 0.1);
 }
 
 .toggle-button {
-  flex: 1;
-  padding: 15px 8px; /* Adjusted padding */
-  border-radius: 15px;
+  flex: 0 1 150px;
+  max-width: 150px;
+  padding: 10px 5px;
+  border-radius: 12px;
   text-align: center;
-  font-size: 15px; /* Adjusted font size */
+  font-size: 13px;
   font-family: "Inter", sans-serif;
   font-weight: 500;
   cursor: pointer;
@@ -56,53 +74,33 @@
 
 /* Notification list area */
 .noti-list {
-  padding: 0 10px; /* Adjusted padding */
+  padding: 15px;
   display: flex;
   flex-direction: column;
-  gap: 10px; /* Reduced gap */
-  padding-bottom: 15px;
+  gap: 10px;
+  padding-bottom: 20px;
+  overflow-y: auto;
 }
 
-/* Hide scrollbar for a cleaner look */
-.notification-page-container {
-  -ms-overflow-style: none;
-  scrollbar-width: none;
-}
-.notification-page-container::-webkit-scrollbar {
-  display: none;
-}
+/* Hide scrollbar */
+.noti-list::-webkit-scrollbar { display: none; }
+.noti-list { -ms-overflow-style: none; scrollbar-width: none; }
 
 /* ================== RESPONSIVE ADJUSTMENTS ================== */
-
-/* For devices like iPads */
 @media (max-width: 768px) {
-  .main-container {
-    height: calc(100vh - 65px); /* Adjust for smaller header */
-  }
+  .main-container { height: calc(100vh - 65px); }
 }
 
-/* For smaller mobile phones */
 @media (max-width: 480px) {
   .notification-page-container {
-    width: calc(100% - 16px); /* Slightly smaller width with 8px margins */
-    margin: 8px auto;
-    border-radius: 20px; /* Softer radius on mobile */
+    height: 70vh;
+    border-radius: 20px;
   }
-
-  .toggle-section {
-    padding: 8px;
-    gap: 8px;
-  }
-
+  .toggle-section { padding: 15px 10px 12px 10px; }
   .toggle-button {
-    padding: 12px 5px; /* Smaller button padding */
-    font-size: 13px; /* Smaller font size */
-    border-radius: 12px;
+    flex-basis: 130px;
+    font-size: 12px;
+    border-radius: 10px;
   }
-
-  .noti-list {
-    padding: 0 8px;
-    gap: 8px;
-    padding-bottom: 10px;
-  }
+  .noti-list { padding: 12px 10px; gap: 8px; }
 }

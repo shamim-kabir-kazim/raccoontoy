@@ -5,7 +5,8 @@ import Header from "./components/Header";
 import SideMenu from "./components/SideMenu";
 import SorryPopup from "./components/SorryPopup";
 import LoginPage from "./pages/LoginPage";
-import SignUpPage from "./pages/SignUpPage"; // ADD THIS IMPORT
+import SignUpPage from "./pages/SignUpPage";
+import NotificationPage from "./pages/NotificationPage"; // ADD THIS IMPORT
 import "./App.css";
 
 function App() {
@@ -26,13 +27,19 @@ function App() {
   return (
     <Router>
       <SorryPopup />
-      {/* Only ONE Header here */}
-      <Header onMenuClick={() => setShowMenu(true)} />
+      {/* Conditionally render Header */}
+      <Routes>
+        <Route path="/notifications" element={null} /> {/* No header on noti page */}
+        <Route path="*" element={<Header onMenuClick={() => setShowMenu(true)} />} />
+      </Routes>
+      
       <SideMenu open={showMenu} onClose={() => setShowMenu(false)} />
+
       <Routes>
         <Route path="/" element={<LandingPage />} />
         <Route path="/login" element={<LoginPage />} />
-        <Route path="/signup" element={<SignUpPage />} /> {/* ADD THIS ROUTE */}
+        <Route path="/signup" element={<SignUpPage />} />
+        <Route path="/notifications" element={<NotificationPage />} /> {/* ADD THIS ROUTE */}
         {/* Add more routes here as your app grows */}
         <Route path="*" element={<Navigate to="/" />} />
       </Routes>

@@ -3,51 +3,57 @@
   bottom: 0;
   left: 0;
   width: 100vw;
-  height: 88px;
+  height: 92px; /* Increased height for more padding */
   background: #fff;
   display: flex;
   justify-content: space-around;
   align-items: center;
   box-shadow: 0 -1px 10px 0 rgba(0,0,0,0.06);
   z-index: 100;
+  padding: 10px 0; /* Added vertical padding */
+  box-sizing: border-box; /* Ensures padding is included in the height */
 }
 
 .nav-item {
   display: flex;
   flex-direction: column;
   align-items: center;
+  justify-content: center; /* This will vertically center the icon and text */
   flex: 1 1 0;
   cursor: pointer;
-  transition: background 0.1s;
-  padding: 12px 0 6px 0;
+  height: 100%; /* Make each item take the full height of the navbar */
 }
 
 .nav-icon {
-  display: block;
-  margin-bottom: 8px;
-  width: 40px;
-  height: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 3px; /* A small, consistent gap */
+  font-size: 38px;
+  color: #000000;
 }
 
 .nav-label {
   font-family: 'Arial', sans-serif;
-  font-size: 1rem;
+  font-size: 0.9rem;
   font-weight: 600;
   color: #111;
   transition: color 0.15s;
 }
 
-.nav-item.active .nav-label {
-  color: #ffc300;
+/* Active state colors */
+.nav-item.active .nav-label,
+.nav-item.active .nav-icon {
+  color: #FFB71A;
 }
 
+/* Responsive adjustments for smaller screens */
 @media (max-width: 700px) {
   .bottom-nav-bar {
-    height: 68px;
+    height: 72px;
   }
   .nav-icon {
-    width: 30px;
-    height: 30px;
+    font-size: 28px;
   }
   .nav-label {
     font-size: 0.8rem;
@@ -56,12 +62,11 @@
 
 @media (max-width: 480px) {
   .bottom-nav-bar {
-    height: 60px;
+    height: 65px;
   }
   .nav-icon {
-    width: 24px;
-    height: 24px;
-    margin-bottom: 6px;
+    font-size: 24px;
+    margin-bottom: 2px;
   }
   .nav-label {
     font-size: 0.7rem;
